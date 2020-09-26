@@ -58,8 +58,8 @@ HiddenPowerDamage:
 	srl a
 	add 30
 	inc a
-
-	ld d, a
+; Hardcode to 70
+	ld d, 70
 
 ; Type:
 

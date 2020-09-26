@@ -50,3 +50,5 @@ gfx/pokemon/*/bitmask.asm
 gfx/pokemon/*/frames.asm
 !gfx/pokemon/unown/bitmask.asm
 !gfx/pokemon/unown/frames.asm
+
+*.csv

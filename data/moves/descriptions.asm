@@ -541,8 +541,8 @@ SeismicTossDescription:
 	next "equals damage HP.@"
 
 StrengthDescription:
-	db   "A powerful physi-"
-	next "cal attack.@"
+	db   "An attack that may"
+	next "up user's ATTACK.@"
 
 AbsorbDescription:
 	db   "Steals 1/2 of the"
@@ -557,8 +557,8 @@ LeechSeedDescription:
 	next "foe on every turn.@"
 
 GrowthDescription:
-	db   "Raises the SPCL."
-	next "ATK rating.@"
+	db   "Sharply increases"
+	next "SPCL.ATK.@"
 
 RazorLeafDescription:
 	db   "Has a high criti-"
@@ -789,8 +789,8 @@ SpikeCannonDescription:
 	next "hit 2-5 times.@"
 
 ConstrictDescription:
-	db   "An attack that may"
-	next "lower SPEED.@"
+	db   "An attack that"
+	next "lowers SPEED.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
@@ -841,8 +841,8 @@ TransformDescription:
 	next "the foe's guise.@"
 
 BubbleDescription:
-	db   "An attack that may"
-	next "reduce SPEED.@"
+	db   "An attack that"
+	next "lowers SPEED.@"
 
 DizzyPunchDescription:
 	db   "An attack that may"
@@ -1021,8 +1021,8 @@ MudSlapDescription:
 	next "accuracy.@"
 
 OctazookaDescription:
-	db   "An attack that may"
-	next "reduce accuracy.@"
+	db   "An attack that"
+	next "strikes twice.@"
 
 SpikesDescription:
 	db   "Hurts foes when"
@@ -1209,7 +1209,7 @@ MoonlightDescription:
 	next "(varies by time).@"
 
 HiddenPowerDescription:
-	db   "The power varies"
+	db   "The type varies"
 	next "with the #MON.@"
 
 CrossChopDescription:
@@ -1230,7 +1230,7 @@ SunnyDayDescription:
 
 CrunchDescription:
 	db   "An attack that may"
-	next "lower SPCL.DEF.@"
+	next "lower DEF.@"
 
 MirrorCoatDescription:
 	db   "Counters a SPCL."
