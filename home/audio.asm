@@ -286,12 +286,12 @@ MinVolume::
 	ld [wVolume], a
 	ret
 
-Unused_FadeOutMusic::
+FadeOutToMusic:: ; unreferenced
 	ld a, 4
 	ld [wMusicFade], a
 	ret
 
-FadeInMusic::
+FadeInToMusic::
 	ld a, 4 | (1 << MUSIC_FADE_IN_F)
 	ld [wMusicFade], a
 	ret
@@ -467,9 +467,8 @@ GetMapMusic_MaybeSpecial::
 	call GetMapMusic
 	ret
 
-Unreferenced_Function3d9f::
-; Places a BCD number at the
-; upper center of the screen.
+PlaceBCDNumberSprite:: ; unreferenced
+; Places a BCD number at the upper center of the screen.
 	ld a, 4 * TILE_WIDTH
 	ld [wVirtualOAMSprite38YCoord], a
 	ld [wVirtualOAMSprite39YCoord], a

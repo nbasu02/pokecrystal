@@ -16,6 +16,7 @@ ReanchorBGMap_NoOAMUpdate::
 	ldh [hBGMapMode], a
 	pop af
 	ldh [hOAMUpdate], a
+
 	ld hl, wVramState
 	set 6, [hl]
 	ret
@@ -32,7 +33,7 @@ ReanchorBGMap_NoOAMUpdate::
 	call _OpenAndCloseMenu_HDMATransferTilemapAndAttrmap
 	farcall LoadOW_BGPal7
 	farcall ApplyPals
-	ld a, $1
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	xor a
 	ldh [hBGMapMode], a

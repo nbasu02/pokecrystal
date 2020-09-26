@@ -174,7 +174,7 @@ GetGender:
 	ld a, [wMonType]
 	cp BOXMON
 	ld a, BANK(sBox)
-	call z, GetSRAMBank
+	call z, OpenSRAM
 
 ; Attack DV
 	ld a, [hli]
@@ -323,7 +323,7 @@ ListMovePP:
 	jr nz, .load_loop
 	ret
 
-Unreferenced_Function50cd0:
+Function50cd0: ; unreferenced
 .loop
 	ld [hl], $32 ; typo for P?
 	inc hl

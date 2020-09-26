@@ -1,11 +1,11 @@
 ; Functions relating to the timer interrupt and the real-time-clock.
 
-Unreferenced_Timer::
+Timer:: ; unreferenced
 	push af
 	ldh a, [hMobile]
 	and a
 	jr z, .not_mobile
-	call Timer
+	call MobileTimer
 
 .not_mobile
 	pop af
@@ -256,12 +256,12 @@ SetClock::
 	call CloseSRAM ; unlatch clock, disable clock r/w
 	ret
 
-UnreferencedClearRTCStatus::
+ClearRTCStatus:: ; unreferenced
 ; clear sRTCStatusFlags
 	xor a
 	push af
 	ld a, BANK(sRTCStatusFlags)
-	call GetSRAMBank
+	call OpenSRAM
 	pop af
 	ld [sRTCStatusFlags], a
 	call CloseSRAM
@@ -272,7 +272,7 @@ RecordRTCStatus::
 	ld hl, sRTCStatusFlags
 	push af
 	ld a, BANK(sRTCStatusFlags)
-	call GetSRAMBank
+	call OpenSRAM
 	pop af
 	or [hl]
 	ld [hl], a
@@ -282,7 +282,7 @@ RecordRTCStatus::
 CheckRTCStatus::
 ; check sRTCStatusFlags
 	ld a, BANK(sRTCStatusFlags)
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [sRTCStatusFlags]
 	call CloseSRAM
 	ret

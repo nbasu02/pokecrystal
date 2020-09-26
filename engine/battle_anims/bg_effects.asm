@@ -1510,10 +1510,10 @@ Tackle_BGEffect25_2d_two:
 
 Functionc88a5:
 	push af
-	ld a, [wFXAnimID + 1] ; FXAnimID + 1
+	ld a, [wFXAnimID + 1]
 	or a
 	jr nz, .not_rollout
-	ld a, [wFXAnimID] ; FXAnimID
+	ld a, [wFXAnimID]
 	cp ROLLOUT
 	jr z, .rollout
 .not_rollout
@@ -2546,7 +2546,7 @@ BGEffects_LoadBGPal0_OBPal1:
 	pop bc
 	pop af
 	ldh [rSVBK], a
-	ld a, $1
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
 
@@ -2573,7 +2573,7 @@ BGEffects_LoadBGPal1_OBPal0:
 	pop bc
 	pop af
 	ldh [rSVBK], a
-	ld a, $1
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
 
@@ -2839,7 +2839,8 @@ BGEffect_FillLYOverridesBackup:
 	ret
 
 BGEffect_DisplaceLYOverridesBackup:
-	; e = a; d = [hLYOverrideEnd] - [hLYOverrideStart] - a
+	; e = a
+	; d = [hLYOverrideEnd] - [hLYOverrideStart] - a
 	push af
 	ld e, a
 	ldh a, [hLYOverrideStart]

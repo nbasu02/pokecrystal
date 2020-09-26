@@ -56,7 +56,7 @@ ENDM
 
 unknownmusic0xde EQUS "sound_duty"
 sound_duty: MACRO
-	db $de
+	db duty_cycle_pattern_cmd
 IF _NARG == 4
 	db \1 | (\2 << 2) | (\3 << 4) | (\4 << 6)
 ELSE
@@ -113,6 +113,8 @@ if_not_equal    EQUS "ifnotequal"
 if_greater_than EQUS "ifgreater"
 if_less_than    EQUS "ifless"
 end_all         EQUS "endall"
+return          EQUS "endcallback"
+reloadandreturn EQUS "reloadend"
 
 checkmaptriggers EQUS "checkmapscene"
 domaptrigger     EQUS "setmapscene"
@@ -221,18 +223,12 @@ signpost: MACRO
 ENDM
 
 person_event: MACRO
-;	object_event \3, \2, \1, \4, \5, \6, \7, \8, \9, \10, \11, \12, \13
-	db \1, \2 + 4, \3 + 4, \4
-	dn \6, \5
-	db \7, \8
-	shift
-	dn \8, \9
-	shift
-	db \9
-	shift
-	dw \9
-	shift
-	dw \9
+_s = \1
+_y = \2
+_x = \3
+_m = \4
+	shift 4
+	object_event _x, _y, _s, _m, \1, \2, \3, \4, \5, \6, \7, \8, \9
 ENDM
 
 PERSONTYPE_SCRIPT   EQUS "OBJECTTYPE_SCRIPT"
@@ -317,9 +313,9 @@ start_asm              EQUS "text_asm"
 deciram                EQUS "text_decimal"
 interpret_data         EQUS "text_pause"
 limited_interpret_data EQUS "text_dots"
-text_waitbutton        EQUS "text_promptbutton"
-link_wait_button       EQUS "text_linkpromptbutton"
-text_linkwaitbutton    EQUS "text_linkpromptbutton"
+link_wait_button       EQUS "text_waitbutton"
+text_linkwaitbutton    EQUS "text_waitbutton"
+text_linkpromptbutton  EQUS "text_waitbutton"
 current_day            EQUS "text_today"
 text_jump              EQUS "text_far"
 
@@ -327,3 +323,60 @@ text_jump              EQUS "text_far"
 anim_enemyfeetobj  EQUS "anim_battlergfx_2row"
 anim_playerheadobj EQUS "anim_battlergfx_1row"
 anim_clearsprites  EQUS "anim_keepsprites"
+
+; engine/events/std_scripts.asm
+pokecenternurse       EQUS "PokecenterNurseScript"
+difficultbookshelf    EQUS "DifficultBookshelfScript"
+picturebookshelf      EQUS "PictureBookshelfScript"
+magazinebookshelf     EQUS "MagazineBookshelfScript"
+teamrocketoath        EQUS "TeamRocketOathScript"
+incenseburner         EQUS "IncenseBurnerScript"
+merchandiseshelf      EQUS "MerchandiseShelfScript"
+townmap               EQUS "TownMapScript"
+window                EQUS "WindowScript"
+tv                    EQUS "TVScript"
+homepage              EQUS "HomepageScript"
+radio1                EQUS "Radio1Script"
+radio2                EQUS "Radio2Script"
+trashcan              EQUS "TrashCanScript"
+strengthboulder       EQUS "StrengthBoulderScript"
+smashrock             EQUS "SmashRockScript"
+pokecentersign        EQUS "PokecenterSignScript"
+martsign              EQUS "MartSignScript"
+goldenrodrockets      EQUS "GoldenrodRocketsScript"
+radiotowerrockets     EQUS "RadioTowerRocketsScript"
+elevatorbutton        EQUS "ElevatorButtonScript"
+daytotext             EQUS "DayToTextScript"
+bugcontestresultswarp EQUS "BugContestResultsWarpScript"
+bugcontestresults     EQUS "BugContestResultsScript"
+initializeevents      EQUS "InitializeEventsScript"
+asknumber1m           EQUS "AskNumber1MScript"
+asknumber2m           EQUS "AskNumber2MScript"
+registerednumberm     EQUS "RegisteredNumberMScript"
+numberacceptedm       EQUS "NumberAcceptedMScript"
+numberdeclinedm       EQUS "NumberDeclinedMScript"
+phonefullm            EQUS "PhoneFullMScript"
+rematchm              EQUS "RematchMScript"
+giftm                 EQUS "GiftMScript"
+packfullm             EQUS "PackFullMScript"
+rematchgiftm          EQUS "RematchGiftMScript"
+asknumber1f           EQUS "AskNumber1FScript"
+asknumber2f           EQUS "AskNumber2FScript"
+registerednumberf     EQUS "RegisteredNumberFScript"
+numberacceptedf       EQUS "NumberAcceptedFScript"
+numberdeclinedf       EQUS "NumberDeclinedFScript"
+phonefullf            EQUS "PhoneFullFScript"
+rematchf              EQUS "RematchFScript"
+giftf                 EQUS "GiftFScript"
+packfullf             EQUS "PackFullFScript"
+rematchgiftf          EQUS "RematchGiftFScript"
+gymstatue1            EQUS "GymStatue1Script"
+gymstatue2            EQUS "GymStatue2Script"
+receiveitem           EQUS "ReceiveItemScript"
+receivetogepiegg      EQUS "ReceiveTogepiEggScript"
+pcscript              EQUS "PCScript"
+gamecornercoinvendor  EQUS "GameCornerCoinVendorScript"
+happinesschecknpc     EQUS "HappinessCheckScript"
+
+; constants/sprite_constants.asm
+SPRITE_BUENA EQUS "SPRITE_BEAUTY"

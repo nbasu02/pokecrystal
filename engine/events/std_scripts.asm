@@ -1,57 +1,61 @@
+add_stdscript: MACRO
+\1StdScript::
+	dba \1
+ENDM
+
 StdScripts::
-; entries correspond to constants/std_constants.asm
-	dba PokecenterNurseScript
-	dba DifficultBookshelfScript
-	dba PictureBookshelfScript
-	dba MagazineBookshelfScript
-	dba TeamRocketOathScript
-	dba IncenseBurnerScript
-	dba MerchandiseShelfScript
-	dba TownMapScript
-	dba WindowScript
-	dba TVScript
-	dba HomepageScript
-	dba Radio1Script
-	dba Radio2Script
-	dba TrashCanScript
-	dba StrengthBoulderScript
-	dba SmashRockScript
-	dba PokecenterSignScript
-	dba MartSignScript
-	dba GoldenrodRocketsScript
-	dba RadioTowerRocketsScript
-	dba ElevatorButtonScript
-	dba DayToTextScript
-	dba BugContestResultsWarpScript
-	dba BugContestResultsScript
-	dba InitializeEventsScript
-	dba AskNumber1MScript
-	dba AskNumber2MScript
-	dba RegisteredNumberMScript
-	dba NumberAcceptedMScript
-	dba NumberDeclinedMScript
-	dba PhoneFullMScript
-	dba RematchMScript
-	dba GiftMScript
-	dba PackFullMScript
-	dba RematchGiftMScript
-	dba AskNumber1FScript
-	dba AskNumber2FScript
-	dba RegisteredNumberFScript
-	dba NumberAcceptedFScript
-	dba NumberDeclinedFScript
-	dba PhoneFullFScript
-	dba RematchFScript
-	dba GiftFScript
-	dba PackFullFScript
-	dba RematchGiftFScript
-	dba GymStatue1Script
-	dba GymStatue2Script
-	dba ReceiveItemScript
-	dba ReceiveTogepiEggScript
-	dba PCScript
-	dba GameCornerCoinVendorScript
-	dba HappinessCheckScript
+	add_stdscript PokecenterNurseScript
+	add_stdscript DifficultBookshelfScript
+	add_stdscript PictureBookshelfScript
+	add_stdscript MagazineBookshelfScript
+	add_stdscript TeamRocketOathScript
+	add_stdscript IncenseBurnerScript
+	add_stdscript MerchandiseShelfScript
+	add_stdscript TownMapScript
+	add_stdscript WindowScript
+	add_stdscript TVScript
+	add_stdscript HomepageScript ; unused
+	add_stdscript Radio1Script
+	add_stdscript Radio2Script
+	add_stdscript TrashCanScript
+	add_stdscript StrengthBoulderScript
+	add_stdscript SmashRockScript
+	add_stdscript PokecenterSignScript
+	add_stdscript MartSignScript
+	add_stdscript GoldenrodRocketsScript
+	add_stdscript RadioTowerRocketsScript
+	add_stdscript ElevatorButtonScript
+	add_stdscript DayToTextScript
+	add_stdscript BugContestResultsWarpScript
+	add_stdscript BugContestResultsScript
+	add_stdscript InitializeEventsScript
+	add_stdscript AskNumber1MScript
+	add_stdscript AskNumber2MScript
+	add_stdscript RegisteredNumberMScript
+	add_stdscript NumberAcceptedMScript
+	add_stdscript NumberDeclinedMScript
+	add_stdscript PhoneFullMScript
+	add_stdscript RematchMScript
+	add_stdscript GiftMScript
+	add_stdscript PackFullMScript
+	add_stdscript RematchGiftMScript
+	add_stdscript AskNumber1FScript
+	add_stdscript AskNumber2FScript
+	add_stdscript RegisteredNumberFScript
+	add_stdscript NumberAcceptedFScript
+	add_stdscript NumberDeclinedFScript
+	add_stdscript PhoneFullFScript
+	add_stdscript RematchFScript
+	add_stdscript GiftFScript
+	add_stdscript PackFullFScript
+	add_stdscript RematchGiftFScript
+	add_stdscript GymStatue1Script
+	add_stdscript GymStatue2Script
+	add_stdscript ReceiveItemScript
+	add_stdscript ReceiveTogepiEggScript
+	add_stdscript PCScript
+	add_stdscript GameCornerCoinVendorScript
+	add_stdscript HappinessCheckScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -605,12 +609,12 @@ InitializeEventsScript:
 	setevent EVENT_TRAINERS_IN_CERULEAN_GYM
 	setevent EVENT_COPYCATS_HOUSE_2F_DOLL
 	setevent EVENT_VIRIDIAN_GYM_BLUE
-	setevent EVENT_SEAFOAM_GYM_GYM_GUY
+	setevent EVENT_SEAFOAM_GYM_GYM_GUIDE
 	setevent EVENT_MT_MOON_SQUARE_CLEFAIRY
 	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	setevent EVENT_INITIALIZED_EVENTS
-	return
+	endcallback
 
 AskNumber1MScript:
 	special RandomPhoneMon

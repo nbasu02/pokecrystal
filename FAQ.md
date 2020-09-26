@@ -4,7 +4,7 @@
 ## Questions
 
 - [What is pokecrystal11.gbc?](#what-is-pokecrystal11gbc)
-- [What is pokecrystal-au.gbc?](#what-is-pokecrystal-augbc)
+- [What is pokecrystal_au.gbc?](#what-is-pokecrystal_augbc)
 - [I can't build the ROM, `make` just prints an error!](#i-cant-build-the-rom-make-just-prints-an-error)
   - [`gcc`: command not found](#gcc-command-not-found)
   - ["ERROR: `UNION` already defined"](#error-union-already-defined)
@@ -25,9 +25,10 @@
 
 Version 1.1 of Pokémon Crystal, which fixed some issues with the initial international release. `make crystal11` defines `_CRYSTAL11` so the assembly builds the changed version.
 
-## What is pokecrystal-au.gbc?
 
-The Australian release of Pokémon Crystal, which is based on the international 1.1 release but censors gambling references from the Game Corners. `make crystal-au` defines `_CRYSTAL11` and `_CRYSTAL_AU` so the assembly builds the changed version.
+## What is pokecrystal_au.gbc?
+
+The Australian release of Pokémon Crystal, which is based on the international 1.1 release but censors gambling references from the Game Corners. `make crystal_au` defines `_CRYSTAL11` and `_CRYSTAL_AU` so the assembly builds the changed version.
 
 
 ## I can't build the ROM, `make` just prints an error!
@@ -40,15 +41,15 @@ You need to install `gcc`. If you're using Cygwin, re-run its setup, and at "Sel
 
 ### "ERROR: `UNION` already defined"
 
-Download [**rgbds 0.4.0**][rgbds] or newer. Older versions will not work.
+Download [**rgbds 0.4.1**][rgbds] or newer. Older versions will not work.
 
 ### "ERROR: Macro not defined"
 
-Download [**rgbds 0.4.0**][rgbds] or newer. Older versions will not work.
+Download [**rgbds 0.4.1**][rgbds] or newer. Older versions will not work.
 
 ### "Expression must be 8-bit"
 
-Download [**rgbds 0.4.0**][rgbds] or newer. Older versions will not work.
+Download [**rgbds 0.4.1**][rgbds] or newer. Older versions will not work.
 
 ### "Segmentation fault" from `rgbgfx`
 
@@ -106,7 +107,7 @@ If your code is on GitHub, you can [link to specific lines][snippethelp]. Put "`
 Try asking on Discord or IRC (see [README.md](README.md)).
 
 [cygwin]: https://cygwin.com/install.html
-[rgbds]: https://github.com/rednex/rgbds/releases
+[rgbds]: https://github.com/gbdev/rgbds/releases
 [polished-map]: https://github.com/Rangi42/polished-map
 [gimp]: https://www.gimp.org/
 [paintdotnet]: https://www.getpaint.net/

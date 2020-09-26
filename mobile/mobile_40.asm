@@ -409,7 +409,7 @@ Function1002dc:
 Function1002ed:
 	farcall LoadOW_BGPal7
 	farcall ApplyPals
-	ld a, $01
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	call DelayFrame
 	ret
@@ -1092,7 +1092,7 @@ Function1006dc:
 MobileBattleResetTimer:
 	ld a, BANK(sMobileBattleTimer)
 	ld hl, sMobileBattleTimer
-	call GetSRAMBank
+	call OpenSRAM
 	xor a
 	ld [hli], a
 	ld [hli], a
@@ -1103,7 +1103,7 @@ MobileBattleResetTimer:
 MobileBattleFixTimer:
 	ld a, BANK(sMobileBattleTimer)
 	ld hl, sMobileBattleTimer
-	call GetSRAMBank
+	call OpenSRAM
 	xor a ; MOBILE_BATTLE_ALLOWED_SECONDS
 	ld [hli], a
 	ld a, MOBILE_BATTLE_ALLOWED_MINUTES
@@ -1125,7 +1125,7 @@ Function100720:
 	ld [wcd74], a
 	ld a, BANK(sMobileBattleTimer)
 	ld hl, sMobileBattleTimer
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [hli]
 	ld [wcd6c], a
 	ld a, [hli]
@@ -1248,7 +1248,7 @@ Function1007f6:
 	ld de, wcd71
 	call Function1006dc
 	ld a, $04
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, $a802
 	call Function100826
 	call CloseSRAM
@@ -1338,7 +1338,7 @@ MobileBattleGetRemainingTime:
 ; Returns minutes in c and seconds in b
 	ld a, BANK(sMobileBattleTimer)
 	ld hl, sMobileBattleTimer
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [hli]
 	ld [wStringBuffer2], a
 	ld a, [hli]
@@ -1689,7 +1689,7 @@ Unknown_100b0a:
 
 popc
 
-Function100b12:
+Mobile_LoadBattleMenu:
 	call Function100dd8
 	ret c
 	ld hl, BattleMenuHeader
@@ -1747,7 +1747,7 @@ Function100b7a:
 	set 7, [hl]
 	ret
 
-MobileMoveSelectionScreen:
+Mobile_MoveSelectionScreen:
 	xor a
 	ld [wMoveSwapBuffer], a
 	farcall CheckPlayerHasUsableMoves
@@ -1765,7 +1765,7 @@ MobileMoveSelectionScreen:
 .GetMoveSelection:
 	xor a
 	ldh [hBGMapMode], a
-	call Function100c74
+	call .ListMoves
 	call Function100c98
 .master_loop
 	farcall MoveInfoBox
@@ -1860,7 +1860,7 @@ MobileMoveSelectionScreen:
 	call SafeLoadTempTilemapToTilemap
 	jp .GetMoveSelection
 
-Function100c74:
+.ListMoves:
 	hlcoord 0, 8
 	ld b, 8
 	ld c, 8
@@ -1876,8 +1876,8 @@ Function100c74:
 	ret
 
 Function100c98:
-	ld de, .attrs
-	call SetMenuAttributes
+	ld de, .data
+	call Load2DMenuData
 	ld a, [wNumMoves]
 	inc a
 	ld [w2DMenuNumRows], a
@@ -1886,12 +1886,12 @@ Function100c98:
 	ld [wMenuCursorY], a
 	ret
 
-.attrs
-	db 10, 1
-	db 255, 1
-	db $a0, $00
-	dn 2, 0
-	db D_UP | D_DOWN | A_BUTTON | B_BUTTON
+.data:
+	db 10, 1 ; cursor start y, x
+	db -1, 1 ; rows, columns
+	db $a0, $00 ; flags
+	dn 2, 0 ; cursor offsets
+	db D_UP | D_DOWN | A_BUTTON | B_BUTTON ; accepted buttons
 
 Mobile_PartyMenuSelect:
 	call Function100dd8
@@ -2210,7 +2210,7 @@ Function100eca:
 
 Function100ed4:
 	farcall ApplyPals
-	ld a, $01
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
 
@@ -2374,7 +2374,7 @@ Function100f8d:
 	ret
 
 .sram
-	call GetSRAMBank
+	call OpenSRAM
 	call CopyBytes
 	call CloseSRAM
 	ret
@@ -2428,7 +2428,7 @@ endr
 	inc hl
 	ld [hl], d
 	ld a, $07
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, wc608
 	ld de, $a001
 	ld bc, wc7bd - wc608
@@ -2654,7 +2654,7 @@ LoadSelectedPartiesForColosseum:
 
 Function1011f1:
 	ld a, BANK(s4_a60c)
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [s4_a60c]
 	ld [wdc41], a
 	call CloseSRAM
@@ -2925,7 +2925,7 @@ Function1013dd:
 	call CGBOnly_CopyTilemapAtOnce
 	ret
 
-Unreferenced_Function1013e1:
+Function1013e1: ; unreferenced
 	push de
 	inc de
 	ld b, a
@@ -2960,7 +2960,7 @@ Function1013f5:
 	jr nz, .asm_1013f9
 	ret
 
-Unreferenced_Function101400:
+Function101400: ; unreferenced
 	ld a, [de]
 	inc de
 	cp [hl]
@@ -3135,7 +3135,7 @@ Function101507:
 	ld [wMobileCommsJumptableIndex], a
 	ret
 
-Unreferenced_Function10151d:
+Function10151d: ; unreferenced
 	ld a, $34
 	call Function3e32
 	ld a, [wMobileCommsJumptableIndex]
@@ -3312,7 +3312,7 @@ Function101663:
 	call MobileCopyTransferData2
 	ret
 
-Unreferenced_Function101674:
+Function101674: ; unreferenced
 	ld a, BANK(w5_dc00)
 	ld hl, w5_dc00
 	call MobileCopyTransferData
@@ -4146,7 +4146,7 @@ Function101cbc:
 	ld [wcd2b], a
 	ret
 
-Unreferenced_Function101cc2:
+Function101cc2: ; unreferenced
 	ld a, $02
 	ld [wcd2b], a
 	ret
@@ -4407,14 +4407,14 @@ Function101e64:
 	ld [wcd2b], a
 	ret
 
-Unreferenced_Function101e82:
+Function101e82: ; unreferenced
 	call Function101ecc
 	ld a, [wMobileCommsJumptableIndex]
 	inc a
 	ld [wMobileCommsJumptableIndex], a
 	ret
 
-Unreferenced_Function101e8d:
+Function101e8d: ; unreferenced
 	call Function101ed3
 	ld a, [wMobileCommsJumptableIndex]
 	inc a
@@ -4659,7 +4659,7 @@ Function1020bf:
 	ld d, h
 	ld e, l
 	ld a, $04
-	call GetSRAMBank
+	call OpenSRAM
 	call Function10208e
 	call Function102068
 	call CloseSRAM
@@ -4695,7 +4695,7 @@ Function1020ea:
 
 Function102112:
 	ld a, $04
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, $a041
 	ld c, 40
 .outer_loop
@@ -5944,7 +5944,7 @@ Function1029cf:
 	ld hl, wcd4b
 	set 1, [hl]
 	ld de, MenuData3_102a33
-	call SetMenuAttributes
+	call Load2DMenuData
 	ld a, [wcd4a]
 	inc a
 	ld [wcd4a], a
@@ -5981,11 +5981,11 @@ String_102a26:
 	db   "@"
 
 MenuData3_102a33:
-	db 8, 11
-	db 2,  1
-	db $80, $00
-	dn 2, 0
-	db A_BUTTON
+	db 8, 11 ; cursor start y, x
+	db 2, 1 ; rows, columns
+	db $80, $00 ; flags
+	dn 2, 0 ; cursor offset
+	db A_BUTTON ; accepted buttons
 
 Function102a3b:
 	ld a, [wcd30]
@@ -6115,47 +6115,47 @@ Function102b4e:
 	ld [wMonType], a
 	ld a, [wMenuCursorY]
 	push af
-	ld de, Unknown_102b73
-	call SetMenuAttributes
+	ld de, MenuData_102b73
+	call Load2DMenuData
 	pop af
 	ld [wMenuCursorY], a
 	ld a, [wOTPartyCount]
 	ld [w2DMenuNumRows], a
 	ret
 
-Unreferenced_Function102b68:
+Function102b68: ; unreferenced
 	xor a
 	ld hl, wWindowStackPointer
 	ld bc, $10
 	call ByteFill
 	ret
 
-Unknown_102b73:
-	db 9, 6
-	db 255, 1
-	db $a0, $00
-	dn 1, 0
-	db D_UP | D_DOWN | A_BUTTON
+MenuData_102b73:
+	db 9, 6 ; cursor start y, x
+	db -1, 1 ; rows, columns
+	db $a0, $00 ; flags
+	dn 1, 0 ; cursor offset
+	db D_UP | D_DOWN | A_BUTTON ; accepted buttons
 
 Function102b7b:
 	xor a
 	ld [wMonType], a
 	ld a, [wMenuCursorY]
 	push af
-	ld de, Unknown_102b94
-	call SetMenuAttributes
+	ld de, MenuData_102b94
+	call Load2DMenuData
 	pop af
 	ld [wMenuCursorY], a
 	ld a, [wPartyCount]
 	ld [w2DMenuNumRows], a
 	ret
 
-Unknown_102b94:
-	db 1, 6
-	db 255, 1
-	db $a0, $00
-	dn 1, 0
-	db D_UP | D_DOWN | A_BUTTON
+MenuData_102b94:
+	db 1, 6 ; cursor start y, x
+	db 255, 1 ; rows, columns
+	db $a0, $00 ; flags
+	dn 1, 0 ; cursor offset
+	db D_UP | D_DOWN | A_BUTTON ; accepted buttons
 
 Function102b9c:
 	ld a, [wcd4d]
@@ -6254,7 +6254,7 @@ Function102c3b:
 Function102c48:
 	farcall Function10165a
 	ld a, 0
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, $a600
 	ld de, wc608
 	ld bc, $2f
@@ -6364,7 +6364,7 @@ Function102d34:
 	ret
 
 Function102d3e:
-	call GetSRAMBank
+	call OpenSRAM
 	call CopyBytes
 	call CloseSRAM
 	ret
@@ -6909,7 +6909,7 @@ Function103309:
 	xor a
 	call ByteFill
 	ld a, BANK(s4_a60c)
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [wdc41]
 	ld [s4_a60c], a
 	ld [wBuffer1], a
@@ -6961,7 +6961,7 @@ Function103362:
 	bit 6, [hl]
 	jr z, .asm_103398
 	ld a, BANK(s4_a60c)
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [wBuffer1]
 	ld [s4_a60c], a
 	ld [wdc41], a

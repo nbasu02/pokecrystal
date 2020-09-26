@@ -11,7 +11,7 @@ _DummyGame:
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
 	callfar ClearSpriteAnims
-	ld hl, LZ_e2221
+	ld hl, DummyGameLZ
 	ld de, vTiles2 tile $00
 	call Decompress
 	ld hl, Unknown_e00ed
@@ -523,7 +523,7 @@ DummyGame_InterpretJoypad_AnimateCursor:
 	ret
 
 .pressed_a
-	ld hl, SPRITEANIMSTRUCT_0C
+	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc a
@@ -538,7 +538,7 @@ DummyGame_InterpretJoypad_AnimateCursor:
 	ret z
 	sub 1 tiles
 	ld [hl], a
-	ld hl, SPRITEANIMSTRUCT_0C
+	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	dec [hl]
 	ret
@@ -551,7 +551,7 @@ DummyGame_InterpretJoypad_AnimateCursor:
 	ret z
 	add 1 tiles
 	ld [hl], a
-	ld hl, SPRITEANIMSTRUCT_0C
+	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ret
@@ -564,7 +564,7 @@ DummyGame_InterpretJoypad_AnimateCursor:
 	ret z
 	sub 1 tiles
 	ld [hl], a
-	ld hl, SPRITEANIMSTRUCT_0C
+	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	sub 9
@@ -579,12 +579,12 @@ DummyGame_InterpretJoypad_AnimateCursor:
 	ret z
 	add 1 tiles
 	ld [hl], a
-	ld hl, SPRITEANIMSTRUCT_0C
+	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	add 9
 	ld [hl], a
 	ret
 
-LZ_e2221:
+DummyGameLZ:
 INCBIN "gfx/dummy_game/dummy_game.2bpp.lz"

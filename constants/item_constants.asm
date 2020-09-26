@@ -197,13 +197,27 @@
 	const MIRAGE_MAIL  ; bd
 	const ITEM_BE      ; be
 
+__tmhm_value__ = 1
+
 add_tm: MACRO
+; Defines three constants:
+; - TM_\1: the item id, starting at $bf
+; - \1_TMNUM: the learnable TM/HM flag, starting at 1
+; - TM##_MOVE: alias for the move id, equal to the value of \1
+; The first usage also defines TM01 as the first TM item id.
 if !DEF(TM01)
 TM01 EQU const_value
-	enum_start 1
 endc
+if __tmhm_value__ < 10
+MOVE_FOR_TM EQUS "TM0{d:__tmhm_value__}_MOVE"
+else
+MOVE_FOR_TM EQUS "TM{d:__tmhm_value__}_MOVE"
+endc
+MOVE_FOR_TM = \1
+PURGE MOVE_FOR_TM
 	const TM_\1
-	enum \1_TMNUM
+\1_TMNUM EQU __tmhm_value__
+__tmhm_value__ = __tmhm_value__ + 1
 ENDM
 
 ; see data/moves/tmhm_moves.asm for moves
@@ -259,14 +273,29 @@ ENDM
 	add_tm FIRE_PUNCH   ; f0
 	add_tm FURY_CUTTER  ; f1
 	add_tm NIGHTMARE    ; f2
-NUM_TMS EQU const_value - TM01 - 2 ; discount ITEM_C3 and ITEM_DC
+NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO
+; Defines three constants:
+; - HM_\1: the item id, starting at $f3
+; - \1_TMNUM: the learnable TM/HM flag, starting at 51
+; - HM##_MOVE: alias for the move id, equal to the value of \1
+; The first usage also defines HM01 as the first TM item id.
 if !DEF(HM01)
 HM01 EQU const_value
 endc
+HM_VALUE EQU __tmhm_value__ - NUM_TMS
+if HM_VALUE < 10
+MOVE_FOR_HM EQUS "HM0{d:HM_VALUE}_MOVE"
+else
+MOVE_FOR_HM EQUS "HM{d:HM_VALUE}_MOVE"
+endc
+MOVE_FOR_HM = \1
+PURGE MOVE_FOR_HM
+PURGE HM_VALUE
 	const HM_\1
-	enum \1_TMNUM
+\1_TMNUM EQU __tmhm_value__
+__tmhm_value__ = __tmhm_value__ + 1
 ENDM
 
 	add_hm CUT          ; f3
@@ -276,16 +305,31 @@ ENDM
 	add_hm FLASH        ; f7
 	add_hm WHIRLPOOL    ; f8
 	add_hm WATERFALL    ; f9
-NUM_HMS EQU const_value - HM01
+NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 add_mt: MACRO
-	enum \1_TMNUM
+; Defines two constants:
+; - \1_TMNUM: the learnable TM/HM flag, starting at 58
+; - MT##_MOVE: alias for the move id, equal to the value of \1
+MT_VALUE EQU __tmhm_value__ - NUM_TMS - NUM_HMS
+if MT_VALUE < 10
+MOVE_FOR_MT EQUS "MT0{d:MT_VALUE}_MOVE"
+else
+MOVE_FOR_MT EQUS "MT{d:MT_VALUE}_MOVE"
+endc
+MOVE_FOR_MT = \1
+PURGE MOVE_FOR_MT
+PURGE MT_VALUE
+\1_TMNUM EQU __tmhm_value__
+__tmhm_value__ = __tmhm_value__ + 1
 ENDM
 
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
-NUM_TM_HM_TUTOR EQU __enum__ - 1
+NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
+
+NUM_TM_HM_TUTOR EQU __tmhm_value__ - 1
 
 	const ITEM_FA       ; fa
 

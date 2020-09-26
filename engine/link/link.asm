@@ -632,7 +632,7 @@ FixDataForLinkTransfer:
 Link_PrepPartyData_Gen1:
 	ld de, wLinkData
 	ld a, SERIAL_PREAMBLE_BYTE
-	ld b, PARTY_LENGTH
+	ld b, SERIAL_PREAMBLE_LENGTH
 .loop1
 	ld [de], a
 	inc de
@@ -798,7 +798,7 @@ Link_PrepPartyData_Gen1:
 Link_PrepPartyData_Gen2:
 	ld de, wLinkData
 	ld a, SERIAL_PREAMBLE_BYTE
-	ld b, PARTY_LENGTH
+	ld b, SERIAL_PREAMBLE_LENGTH
 .loop1
 	ld [de], a
 	inc de
@@ -835,7 +835,7 @@ Link_PrepPartyData_Gen2:
 
 ; Copy all the mail messages to wc9f9
 	ld a, BANK(sPartyMail)
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, sPartyMail
 	ld b, PARTY_LENGTH
 .loop2
@@ -1561,7 +1561,7 @@ Function28b22:
 	ldh [rSC], a
 	ret
 
-Unreferenced_Function28b42:
+Function28b42: ; unreferenced
 	hlcoord 0, 16
 	ld a, "┘"
 	ld bc, 2 * SCREEN_WIDTH
@@ -1706,7 +1706,7 @@ LinkTrade:
 	ld bc, MAIL_STRUCT_LENGTH
 	call AddNTimes
 	ld a, BANK(sPartyMail)
-	call GetSRAMBank
+	call OpenSRAM
 	ld d, h
 	ld e, l
 	ld bc, MAIL_STRUCT_LENGTH
@@ -1882,24 +1882,31 @@ LinkTrade:
 	call LoadTradeScreenBorder
 	call SetTradeRoomBGPals
 	farcall Link_WaitBGMap
-	ld b, $1
+
+; Check if either of the Pokémon sent was a Mew or Celebi, and send a different
+; byte depending on that. Presumably this would've been some prevention against
+; illicit trade machines, but it doesn't seem like a very effective one.
+; Removing this code breaks link compatibility with the vanilla gen2 games, but
+; has otherwise no consequence.
+	ld b, 1
 	pop af
 	ld c, a
 	cp MEW
-	jr z, .loop
+	jr z, .send_checkbyte
 	ld a, [wCurPartySpecies]
 	cp MEW
-	jr z, .loop
-	ld b, $2
+	jr z, .send_checkbyte
+	ld b, 2
 	ld a, c
 	cp CELEBI
-	jr z, .loop
+	jr z, .send_checkbyte
 	ld a, [wCurPartySpecies]
 	cp CELEBI
-	jr z, .loop
-	ld b, $0
+	jr z, .send_checkbyte
 
-.loop
+; Send the byte in a loop until the desired byte has been received.
+	ld b, 0
+.send_checkbyte
 	ld a, b
 	ld [wPlayerLinkAction], a
 	push bc
@@ -1913,7 +1920,7 @@ LinkTrade:
 	jr z, .save
 	ld a, [wOtherPlayerLinkAction]
 	cp b
-	jr nz, .loop
+	jr nz, .send_checkbyte
 
 .save
 	farcall SaveAfterLinkTrade
@@ -1971,7 +1978,7 @@ SetTradeRoomBGPals:
 	call SetPalettes
 	ret
 
-Unreferenced_Function28f09:
+Function28f09: ; unreferenced
 	hlcoord 0, 0
 	ld b, 6
 	ld c, 18
@@ -2503,12 +2510,12 @@ CableClubCheckWhichChris:
 	ld [wScriptVar], a
 	ret
 
-Unreferenced_Gen1LinkCommsBorderGFX:
-INCBIN "gfx/trade/unused_gen_1_border_tiles.2bpp"
+GSLinkCommsBorderGFX: ; unreferenced
+INCBIN "gfx/trade/unused_gs_border_tiles.2bpp"
 
-Unreferenced_Function29fe4:
+Function29fe4: ; unreferenced
 	ld a, BANK(sPartyMail)
-	call GetSRAMBank
+	call OpenSRAM
 	ld d, FALSE
 	ld b, CHECK_FLAG
 	predef SmallFarFlagAction

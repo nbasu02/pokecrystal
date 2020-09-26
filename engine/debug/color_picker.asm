@@ -230,16 +230,7 @@ Function81a74:
 	jr nz, .asm_81aab
 
 .asm_81a8b
-	ld a, [wJumptableIndex]
-	ld e, a
-	ld d, 0
-	ld hl, Jumptable_81acf
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp hl
+	jumptable Jumptable_81acf, wJumptableIndex
 
 .asm_81a9a
 	call Function81eca
@@ -297,15 +288,15 @@ Function81adb:
 	hlcoord 1, 3
 	lb bc, 7, 18
 	ld a, DEBUGTEST_WHITE
-	call Bank20_FillBoxWithByte
+	call DebugColor_FillBoxWithByte
 	hlcoord 11, 0
 	lb bc, 2, 3
 	ld a, DEBUGTEST_LIGHT
-	call Bank20_FillBoxWithByte
+	call DebugColor_FillBoxWithByte
 	hlcoord 16, 0
 	lb bc, 2, 3
 	ld a, DEBUGTEST_DARK
-	call Bank20_FillBoxWithByte
+	call DebugColor_FillBoxWithByte
 	call Function81bc0
 	call Function81bf4
 	ld a, [wcf66]
@@ -457,7 +448,7 @@ Function81c33:
 	hlcoord 15, 2
 	ld de, wc608 + 2
 	call Function81ca7
-	ld a, $1
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ld a, $3
 	ld [wJumptableIndex], a
@@ -880,7 +871,7 @@ Function81ee3:
 	jr nz, .asm_81ee3
 	ret
 
-Bank20_FillBoxWithByte:
+DebugColor_FillBoxWithByte:
 ; For some reason, we have another copy of FillBoxWithByte here
 .row
 	push bc
@@ -1236,7 +1227,7 @@ Function822a3:
 	call Function81ca7
 	pop af
 	ldh [rSVBK], a
-	ld a, $1
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	call DelayFrame
 	ret

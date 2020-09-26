@@ -1,4 +1,4 @@
-Unreferenced_Function16c000:
+Function16c000: ; unreferenced
 	; Only for CGB
 	ldh a, [hCGB]
 	and a
@@ -650,7 +650,7 @@ Function16cbd1:
 	ld a, $5
 	call FarCopyWRAM
 	farcall ApplyPals
-	ld a, $1
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
 

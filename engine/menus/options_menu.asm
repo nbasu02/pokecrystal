@@ -10,7 +10,7 @@
 	const OPT_CANCEL       ; 7
 NUM_OPTIONS EQU const_value    ; 8
 
-_OptionsMenu:
+_Option:
 	ld hl, hInMenu
 	ld a, [hl]
 	push af
@@ -91,16 +91,7 @@ StringOptions:
 	db "CANCEL@"
 
 GetOptionPointer:
-	ld a, [wJumptableIndex]
-	ld e, a
-	ld d, 0
-	ld hl, .Pointers
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp hl
+	jumptable .Pointers, wJumptableIndex
 
 .Pointers:
 ; entries correspond to OPT_* constants

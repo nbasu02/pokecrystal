@@ -26,7 +26,7 @@ box_struct: MACRO
 \1CaughtGender::
 \1CaughtLocation:: db
 \1Level::          db
-\1End::
+\1BoxEnd::
 ENDM
 
 party_struct: MACRO
@@ -41,7 +41,7 @@ party_struct: MACRO
 \1Speed::          dw
 \1SpclAtk::        dw
 \1SpclDef::        dw
-\1StatsEnd::
+\1StructEnd::
 ENDM
 
 red_box_struct: MACRO
@@ -80,7 +80,6 @@ battle_struct: MACRO
 \1Species::   db
 \1Item::      db
 \1Moves::     ds NUM_MOVES
-\1MovesEnd::
 \1DVs::       dw
 \1PP::        ds NUM_MOVES
 \1Happiness:: db
@@ -94,7 +93,6 @@ battle_struct: MACRO
 \1Speed::     dw
 \1SpclAtk::   dw
 \1SpclDef::   dw
-\1StatsEnd::
 \1Type::
 \1Type1::     db
 \1Type2::     db
@@ -126,7 +124,6 @@ map_connection_struct: MACRO
 ENDM
 
 channel_struct: MACRO
-; Addreses are wChannel1 (c101).
 \1MusicID::           dw
 \1MusicBank::         db
 \1Flags1::            db ; 0:on/off 1:subroutine 2:looping 3:sfx 4:noise 5:rest
@@ -242,14 +239,14 @@ link_battle_record: MACRO
 ENDM
 
 trademon: MACRO
-\1Species::     db ; wc6d0 | wc702
-\1SpeciesName:: ds MON_NAME_LENGTH ; wc6d1 | wc703
-\1Nickname::    ds MON_NAME_LENGTH ; wc6dc | wc70e
-\1SenderName::  ds NAME_LENGTH ; wc6e7 | wc719
-\1OTName::      ds NAME_LENGTH ; wc6f2 | wc724
-\1DVs::         dw ; wc6fd | wc72f
-\1ID::          dw ; wc6ff | wc731
-\1CaughtData::  db ; wc701 | wc733
+\1Species::     db
+\1SpeciesName:: ds MON_NAME_LENGTH
+\1Nickname::    ds MON_NAME_LENGTH
+\1SenderName::  ds NAME_LENGTH
+\1OTName::      ds NAME_LENGTH
+\1DVs::         dw
+\1ID::          dw
+\1CaughtData::  db
 \1End::
 ENDM
 
@@ -359,16 +356,16 @@ sprite_anim_struct: MACRO
 \1DurationOffset:: db
 \1FrameIndex::     db
 \1JumptableIndex:: db
-\1Field0c::        ds 1
-\1Field0d::        ds 1
-\1Field0e::        ds 1
-\1Field0f::        ds 1
+\1Var1::           ds 1
+\1Var2::           ds 1
+\1Var3::           ds 1
+\1Var4::           ds 1
 ENDM
 
 battle_anim_struct: MACRO
 ; Placeholder until we can figure out what it all means
 \1Index::              db
-\1Field01::            ds 1
+\1OAMFlags::           db
 \1Field02::            ds 1
 \1FramesetID::         db
 \1Function::           db
@@ -378,19 +375,13 @@ battle_anim_struct: MACRO
 \1YCoord::             db
 \1XOffset::            db
 \1YOffset::            db
-\1Field0b::            ds 1
+\1Param::              db
 \1Duration::           db
 \1Frame::              db
-\1AnonJumptableIndex:: db
-\1Field0f::            ds 1
-\1Field10::            ds 1
-\1Field11::            ds 1
-\1Field12::            ds 1
-\1Field13::            ds 1
-\1Field14::            ds 1
-\1Field15::            ds 1
-\1Field16::            ds 1
-\1Field17::            ds 1
+\1JumptableIndex::     db
+\1Var1::               db
+\1Var2::               db
+	ds 7
 ENDM
 
 battle_bg_effect: MACRO

@@ -203,7 +203,7 @@ PokeBallEffect:
 	jr nz, .room_in_party
 
 	ld a, BANK(sBoxCount)
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [sBoxCount]
 	cp MONS_PER_BOX
 	call CloseSRAM
@@ -605,7 +605,7 @@ PokeBallEffect:
 	farcall SetBoxMonCaughtData
 
 	ld a, BANK(sBoxCount)
-	call GetSRAMBank
+	call OpenSRAM
 
 	ld a, [sBoxCount]
 	cp MONS_PER_BOX
@@ -641,7 +641,7 @@ PokeBallEffect:
 	farcall NamingScreen
 
 	ld a, BANK(sBoxMonNicknames)
-	call GetSRAMBank
+	call OpenSRAM
 
 	ld hl, wMonOrItemNameBuffer
 	ld de, sBoxMonNicknames
@@ -656,7 +656,7 @@ PokeBallEffect:
 
 .SkipBoxMonNickname:
 	ld a, BANK(sBoxMonNicknames)
-	call GetSRAMBank
+	call OpenSRAM
 
 	ld hl, sBoxMonNicknames
 	ld de, wMonOrItemNameBuffer
@@ -1141,7 +1141,7 @@ EvoStoneEffect:
 	cp EVERSTONE
 	jr z, .NoEffect
 
-	ld a, $1
+	ld a, TRUE
 	ld [wForceEvolution], a
 	farcall EvolvePokemon
 
@@ -1241,7 +1241,7 @@ StatStrings:
 
 GetStatExpRelativePointer:
 	ld a, [wCurItem]
-	ld hl, Table_eeeb
+	ld hl, StatExpItemPointerOffsets
 .next
 	cp [hl]
 	inc hl
@@ -1255,7 +1255,7 @@ GetStatExpRelativePointer:
 	ld b, 0
 	ret
 
-Table_eeeb:
+StatExpItemPointerOffsets:
 	db HP_UP,    MON_HP_EXP - MON_STAT_EXP
 	db PROTEIN, MON_ATK_EXP - MON_STAT_EXP
 	db IRON,    MON_DEF_EXP - MON_STAT_EXP
@@ -2097,9 +2097,9 @@ XAccuracyEffect:
 
 PokeDollEffect:
 	ld a, [wBattleMode]
-	dec a
-	jr nz, .asm_f4a6
-	inc a
+	dec a ; WILD_BATTLE?
+	jr nz, .not_wild
+	inc a ; TRUE
 	ld [wForcedSwitch], a
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
@@ -2107,7 +2107,7 @@ PokeDollEffect:
 	ld [wBattleResult], a
 	jp UseItemText
 
-.asm_f4a6
+.not_wild
 	xor a
 	ld [wItemEffectSucceeded], a
 	ret
@@ -2247,7 +2247,7 @@ PokeFluteEffect:
 	pop de
 
 .battle
-	jp PokeFluteTerminatorCharacter
+	jp PokeFluteTerminator
 
 BlueCardEffect:
 	ld hl, .BlueCardBalanceText

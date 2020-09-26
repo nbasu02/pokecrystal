@@ -32,6 +32,7 @@ MAP_NONE   EQU 0
 	const PALETTE_NITE
 	const PALETTE_MORN
 	const PALETTE_DARK
+NUM_MAP_PALETTES EQU const_value
 
 ; FishGroups indexes (see data/wild/fish.asm)
 	const_def
@@ -102,6 +103,7 @@ NUM_SPAWNS EQU const_value
 ; Flypoints indexes (see data/maps/flypoints.asm)
 	const_def
 ; johto
+JOHTO_FLYPOINT EQU const_value
 	const FLY_NEW_BARK
 	const FLY_CHERRYGROVE
 	const FLY_VIOLET
@@ -128,5 +130,6 @@ KANTO_FLYPOINT EQU const_value
 	const FLY_FUCHSIA
 	const FLY_CINNABAR
 	const FLY_INDIGO
+NUM_FLYPOINTS EQU const_value
 
 MAX_OUTDOOR_SPRITES EQU 23 ; see engine/overworld/overworld.asm

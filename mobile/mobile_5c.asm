@@ -37,7 +37,7 @@ Function170000:
 
 Function17005a:
 	ld a, $5
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [$a824]
 	ld [wOTTrademonSpecies], a
 	ld hl, $a827
@@ -75,7 +75,7 @@ INCLUDE "engine/events/battle_tower/battle_tower.asm"
 
 Function170be4:
 	ld a, $5
-	call GetSRAMBank
+	call OpenSRAM
 	xor a
 	ld hl, $a894
 	ld bc, $0008
@@ -85,7 +85,7 @@ Function170be4:
 
 Clears5_a89a:
 	ld a, $5
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, $a89a
 	xor a
 	ld [hli], a
@@ -95,7 +95,7 @@ Clears5_a89a:
 
 Function170c06:
 	ld a, $5
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, $a894
 	ld a, [wBattleResult]
 	and a ; WIN?
@@ -346,16 +346,7 @@ Function171a11:
 	ret
 
 Function171a36:
-	ld a, [wcd49]
-	ld e, a
-	ld d, 0
-	ld hl, Jumptable_171a45
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp hl
+	jumptable Jumptable_171a45, wcd49
 
 Jumptable_171a45:
 	dw Function171a95
@@ -494,7 +485,7 @@ Function171b4b:
 	depixel 8, 2
 	ld a, SPRITE_ANIM_INDEX_EZCHAT_CURSOR
 	call InitSpriteAnimStruct
-	ld hl, SPRITEANIMSTRUCT_0C
+	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, $8
 	ld [hl], a
@@ -502,7 +493,7 @@ Function171b4b:
 	depixel 8, 19
 	ld a, SPRITE_ANIM_INDEX_EZCHAT_CURSOR
 	call InitSpriteAnimStruct
-	ld hl, SPRITEANIMSTRUCT_0C
+	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, $9
 	ld [hl], a
@@ -510,7 +501,7 @@ Function171b4b:
 	depixel 17, 14, 2, 0
 	ld a, SPRITE_ANIM_INDEX_EZCHAT_CURSOR
 	call InitSpriteAnimStruct
-	ld hl, SPRITEANIMSTRUCT_0C
+	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, $a
 	ld [hl], a
@@ -589,7 +580,7 @@ Function171bdc:
 
 Function171beb:
 	ld a, $5
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [wcd4a]
 	ld [$aa4a], a
 	call CloseSRAM

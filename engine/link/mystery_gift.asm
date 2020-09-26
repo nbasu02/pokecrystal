@@ -1107,7 +1107,7 @@ MysteryGift_CheckAndSetDecorationAlreadyReceived:
 	ld d, $0
 	ld b, CHECK_FLAG
 	ld hl, sMysteryGiftDecorationsReceived
-	predef_id SmallFarFlagAction
+	lda_predef SmallFarFlagAction
 	push hl
 	push bc
 	call Predef
@@ -1202,14 +1202,14 @@ MysteryGift_ClearTrainerData:
 
 GetMysteryGiftBank:
 	ld a, BANK(sBackupMysteryGiftItem)
-	jp GetSRAMBank
+	jp OpenSRAM
 
 StagePartyDataForMysteryGift:
 ; You will be sending this data to your mystery gift partner.
 ; Structure is the same as a trainer with species and moves
 ; defined.
 	ld a, BANK(sPokemonData)
-	call GetSRAMBank
+	call OpenSRAM
 	ld de, wMysteryGiftStaging
 	ld bc, sPokemonData + wPartyMons - wPokemonData
 	ld hl, sPokemonData + wPartySpecies - wPokemonData
@@ -1350,7 +1350,7 @@ InitMysteryGiftLayout:
 	ld b, 5
 	jr .gfx_loop
 
-.Unreferenced_Load6GFX:
+.Load6GFX: ; unreferenced
 	ld b, 6
 	jr .gfx_loop
 
@@ -1521,7 +1521,7 @@ Function105777:
 Function10578c:
 	ld de, wLinkData
 	ld a, BANK(sPlayerData)
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, sPlayerData + wPlayerName - wPlayerData
 	ld bc, NAME_LENGTH
 	call CopyBytes
@@ -1533,16 +1533,16 @@ Function10578c:
 	call CopyBytes
 	call CloseSRAM
 	ld a, BANK(sCrystalData)
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [sCrystalData + 0]
 	ld [de], a
 	inc de
-	ld a, 4 ; MBC30 bank used by JP Crystal; inaccessible by MBC3
-	call GetSRAMBank
-	ld hl, $a603 ; address of MBC30 bank
+	ld a, BANK(s4_a603) ; aka BANK(s4_a007) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	call OpenSRAM
+	ld hl, s4_a603 ; address of MBC30 bank
 	ld bc, $8
 	call CopyBytes
-	ld hl, $a007 ; address of MBC30 bank
+	ld hl, s4_a007 ; address of MBC30 bank
 	ld bc, $c
 	call CopyBytes
 	call CloseSRAM

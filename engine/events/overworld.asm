@@ -289,7 +289,7 @@ FlashFunction:
 	pop hl
 	jr c, .useflash
 	ld a, [wTimeOfDayPalset]
-	cp %11111111 ; 3, 3, 3, 3
+	cp DARKNESS_PALSET
 	jr nz, .notadarkcave
 .useflash
 	call UseFlash
@@ -349,7 +349,7 @@ SurfFunction:
 .TrySurf:
 	ld de, ENGINE_FOGBADGE
 	call CheckBadge
-	jr c, .asm_c956
+	jr c, .nofogbadge
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
@@ -368,7 +368,7 @@ SurfFunction:
 	jr c, .cannotsurf
 	ld a, $1
 	ret
-.asm_c956
+.nofogbadge
 	ld a, $80
 	ret
 .alreadyfail
@@ -407,19 +407,19 @@ UsedSurfScript:
 	waitbutton
 	closetext
 
-	callasm .empty_fn ; empty function
+	callasm .stubbed_fn
 
 	readmem wBuffer2
 	writevar VAR_MOVEMENT
 
-	special ReplaceKrisSprite
+	special UpdatePlayerSprite
 	special PlayMapMusic
 ; step into the water (slow_step DIR, step_end)
 	special SurfStartStep
 	applymovement PLAYER, wMovementBuffer
 	end
 
-.empty_fn
+.stubbed_fn
 	farcall StubbedTrainerRankings_Surf
 	ret
 
@@ -628,7 +628,7 @@ FlyFunction:
 .ReturnFromFly:
 	farcall Function561d
 	call DelayFrame
-	call ReplaceKrisSprite
+	call UpdatePlayerSprite
 	farcall LoadOverworldFont
 	ret
 
@@ -971,7 +971,7 @@ StrengthFunction:
 	jr c, .Failed
 	jr .UseStrength
 
-.Unreferenced_AlreadyUsing:
+.AlreadyUsingStrength: ; unreferenced
 	ld hl, .AlreadyUsingStrengthText
 	call MenuTextboxBackup
 	ld a, $80
@@ -1369,7 +1369,7 @@ RockSmashScript:
 	special WaitSFX
 	playsound SFX_STRENGTH
 	earthquake 84
-	applymovementlasttalked MovementData_0xcf55
+	applymovementlasttalked MovementData_RockSmash
 	disappear -2
 
 	callasm RockMonEncounter
@@ -1381,7 +1381,7 @@ RockSmashScript:
 .done
 	end
 
-MovementData_0xcf55:
+MovementData_RockSmash:
 	rock_smash 10
 	step_end
 
@@ -1591,11 +1591,11 @@ Script_FishCastRod:
 	loademote EMOTE_ROD
 	callasm LoadFishingGFX
 	loademote EMOTE_SHOCK
-	applymovement PLAYER, MovementData_0xd093
+	applymovement PLAYER, MovementData_CastRod
 	pause 40
 	end
 
-MovementData_0xd093:
+MovementData_CastRod:
 	fish_cast_rod
 	step_end
 
@@ -1605,7 +1605,7 @@ PutTheRodAway:
 	ld a, $1
 	ld [wPlayerAction], a
 	call UpdateSprites
-	call ReplaceKrisSprite
+	call UpdatePlayerSprite
 	ret
 
 RodBiteText:
@@ -1713,13 +1713,13 @@ Script_GetOnBike:
 	writetext GotOnBikeText
 	waitbutton
 	closetext
-	special ReplaceKrisSprite
+	special UpdatePlayerSprite
 	end
 
 Script_GetOnBike_Register:
 	loadvar VAR_MOVEMENT, PLAYER_BIKE
 	closetext
-	special ReplaceKrisSprite
+	special UpdatePlayerSprite
 	end
 
 ; unused
@@ -1735,7 +1735,7 @@ Script_GetOffBike:
 
 FinishGettingOffBike:
 	closetext
-	special ReplaceKrisSprite
+	special UpdatePlayerSprite
 	special PlayMapMusic
 	end
 
@@ -1787,10 +1787,10 @@ AskCutScript:
 	opentext
 	writetext AskCutText
 	yesorno
-	iffalse .script_d1b8
+	iffalse .declined
 	callasm .CheckMap
 	iftrue Script_Cut
-.script_d1b8
+.declined
 	closetext
 	end
 

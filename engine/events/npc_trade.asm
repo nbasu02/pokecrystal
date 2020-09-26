@@ -188,10 +188,10 @@ DoNPCTrade:
 	ld e, NPCTRADE_DIALOG
 	call GetTradeAttribute
 	ld a, [hl]
-	cp TRADE_DIALOG_COMPLETE
-	ld b, RESET_FLAG
+	cp TRADE_DIALOGSET_GIRL
+	ld b, CAUGHT_BY_UNKNOWN
 	jr c, .incomplete
-	ld b, SET_FLAG
+	ld b, CAUGHT_BY_GIRL
 .incomplete
 	farcall SetGiftPartyMonCaughtData
 
@@ -312,14 +312,14 @@ CopyTradeName:
 	call CopyBytes
 	ret
 
-Unreferenced_Functionfcdfb:
+Functionfcdfb: ; unreferenced
 	ld bc, 4
 	call CopyBytes
 	ld a, "@"
 	ld [de], a
 	ret
 
-Unreferenced_Functionfce05:
+Functionfce05: ; unreferenced
 	ld bc, 3
 	call CopyBytes
 	ld a, "@"

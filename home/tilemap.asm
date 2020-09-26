@@ -197,12 +197,12 @@ ClearPalettes::
 	ldh [rSVBK], a
 
 ; Request palette update
-	ld a, 1
+	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
 
 GetMemSGBLayout::
-	ld b, SCGB_RAM
+	ld b, SCGB_DEFAULT
 GetSGBLayout::
 ; load sgb packets unless dmg
 

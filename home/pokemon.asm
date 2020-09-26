@@ -234,7 +234,7 @@ Print8BitNumLeftAlign::
 	ld b, PRINTNUM_LEFTALIGN | 1
 	jp PrintNum
 
-Unreferenced_GetNthMove::
+GetNthMove:: ; unreferenced
 	ld hl, wListMoves_MoveIndicesBuffer
 	ld c, a
 	ld b, 0
@@ -267,7 +267,7 @@ GetBaseData::
 	jr .end
 
 .egg
-	ld de, UnusedEggFrontpic
+	ld de, UnusedEggPic
 
 ; Sprite dimensions
 	ld b, $55 ; 5x5

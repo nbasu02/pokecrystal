@@ -1,6 +1,6 @@
 ; A library included as part of the Mobile Adapter GB SDK.
 
-INCLUDE "macros/enum.asm"
+INCLUDE "macros/const.asm"
 INCLUDE "constants/hardware_constants.asm"
 INCLUDE "constants/mobile_constants.asm"
 
@@ -9414,7 +9414,7 @@ Function113eb8:
 	res 0, [hl]
 	jp Function111f97
 
-Unreferenced_Function113ec7:
+Function113ec7: ; unreferenced
 	ld hl, $c822
 	ld a, [hl]
 	push af

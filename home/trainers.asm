@@ -15,7 +15,7 @@ _CheckTrainerBattle::
 
 ; Skip the player object.
 	ld a, 1
-	ld de, wMapObjects + MAPOBJECT_LENGTH
+	ld de, wMap1Object
 
 .loop
 
@@ -203,7 +203,7 @@ FacingPlayerDistance::
 	and a
 	ret
 
-UnreferencedCheckTrainerFlag::
+CheckTrainerFlag:: ; unreferenced
 	push bc
 	ld hl, OBJECT_MAP_OBJECT_INDEX
 	add hl, bc

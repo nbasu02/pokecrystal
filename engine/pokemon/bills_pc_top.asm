@@ -139,7 +139,7 @@ BillsPC_DepositMenu:
 	and a
 	ret
 
-Unreferenced_Functione512:
+Functione512: ; unreferenced
 	ld a, [wPartyCount]
 	and a
 	jr z, .no_mon
@@ -206,14 +206,14 @@ BillsPC_WithdrawMenu:
 	and a
 	ret
 
-Unreferenced_Functione56d:
+Functione56d: ; unreferenced
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
-	jr nc, .asm_e576
+	jr nc, .party_full
 	and a
 	ret
 
-.asm_e576
+.party_full
 	ld hl, PCCantTakeText
 	call MenuTextboxBackup
 	scf
@@ -256,12 +256,12 @@ CopyBoxmonToTempMon:
 	ld de, wTempMonSpecies
 	ld bc, BOXMON_STRUCT_LENGTH
 	ld a, BANK(sBoxMon1Species)
-	call GetSRAMBank
+	call OpenSRAM
 	call CopyBytes
 	call CloseSRAM
 	ret
 
-Unreferenced_LoadBoxMonListing:
+LoadBoxMonListing: ; unreferenced
 	ld a, [wCurBox]
 	cp b
 	jr z, .same_box
@@ -282,7 +282,7 @@ Unreferenced_LoadBoxMonListing:
 	ld hl, sBoxCount
 
 .okay
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [hl]
 	ld bc, sBoxMons - sBox
 	add hl, bc

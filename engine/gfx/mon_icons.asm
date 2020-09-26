@@ -41,9 +41,9 @@ LoadMenuMonIcon:
 	dw Trade_LoadMonIconGFX             ; MONICON_TRADE
 	dw Mobile_InitAnimatedMonIcon       ; MONICON_MOBILE1
 	dw Mobile_InitPartyMenuBGPal71      ; MONICON_MOBILE2
-	dw .GetPartyMenuMonIcon             ; MONICON_UNUSED
+	dw Unused_GetPartyMenuMonIcon       ; MONICON_UNUSED
 
-.GetPartyMenuMonIcon:
+Unused_GetPartyMenuMonIcon:
 	call InitPartyMenuIcon
 	call .GetPartyMonItemGFX
 	call SetPartyMonIconAnimSpeed
@@ -194,7 +194,7 @@ SetPartyMonIconAnimSpeed:
 	ld [hl], a
 	rlca
 	rlca
-	ld hl, SPRITEANIMSTRUCT_0D
+	ld hl, SPRITEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], a
 	ret
@@ -273,7 +273,7 @@ FlyFunction_GetMonIcon:
 	call GetIcon_a
 	ret
 
-Unreferenced_GetMonIcon2:
+GetMonIconDE: ; unreferenced
 	push de
 	ld a, [wTempIconSpecies]
 	call ReadMonMenuIcon

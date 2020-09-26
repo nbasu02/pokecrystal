@@ -11,7 +11,6 @@ gfx/diploma/diploma.2bpp.lz: LZFLAGS += --method 8 --align 1
 gfx/dummy_game/dummy_game.2bpp.lz: LZFLAGS += --method 2 --align 4
 
 gfx/intro/%.lz: LZFLAGS += --align 4
-gfx/intro/logo.2bpp.lz: LZFLAGS += --method 2 --align 4
 gfx/intro/suicune_close.2bpp.lz: LZFLAGS += --method 2 --align 4
 gfx/intro/unown_back.2bpp.lz: LZFLAGS += --method 2 --align 4
 
@@ -34,7 +33,12 @@ gfx/pokegear/pokegear.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
 gfx/pokegear/pokegear_sprites.2bpp.lz: LZFLAGS += --align 4
 gfx/pokegear/town_map.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
 
+gfx/pokemon/corsola/front.animated.2bpp.lz: LZFLAGS += --method 4
 gfx/pokemon/hitmontop/back.2bpp.lz: LZFLAGS += --method 4
+gfx/pokemon/nidoran_f/front.animated.2bpp.lz: LZFLAGS += --method 4
+gfx/pokemon/primeape/front.animated.2bpp.lz: LZFLAGS += --method 4
+gfx/pokemon/scyther/front.animated.2bpp.lz: LZFLAGS += --method 4
+gfx/pokemon/unown_g/front.animated.2bpp.lz: LZFLAGS += --method 4
 gfx/pokemon/voltorb/front.animated.2bpp.lz: LZFLAGS += --method 4
 
 gfx/sgb/gbc_only.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
@@ -42,6 +46,8 @@ gfx/sgb/gbc_only.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
 gfx/slots/slots_1.2bpp.lz: LZFLAGS += --method 2 --align 4
 gfx/slots/slots_2.2bpp.lz: LZFLAGS += --align 4
 gfx/slots/slots_3.2bpp.lz: LZFLAGS += --align 4
+
+gfx/splash/ditto.2bpp.lz: LZFLAGS += --method 2 --align 4
 
 gfx/tilesets/%.lz: LZFLAGS += --align 4
 gfx/tilesets/aerodactyl_word_room.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
@@ -56,6 +62,7 @@ gfx/tilesets/kanto.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
 gfx/tilesets/mansion.2bpp.lz: LZFLAGS += --method 2 --align 4
 gfx/tilesets/mart.2bpp.lz: LZFLAGS += --method 2 --align 4
 gfx/tilesets/omanyte_word_room.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
+gfx/tilesets/players_room.2bpp.lz: LZFLAGS += --method 4 --align 4
 gfx/tilesets/ruins_of_alph.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
 gfx/tilesets/tower.2bpp.lz: LZFLAGS += --method 2 --align 4
 

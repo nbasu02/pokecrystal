@@ -1,4 +1,4 @@
-	object_const_def ; object_event constants
+	object_const_def
 	const MAHOGANYMART1F_PHARMACIST
 	const MAHOGANYMART1F_BLACK_BELT
 	const MAHOGANYMART1F_LANCE
@@ -6,11 +6,11 @@
 	const MAHOGANYMART1F_GRANNY
 
 MahoganyMart1F_MapScripts:
-	db 2 ; scene scripts
+	def_scene_scripts
 	scene_script .DummyScene0 ; SCENE_MAHOGANYMART1F_NOTHING
 	scene_script .LanceUncoversStaircase ; SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS
 
-	db 1 ; callbacks
+	def_callbacks
 	callback MAPCALLBACK_TILES, .MahoganyMart1FStaircase
 
 .DummyScene0:
@@ -23,11 +23,11 @@ MahoganyMart1F_MapScripts:
 .MahoganyMart1FStaircase:
 	checkevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART
 	iftrue .ShowStairs
-	return
+	endcallback
 
 .ShowStairs:
 	changeblock 6, 2, $1e ; stairs
-	return
+	endcallback
 
 MahoganyMart1FPharmacistScript:
 	faceplayer
@@ -154,7 +154,7 @@ MahoganyMart1FLanceGoDownStairsMovement:
 	slow_step RIGHT
 	step_end
 
-UnknownText_0x6c414:
+MahoganyMart1FRageCandyBarText: ; unreferenced
 	text "Hello, kiddo!"
 
 	para "How would you like"
@@ -221,16 +221,16 @@ MahoganyMart1FLanceSplitUpText:
 MahoganyMart1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	def_warp_events
 	warp_event  3,  7, MAHOGANY_TOWN, 1
 	warp_event  4,  7, MAHOGANY_TOWN, 1
 	warp_event  7,  3, TEAM_ROCKET_BASE_B1F, 1
 
-	db 0 ; coord events
+	def_coord_events
 
-	db 0 ; bg events
+	def_bg_events
 
-	db 5 ; object events
+	def_object_events
 	object_event  4,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FPharmacistScript, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  1,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FBlackBeltScript, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  4,  6, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE

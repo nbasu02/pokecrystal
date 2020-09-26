@@ -13,164 +13,169 @@ MapSetupScripts:
 	dw MapSetupScript_BadWarp
 	dw MapSetupScript_Fly
 
+; valid commands are listed in MapSetupCommands (see data/maps/setup_script_pointers.asm)
+mapsetup: MACRO
+	db (\1_MapSetupCmd - MapSetupCommands) / 3
+ENDM
+
 MapSetupScript_Teleport:
-	db map_reset_player_object_action
+	mapsetup ResetPlayerObjectAction
 MapSetupScript_Fly:
-	db map_fade_out_palettes
-	db map_jump_roam_mons
+	mapsetup FadeOutPalettes
+	mapsetup JumpRoamMons
 MapSetupScript_Warp:
-	db map_disable_lcd
-	db map_init_sound
-	db map_enter_spawn_point
-	db map_load_attributes
-	db map_handle_new
-	db map_spawn_player
-	db map_refresh_player_coords
-	db map_get_screen_coords
-	db map_load_block_data
-	db map_buffer_screen
-	db map_load_graphics
-	db map_load_time_of_day
-	db map_load_objects
-	db map_enable_lcd
-	db map_load_palettes
-	db map_spawn_in_facing_down
-	db map_refresh_sprites
-	db map_play_music_bike
-	db map_fade_in_music
-	db map_fade_in_palettes
-	db map_activate_anims
-	db map_load_wild_mon_data
-	db map_end
+	mapsetup DisableLCD
+	mapsetup InitSound
+	mapsetup EnterMapSpawnPoint
+	mapsetup LoadMapAttributes
+	mapsetup HandleNewMap
+	mapsetup SpawnPlayer
+	mapsetup RefreshPlayerCoords
+	mapsetup GetMapScreenCoords
+	mapsetup LoadBlockData
+	mapsetup BufferScreen
+	mapsetup LoadMapGraphics
+	mapsetup LoadMapTimeOfDay
+	mapsetup LoadMapObjects
+	mapsetup EnableLCD
+	mapsetup LoadMapPalettes
+	mapsetup SpawnInFacingDown
+	mapsetup RefreshMapSprites
+	mapsetup PlayMapMusicBike
+	mapsetup FadeInToMusic
+	mapsetup FadeInPalettes
+	mapsetup ActivateMapAnims
+	mapsetup LoadWildMonData
+	db -1 ; end
 
 MapSetupScript_BadWarp:
-	db map_enter_spawn_point
-	db map_load_attributes
-	db map_handle_new
-	db map_spawn_player
-	db map_refresh_player_coords
-	db map_get_screen_coords
-	db map_load_block_data
-	db map_buffer_screen
-	db map_disable_lcd
-	db map_load_graphics
-	db map_load_time_of_day
-	db map_fade_out_music
-	db map_enable_lcd
-	db map_load_objects
-	db map_load_palettes
-	db map_spawn_in_facing_down
-	db map_refresh_sprites
-	db map_fade_to_music
-	db map_fade_in_palettes
-	db map_activate_anims
-	db map_load_wild_mon_data
-	db map_end
+	mapsetup EnterMapSpawnPoint
+	mapsetup LoadMapAttributes
+	mapsetup HandleNewMap
+	mapsetup SpawnPlayer
+	mapsetup RefreshPlayerCoords
+	mapsetup GetMapScreenCoords
+	mapsetup LoadBlockData
+	mapsetup BufferScreen
+	mapsetup DisableLCD
+	mapsetup LoadMapGraphics
+	mapsetup LoadMapTimeOfDay
+	mapsetup FadeOutMapMusic
+	mapsetup EnableLCD
+	mapsetup LoadMapObjects
+	mapsetup LoadMapPalettes
+	mapsetup SpawnInFacingDown
+	mapsetup RefreshMapSprites
+	mapsetup FadeToMapMusic
+	mapsetup FadeInPalettes
+	mapsetup ActivateMapAnims
+	mapsetup LoadWildMonData
+	db -1 ; end
 
 MapSetupScript_Connection:
-	db map_suspend_anims
-	db map_enter_connection
-	db map_load_attributes
-	db map_handle_new
-	db map_refresh_player_coords
-	db map_load_block_data
-	db map_load_tileset
-	db map_save_screen
-	db map_load_objects
-	db map_fade_to_music
-	db map_load_palettes
-	db map_init_name_sign
-	db map_apply_palettes
-	db map_load_wild_mon_data
-	db map_update_roam_mons
-	db map_activate_anims
-	db map_end
+	mapsetup SuspendMapAnims
+	mapsetup EnterMapConnection
+	mapsetup LoadMapAttributes
+	mapsetup HandleNewMap
+	mapsetup RefreshPlayerCoords
+	mapsetup LoadBlockData
+	mapsetup LoadMapTileset
+	mapsetup SaveScreen
+	mapsetup LoadMapObjects
+	mapsetup FadeToMapMusic
+	mapsetup LoadMapPalettes
+	mapsetup InitMapNameSign
+	mapsetup ApplyMapPalettes
+	mapsetup LoadWildMonData
+	mapsetup UpdateRoamMons
+	mapsetup ActivateMapAnims
+	db -1 ; end
 
 MapSetupScript_Fall:
-	db map_reset_player_object_action
+	mapsetup ResetPlayerObjectAction
 MapSetupScript_Door:
-	db map_fade_out_palettes
+	mapsetup FadeOutPalettes
 MapSetupScript_Train:
-	db map_enter_warp
-	db map_load_attributes
-	db map_get_warp_dest_coords
-	db map_handle_new
-	db map_refresh_player_coords
-	db map_load_block_data
-	db map_buffer_screen
-	db map_disable_lcd
-	db map_load_graphics
-	db map_load_time_of_day
-	db map_fade_out_music
-	db map_enable_lcd
-	db map_load_objects
-	db map_load_palettes
-	db map_refresh_sprites
-	db map_fade_to_music
-	db map_fade_in_palettes
-	db map_activate_anims
-	db map_load_wild_mon_data
-	db map_update_roam_mons
-	db map_end
+	mapsetup EnterMapWarp
+	mapsetup LoadMapAttributes
+	mapsetup GetWarpDestCoords
+	mapsetup HandleNewMap
+	mapsetup RefreshPlayerCoords
+	mapsetup LoadBlockData
+	mapsetup BufferScreen
+	mapsetup DisableLCD
+	mapsetup LoadMapGraphics
+	mapsetup LoadMapTimeOfDay
+	mapsetup FadeOutMapMusic
+	mapsetup EnableLCD
+	mapsetup LoadMapObjects
+	mapsetup LoadMapPalettes
+	mapsetup RefreshMapSprites
+	mapsetup FadeToMapMusic
+	mapsetup FadeInPalettes
+	mapsetup ActivateMapAnims
+	mapsetup LoadWildMonData
+	mapsetup UpdateRoamMons
+	db -1 ; end
 
 MapSetupScript_ReloadMap:
-	db map_fade_music_and_palettes
-	db map_clear_bg_palettes
-	db map_disable_lcd
-	db map_init_sound
-	db map_load_block_data
-	db map_load_connection_block_data
-	db map_load_graphics
-	db map_load_time_of_day
-	db map_enable_lcd
-	db map_load_palettes
-	db map_refresh_sprites
-	db map_force_music
-	db map_fade_in_palettes
-	db map_activate_anims
-	db map_load_wild_mon_data
-	db map_end
+	mapsetup FadeMapMusicAndPalettes
+	mapsetup ClearBGPalettes
+	mapsetup DisableLCD
+	mapsetup InitSound
+	mapsetup LoadBlockData
+	mapsetup LoadConnectionBlockData
+	mapsetup LoadMapGraphics
+	mapsetup LoadMapTimeOfDay
+	mapsetup EnableLCD
+	mapsetup LoadMapPalettes
+	mapsetup RefreshMapSprites
+	mapsetup ForceMapMusic
+	mapsetup FadeInPalettes
+	mapsetup ActivateMapAnims
+	mapsetup LoadWildMonData
+	db -1 ; end
 
 MapSetupScript_LinkReturn:
-	db map_fade_music_and_palettes
-	db map_disable_lcd
-	db map_init_sound
-	db map_handle_new
-	db map_load_block_data
-	db map_buffer_screen
-	db map_load_graphics
-	db map_load_time_of_day
-	db map_enable_lcd
-	db map_load_palettes
-	db map_refresh_sprites
-	db map_play_music_bike
-	db map_fade_in_palettes
-	db map_activate_anims
-	db map_load_wild_mon_data
-	db map_enable_text_acceleration
-	db map_end
+	mapsetup FadeMapMusicAndPalettes
+	mapsetup DisableLCD
+	mapsetup InitSound
+	mapsetup HandleNewMap
+	mapsetup LoadBlockData
+	mapsetup BufferScreen
+	mapsetup LoadMapGraphics
+	mapsetup LoadMapTimeOfDay
+	mapsetup EnableLCD
+	mapsetup LoadMapPalettes
+	mapsetup RefreshMapSprites
+	mapsetup PlayMapMusicBike
+	mapsetup FadeInPalettes
+	mapsetup ActivateMapAnims
+	mapsetup LoadWildMonData
+	mapsetup EnableTextAcceleration
+	db -1 ; end
 
 MapSetupScript_Continue:
-	db map_disable_lcd
-	db map_init_sound
-	db map_load_attributes_no_objects
-	db map_get_screen_coords
-	db map_handle_continue
-	db map_load_block_data
-	db map_load_connection_block_data
-	db map_buffer_screen
-	db map_load_graphics
-	db map_load_time_of_day
-	db map_enable_lcd
-	db map_load_palettes
-	db map_refresh_sprites
-	db map_play_music_bike
-	db map_fade_in_palettes
-	db map_activate_anims
-	db map_load_wild_mon_data
-	db map_end
+	mapsetup DisableLCD
+	mapsetup InitSound
+	mapsetup LoadMapAttributes_SkipObjects
+	mapsetup GetMapScreenCoords
+	mapsetup HandleContinueMap
+	mapsetup LoadBlockData
+	mapsetup LoadConnectionBlockData
+	mapsetup BufferScreen
+	mapsetup LoadMapGraphics
+	mapsetup LoadMapTimeOfDay
+	mapsetup EnableLCD
+	mapsetup LoadMapPalettes
+	mapsetup RefreshMapSprites
+	mapsetup PlayMapMusicBike
+	mapsetup FadeInPalettes
+	mapsetup ActivateMapAnims
+	mapsetup LoadWildMonData
+	db -1 ; end
 
 MapSetupScript_Submenu:
-	db map_load_block_data
-	db map_load_connection_block_data
-	db map_end
+	mapsetup LoadBlockData
+	mapsetup LoadConnectionBlockData
+	db -1 ; end

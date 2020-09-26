@@ -368,8 +368,7 @@ CheckIndoorMap::
 	cp GATE
 	ret
 
-; unused
-UnreferencedCheckEnvironment::
+CheckUnknownMap:: ; unreferenced
 	cp INDOOR
 	ret z
 	cp GATE
@@ -1110,14 +1109,14 @@ ObjectEventText::
 	text_far _ObjectEventText
 	text_end
 
-BGEvent::
+BGEvent:: ; unreferenced
 	jumptext BGEventText
 
 BGEventText::
 	text_far _BGEventText
 	text_end
 
-CoordinatesEvent::
+CoordinatesEvent:: ; unreferenced
 	jumptext CoordinatesEventText
 
 CoordinatesEventText::
@@ -1139,7 +1138,7 @@ MaskObject::
 	ld d, $0
 	ld hl, wObjectMasks
 	add hl, de
-	ld [hl], -1 ; , masked
+	ld [hl], -1 ; masked
 	ret
 
 UnmaskObject::
@@ -1150,6 +1149,28 @@ UnmaskObject::
 	add hl, de
 	ld [hl], 0 ; unmasked
 	ret
+
+if DEF(_DEBUG)
+ComputeROMXChecksum::
+	ldh a, [hROMBank]
+	push af
+	ld a, c
+	rst Bankswitch
+	ld hl, $4000 ; ROMX start
+.loop
+	ld a, [hli]
+	add e
+	ld e, a
+	ld a, d
+	adc 0
+	ld d, a
+	ld a, h
+	cp $80 ; HIGH(ROMX end)
+	jr c, .loop
+	pop af
+	rst Bankswitch
+	ret
+endc
 
 ScrollMapUp::
 	hlcoord 0, 0
@@ -1313,7 +1334,7 @@ UpdateBGMapColumn::
 	ldh [hBGMapTileCount], a
 	ret
 
-Unreferenced_Function2816::
+ClearBGMapBuffer:: ; unreferenced
 	ld hl, wBGMapBuffer
 	ld bc, wBGMapBufferEnd - wBGMapBuffer
 	xor a
@@ -1904,7 +1925,7 @@ CloseSubmenu::
 	call ReloadTilesetAndPalettes
 	call UpdateSprites
 	call Call_ExitMenu
-	call ret_d90
+	call GSReloadPalettes
 	jr FinishExitMenu
 
 ExitAllMenus::
@@ -1912,7 +1933,7 @@ ExitAllMenus::
 	call Call_ExitMenu
 	call ReloadTilesetAndPalettes
 	call UpdateSprites
-	call ret_d90
+	call GSReloadPalettes
 FinishExitMenu::
 	ld b, SCGB_MAPPALS
 	call GetSGBLayout
@@ -2048,7 +2069,7 @@ SwitchToAnyMapAttributesBank::
 	rst Bankswitch
 	ret
 
-GetMapAttributesBank::
+GetMapAttributesBank:: ; unreferenced
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]

@@ -250,7 +250,7 @@ INCLUDE "engine/events/basement_key.asm"
 INCLUDE "engine/events/sacred_ash.asm"
 INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
-INCLUDE "engine/battle/unreferenced_getgen1trainerclassname.asm"
+INCLUDE "engine/battle/getgen1trainerclassname.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
 INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
@@ -261,7 +261,7 @@ INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
 INCLUDE "data/pokemon/unused_pic_banks.asm"
 
-UnusedEggFrontpic::
+UnusedEggPic::
 ; Another egg pic. This is shifted up a few pixels.
 INCBIN "gfx/pokemon/egg/unused_front.2bpp.lz"
 
@@ -290,7 +290,7 @@ INCLUDE "engine/overworld/player_movement.asm"
 INCLUDE "engine/events/engine_flags.asm"
 INCLUDE "engine/overworld/variables.asm"
 INCLUDE "data/text/battle.asm"
-INCLUDE "engine/menus/debug.asm"
+INCLUDE "engine/debug/color_picker.asm"
 
 
 SECTION "bank21", ROMX
@@ -493,7 +493,8 @@ CopyrightGFX::
 INCBIN "gfx/splash/copyright.2bpp"
 
 INCLUDE "engine/menus/options_menu.asm"
-INCLUDE "engine/movie/crystal_intro.asm"
+INCLUDE "engine/movie/splash.asm"
+INCLUDE "engine/movie/intro.asm"
 
 
 SECTION "bank3E", ROMX
@@ -540,8 +541,8 @@ INCLUDE "mobile/mobile_42.asm"
 
 SECTION "Intro Logo", ROMX
 
-IntroLogoGFX:
-INCBIN "gfx/intro/logo.2bpp.lz"
+GameFreakDittoGFX:
+INCBIN "gfx/splash/ditto.2bpp.lz"
 
 
 SECTION "Title", ROMX
@@ -696,6 +697,13 @@ INCBIN "gfx/pokegear/pokegear.2bpp.lz"
 INCLUDE "engine/pokemon/european_mail.asm"
 
 
+SECTION "Debug Room", ROMX
+
+if DEF(_DEBUG)
+INCLUDE "engine/debug/debug_room.asm"
+endc
+
+
 SECTION "Battle Tower Text", ROMX
 
 INCLUDE "data/battle_tower/trainer_text.asm"
@@ -717,12 +725,12 @@ INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
 
-SECTION "Mobile Stadium 2", ROMX
+SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 
-if DEF(_CRYSTAL_AU)
-INCBIN "mobile/stadium/stadium2_au.bin"
-elif DEF(_CRYSTAL11)
-INCBIN "mobile/stadium/stadium2_11.bin"
-else
-INCBIN "mobile/stadium/stadium2.bin"
-endc
+; The end of the ROM is taken up by checksums of the content, apparently used
+; by Pokémon Stadium 2 due to the checksums' "N64PS3" header. (In Japan,
+; Pokémon Stadium Gold and Silver was the third Stadium release for N64.)
+; This SECTION reserves space for those checksums.
+; If it is removed, also remove the "tools/stadium" command in the Makefile.
+
+	ds $220
