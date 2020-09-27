@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 import csv
+import os
 from typing import AnyStr
 from typing import Dict
 from typing import DefaultDict
@@ -14,16 +15,29 @@ from typing import Tuple
 import attr
 
 
+BALANCED_STAT_PATH = "/home/neil/Projects/pokecrystal/data/pokemon/base_stats"
+ORIGINAL_STAT_PATH = (
+    "/home/neil/Projects/crystalpyenv/pokecrystal/data/pokemon/base_stats"
+)
+
+
 @attr.s
 class Pokemon:
     name = attr.ib(type=str)
     # each string in this list has the evolution method followed by
     # level, item, or other method
-    evolutions = attr.ib(type=Set[str], factory=(list))
+    evolutions = attr.ib(type=List[str], factory=list)
     # map of level to all moves learned at that level
     levelup_moves = attr.ib(
         type=DefaultDict[int, Set], factory=lambda: defaultdict(set)
     )
+    # tuple of stats
+    # hp, atk, def, speed, satk, sdef
+    stats = attr.ib(type=List[int], factory=list)
+    # types
+    type1 = attr.ib(type=str, factory=str)
+    type2 = attr.ib(type=str, factory=str)
+    tm_list = attr.ib(type=Set[str], factory=set)
 
     def add_evolution(self, method: str) -> None:
         method_list = method.split(",")
@@ -42,7 +56,7 @@ class Pokemon:
         self.levelup_moves[level].add(move)
 
     def get_changed_evolutions(self, other: Pokemon) -> List[List[str]]:
-        differences = (set(self.evolutions) - set(other.evolutions))
+        differences = set(self.evolutions) - set(other.evolutions)
         return [diff.split(",") for diff in differences]
 
     def get_changed_levelup_moves(self, other: Pokemon) -> Dict[int, Set]:
@@ -61,6 +75,30 @@ class Pokemon:
         # cast to dict to avoid being given new items downstream
         return dict(changed_moves)
 
+    @property
+    def hp(self):
+        return self.stats[0]
+
+    @property
+    def attack(self):
+        return self.stats[1]
+
+    @property
+    def defense(self):
+        return self.stats[2]
+
+    @property
+    def speed(self):
+        return self.stats[3]
+
+    @property
+    def special_attack(self):
+        return self.stats[4]
+
+    @property
+    def special_defense(self):
+        return self.stats[5]
+
 
 def clean_move_file_line(line: str) -> str:
     # remove the comments
@@ -75,6 +113,11 @@ def clean_move_file_line(line: str) -> str:
         line = ""
 
     return line
+
+def clean_name(name: str) -> str:
+    if name == "PSYCHIC_TYPE" or name == "PSYCHIC_M":
+        return "Psychic"
+    return " ".join(name.split("_")).title()
 
 
 def get_evolution(file: IO[AnyStr]) -> Optional[str]:
@@ -163,81 +206,256 @@ def parse_files(
         original_pokemon_list.append(original_pokemon)
         new_pokemon_list.append(new_pokemon)
 
+        stats_filename = get_base_stats_filename(original_pokemon.name)
+        original_pokemon_file = os.path.join(ORIGINAL_STAT_PATH, stats_filename)
+        new_pokemon_file = os.path.join(BALANCED_STAT_PATH, stats_filename)
+
+        populate_pokemon_stats_type_tms(original_pokemon_file, original_pokemon)
+        populate_pokemon_stats_type_tms(new_pokemon_file, new_pokemon)
+
     return original_pokemon_list, new_pokemon_list
 
 
-def generate_evolution_file(
+def generate_change_file(
     old_pokemon_list: List[Pokemon], new_pokemon_list: List[Pokemon]
 ) -> None:
-    with open("evolution_changes.csv", "w") as f:
+    with open("poke_changes.csv", "w") as f:
         writer = csv.writer(f)
-        for old_pokemon, new_pokemon in zip(old_pokemon_list, new_pokemon_list):
-            if old_pokemon.name != new_pokemon.name:
+        for original_pokemon, new_pokemon in zip(old_pokemon_list, new_pokemon_list):
+            if original_pokemon.name != new_pokemon.name:
                 raise ValueError(
-                    f"Pokemon name mismatch {old_pokemon.name} != {new_pokemon.name}"
+                    f"Pokemon name mismatch {original_pokemon.name} != {new_pokemon.name}"
                 )
 
-            removals = old_pokemon.get_changed_evolutions(new_pokemon)
-            additions = new_pokemon.get_changed_evolutions(old_pokemon)
+            writer.writerow([original_pokemon.name, "-" * 10, "-" * 10, "-" * 10])
 
-            # make sure the two lists have equal number of columns to properly format the output
-            while len(additions) > len(removals):
-                removals.append(["","",""])
-            while len(removals) > len(additions):
-                additions.append(["","",""])
-
-            assert len(additions) == len(removals)
-
-            if not additions and not removals:
-                continue
-
-            writer.writerow([old_pokemon.name])
-            writer.writerow(["Original:", "", "", "New:", "", ""])
-            for rem, add in zip(removals, additions):
-                writer.writerow(rem + add)
-            writer.writerow([""])
+            generate_evolution_changes(writer, original_pokemon, new_pokemon)
+            generate_move_changes(writer, original_pokemon, new_pokemon)
+            generate_type_changes(writer, original_pokemon, new_pokemon)
+            generate_stat_changes(writer, original_pokemon, new_pokemon)
+            generate_tm_list_change(writer, original_pokemon, new_pokemon)
 
 
-def generate_move_changes_file(
-    old_pokemon_list: List[Pokemon], new_pokemon_list: List[Pokemon]
+def generate_evolution_changes(
+    writer: csv.writer, original_pokemon: Pokemon, new_pokemon: Pokemon
 ) -> None:
-    with open("move_changes.csv", "w") as f:
-        writer = csv.writer(f)
-        for old_pokemon, new_pokemon in zip(old_pokemon_list, new_pokemon_list):
-            if old_pokemon.name != new_pokemon.name:
-                raise ValueError(
-                    f"Pokemon name mismatch {old_pokemon.name} != {new_pokemon.name}"
-                )
+    removals = original_pokemon.get_changed_evolutions(new_pokemon)
+    additions = new_pokemon.get_changed_evolutions(original_pokemon)
 
-            removal_pairs = old_pokemon.get_changed_levelup_moves(new_pokemon)
-            addition_pairs = new_pokemon.get_changed_levelup_moves(old_pokemon)
+    # make sure the two lists have equal number of columns to properly format the output
+    while len(additions) > len(removals):
+        removals.append(["", "", ""])
+    while len(removals) > len(additions):
+        additions.append(["", "", ""])
 
-            removals = []
-            additions = []
-            for level, moves in sorted(removal_pairs.items()):
-                for move in moves:
-                    removals.append([str(level), move])
+    assert len(additions) == len(removals)
 
-            for level, moves in sorted(addition_pairs.items()):
-                for move in moves:
-                    additions.append([str(level), move])
+    if not additions and not removals:
+        return
 
-            # make sure the two lists have equal number of columns to properly format the output
-            while len(additions) > len(removals):
-                removals.append(["",""])
-            while len(removals) > len(additions):
-                additions.append(["",""])
+    writer.writerow(["Evolutions"])
+    writer.writerow(["Original:", "", "", "New:"])
+    for rem, add in zip(removals, additions):
+        writer.writerow(rem + add)
+    writer.writerow([""])
 
-            assert len(additions) == len(removals)
 
-            if not additions and not removals:
-                continue
+def generate_move_changes(
+    writer: csv.writer, original_pokemon: Pokemon, new_pokemon: Pokemon
+) -> None:
+    removal_pairs = original_pokemon.get_changed_levelup_moves(new_pokemon)
+    addition_pairs = new_pokemon.get_changed_levelup_moves(original_pokemon)
 
-            writer.writerow([old_pokemon.name])
-            writer.writerow(["Original:", "", "New:", ""])
-            for rem, add in zip(removals, additions):
-                writer.writerow(rem + add)
-            writer.writerow([""])
+    removals = []
+    additions = []
+    for level, moves in sorted(removal_pairs.items()):
+        for move in moves:
+            removals.append([str(level), move])
+
+    for level, moves in sorted(addition_pairs.items()):
+        for move in moves:
+            additions.append([str(level), move])
+
+    # make sure the two lists have equal number of columns to properly format the output
+    while len(additions) > len(removals):
+        removals.append(["", ""])
+    while len(removals) > len(additions):
+        additions.append(["", ""])
+
+    assert len(additions) == len(removals)
+
+    if not additions and not removals:
+        return
+
+    writer.writerow(["Moves"])
+    writer.writerow(["Original:", "", "New:"])
+    for rem, add in zip(removals, additions):
+        writer.writerow(rem + add)
+    writer.writerow([""])
+
+
+def generate_type_changes(
+    writer: csv.writer, original_pokemon: Pokemon, new_pokemon: Pokemon
+) -> None:
+    original_types = {original_pokemon.type1, original_pokemon.type2}
+    new_types = {new_pokemon.type1, original_pokemon.type2}
+    if original_types == new_types:
+        return
+
+    writer.writerow(["Types"])
+    writer.writerow(["Original:", "", "New:"])
+    writer.writerow(
+        [
+            original_pokemon.type1,
+            original_pokemon.type2
+            if original_pokemon.type2 != original_pokemon.type1
+            else "",
+            new_pokemon.type1,
+            new_pokemon.type2 if new_pokemon.type2 != new_pokemon.type1 else "",
+        ]
+    )
+    writer.writerow([""])
+
+
+def generate_stat_changes(
+    writer: csv.writer, original_pokemon: Pokemon, new_pokemon: Pokemon
+) -> None:
+    original_stats = (
+        original_pokemon.hp,
+        original_pokemon.attack,
+        original_pokemon.defense,
+        original_pokemon.special_attack,
+        original_pokemon.special_defense,
+        original_pokemon.speed,
+    )
+    new_stats = (
+        new_pokemon.hp,
+        new_pokemon.attack,
+        new_pokemon.defense,
+        new_pokemon.special_attack,
+        new_pokemon.special_defense,
+        new_pokemon.speed,
+    )
+
+    if original_stats == new_stats:
+        return
+
+    writer.writerow(["Stats"])
+    writer.writerow(["", "Original:", "", "New:"])
+    writer.writerow(
+        [
+            "HP",
+            original_pokemon.hp,
+            "->" if original_pokemon.hp != new_pokemon.hp else "",
+            new_pokemon.hp,
+        ]
+    )
+    writer.writerow(
+        [
+            "Attack",
+            original_pokemon.attack,
+            "->" if original_pokemon.attack != new_pokemon.attack else "",
+            new_pokemon.attack,
+        ]
+    )
+    writer.writerow(
+        [
+            "Defense",
+            original_pokemon.defense,
+            "->" if original_pokemon.defense != new_pokemon.defense else "",
+            new_pokemon.defense,
+        ]
+    )
+    writer.writerow(
+        [
+            "Special Attack",
+            original_pokemon.special_attack,
+            "->"
+            if original_pokemon.special_attack != new_pokemon.special_attack
+            else "",
+            new_pokemon.special_attack,
+        ]
+    )
+    writer.writerow(
+        [
+            "Special Defense",
+            original_pokemon.special_defense,
+            "->"
+            if original_pokemon.special_defense != new_pokemon.special_defense
+            else "",
+            new_pokemon.special_defense,
+        ]
+    )
+    writer.writerow(
+        [
+            "Speed",
+            original_pokemon.speed,
+            "->" if original_pokemon.speed != new_pokemon.speed else "",
+            new_pokemon.speed,
+        ]
+    )
+    writer.writerow([""])
+
+
+def generate_tm_list_change(
+    writer: csv.writer, original_pokemon: Pokemon, new_pokemon: Pokemon
+) -> None:
+    original_tm_list = set(original_pokemon.tm_list)
+    new_tm_list = set(new_pokemon.tm_list)
+
+    added_tms = new_tm_list - original_tm_list
+
+    if not added_tms:
+        return
+
+    writer.writerow(["New TM/HM/Move Tutors"])
+    for tm in added_tms:
+        writer.writerow([clean_name(tm)])
+    writer.writerow([""])
+
+
+def get_base_stats_filename(pokemon_name: str) -> str:
+    # the original name comes from evos_attacks.asm so no special chars
+    pokemon_name = pokemon_name.lower()
+
+    for filename in os.listdir(BALANCED_STAT_PATH):
+        cleaned_filename = filename.replace("_", "").replace(".asm", "")
+        if cleaned_filename == pokemon_name:
+            return filename
+
+    raise Exception(f"Could not find filename for {pokemon_name}")
+
+
+def populate_pokemon_stats_type_tms(pokemon_filepath: str, pokemon: Pokemon) -> None:
+    with open(pokemon_filepath) as file:
+        # name line
+        file.readline()
+        # blank
+        file.readline()
+
+        stats_line = file.readline().strip().replace(" ", "").replace("db", "")
+        stats = stats_line.split(",")
+        pokemon.stats = [int(i) for i in stats]
+
+        # comments
+        file.readline()
+        # blank
+        file.readline()
+
+        types_line = (
+            file.readline()
+            .strip()
+            .replace(" ", "")
+            .replace("db", "")
+            .replace(";type", "")
+        )
+        pokemon.type1, pokemon.type2 = types_line.split(",")
+
+        # other stuff we don't need
+        [file.readline() for _ in range(13)]
+
+        tm_list = file.readline().strip().replace(" ", "").replace("tmhm", "")
+        pokemon.tm_list = tm_list.split(",")
 
 
 def generate_comparison_files() -> None:
@@ -249,8 +467,7 @@ def generate_comparison_files() -> None:
     with open(original_file) as orig, open(new_file) as new:
         old_pokemon_list, new_pokemon_list = parse_files(orig, new)
 
-    generate_evolution_file(old_pokemon_list, new_pokemon_list)
-    generate_move_changes_file(old_pokemon_list, new_pokemon_list)
+    generate_change_file(old_pokemon_list, new_pokemon_list)
 
 
 if __name__ == "__main__":
