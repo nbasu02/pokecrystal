@@ -2620,8 +2620,9 @@ BellossomEvosAttacks:
 	db 1, SWEET_SCENT
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
+	db 30, SYNTHESIS
 	db 35, GIGA_DRAIN
-	db 45, SYNTHESIS
+	db 45, SHADOW_BALL
 	db 55, PETAL_DANCE
 	db 0 ; no more level-up moves
 
