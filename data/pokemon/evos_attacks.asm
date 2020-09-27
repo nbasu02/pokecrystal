@@ -538,10 +538,10 @@ NinetalesEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, CONFUSE_RAY
 	db 1, SAFEGUARD
-	db 30, PSYBEAM
+	db 30, PSYCHIC_M
 	db 38, FLAMETHROWER
 	db 43, HYPNOSIS
-	db 50, PSYCHIC_M
+	db 50, SHADOW_BALL
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
