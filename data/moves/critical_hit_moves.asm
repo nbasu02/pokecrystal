@@ -2,7 +2,8 @@ CriticalHitMoves:
 	db KARATE_CHOP
     db RAZOR_WIND
 	db CUT
-	db RAZOR_LEAF
+	db DRILL_PECK
+    db RAZOR_LEAF
 	db CRABHAMMER
 	db SLASH
 	db AEROBLAST
