@@ -115,6 +115,14 @@ def clean_move_file_line(line: str) -> str:
     return line
 
 def clean_name(name: str) -> str:
+    # if it's an int, do nothing
+    try:
+        int(name)
+    except Exception:
+        pass
+    else:
+        return name
+
     if name == "PSYCHIC_TYPE" or name == "PSYCHIC_M":
         return "Psychic"
     return " ".join(name.split("_")).title()
@@ -228,6 +236,7 @@ def generate_change_file(
                 )
 
             writer.writerow([original_pokemon.name, "-" * 10, "-" * 10, "-" * 10])
+            writer.writerow([""])
 
             generate_evolution_changes(writer, original_pokemon, new_pokemon)
             generate_move_changes(writer, original_pokemon, new_pokemon)
@@ -256,7 +265,7 @@ def generate_evolution_changes(
     writer.writerow(["Evolutions"])
     writer.writerow(["Original:", "", "", "New:"])
     for rem, add in zip(removals, additions):
-        writer.writerow(rem + add)
+        writer.writerow([clean_name(str(i)) for i in rem + add])
     writer.writerow([""])
 
 
@@ -290,7 +299,7 @@ def generate_move_changes(
     writer.writerow(["Moves"])
     writer.writerow(["Original:", "", "New:"])
     for rem, add in zip(removals, additions):
-        writer.writerow(rem + add)
+        writer.writerow(clean_name(str(i)) for i in rem + add)
     writer.writerow([""])
 
 
@@ -298,7 +307,7 @@ def generate_type_changes(
     writer: csv.writer, original_pokemon: Pokemon, new_pokemon: Pokemon
 ) -> None:
     original_types = {original_pokemon.type1, original_pokemon.type2}
-    new_types = {new_pokemon.type1, original_pokemon.type2}
+    new_types = {new_pokemon.type1, new_pokemon.type2}
     if original_types == new_types:
         return
 
@@ -306,12 +315,12 @@ def generate_type_changes(
     writer.writerow(["Original:", "", "New:"])
     writer.writerow(
         [
-            original_pokemon.type1,
-            original_pokemon.type2
+            clean_name(original_pokemon.type1),
+            clean_name(original_pokemon.type2)
             if original_pokemon.type2 != original_pokemon.type1
             else "",
-            new_pokemon.type1,
-            new_pokemon.type2 if new_pokemon.type2 != new_pokemon.type1 else "",
+            clean_name(new_pokemon.type1),
+            clean_name(new_pokemon.type2) if new_pokemon.type2 != new_pokemon.type1 else "",
         ]
     )
     writer.writerow([""])
