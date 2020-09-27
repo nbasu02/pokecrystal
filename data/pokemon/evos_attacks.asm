@@ -1376,6 +1376,7 @@ OnixEvosAttacks:
 	db 36, SANDSTORM
 	db 40, ROCK_SLIDE
 	db 49, EARTHQUAKE
+	db 55, SPIKES
 	db 0 ; no more level-up moves
 
 DrowzeeEvosAttacks:
