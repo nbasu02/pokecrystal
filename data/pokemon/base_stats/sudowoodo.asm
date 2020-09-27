@@ -1,6 +1,6 @@
 	db SUDOWOODO ; 185
 
-	db  70, 100, 115,  30,  30,  65
+	db  90, 100, 115,  30,  65,  65
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, ROCK ; type
