@@ -1,9 +1,9 @@
 GOLDENRODGAMECORNER_TM25_COINS EQU 5500
 GOLDENRODGAMECORNER_TM14_COINS EQU 5500
 GOLDENRODGAMECORNER_TM38_COINS EQU 5500
-GOLDENRODGAMECORNER_ABRA_COINS      EQU 100
-GOLDENRODGAMECORNER_CUBONE_COINS    EQU 800
-GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 1500
+GOLDENRODGAMECORNER_VOLTORB_COINS      EQU 100
+GOLDENRODGAMECORNER_DRATINI_COINS    EQU 800
+GOLDENRODGAMECORNER_PORYGON_COINS EQU 1500
 
 	object_const_def
 	const GOLDENRODGAMECORNER_CLERK
@@ -170,63 +170,63 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .Abra
-	ifequal 2, .Cubone
-	ifequal 3, .Wobbuffet
+	ifequal 1, .Voltorb
+	ifequal 2, .Dratini
+	ifequal 3, .Porygon
 	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
-.Abra:
-	checkcoins GOLDENRODGAMECORNER_ABRA_COINS
+.Voltorb:
+	checkcoins GOLDENRODGAMECORNER_VOLTORB_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, ABRA
+	getmonname STRING_BUFFER_3, VOLTORB
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval ABRA
+	setval VOLTORB
 	special GameCornerPrizeMonCheckDex
-	givepoke ABRA, 5
-	takecoins GOLDENRODGAMECORNER_ABRA_COINS
+	givepoke VOLTORB, 20
+	takecoins GOLDENRODGAMECORNER_VOLTORB_COINS
 	sjump .loop
 
-.Cubone:
-	checkcoins GOLDENRODGAMECORNER_CUBONE_COINS
+.Dratini:
+	checkcoins GOLDENRODGAMECORNER_DRATINI_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, CUBONE
+	getmonname STRING_BUFFER_3, DRATINI
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval CUBONE
+	setval DRATINI
 	special GameCornerPrizeMonCheckDex
-	givepoke CUBONE, 15
-	takecoins GOLDENRODGAMECORNER_CUBONE_COINS
+	givepoke DRATINI, 20
+	takecoins GOLDENRODGAMECORNER_DRATINI_COINS
 	sjump .loop
 
-.Wobbuffet:
-	checkcoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
+.Porygon:
+	checkcoins GOLDENRODGAMECORNER_PORYGON_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, WOBBUFFET
+	getmonname STRING_BUFFER_3, PORYGON
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval WOBBUFFET
+	setval PORYGON
 	special GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 15
-	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
+	givepoke PORYGON, 20
+	takecoins GOLDENRODGAMECORNER_PORYGON_COINS
 	sjump .loop
 
 .MenuHeader:
@@ -238,9 +238,9 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "ABRA        100@"
-	db "CUBONE      800@"
-	db "WOBBUFFET  1500@"
+	db "VOLTORB     100@"
+	db "DRATINI     800@"
+	db "PORYGON    1500@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPharmacistScript:

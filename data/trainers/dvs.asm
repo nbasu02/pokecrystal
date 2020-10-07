@@ -16,7 +16,7 @@ TrainerClassDVs:
 	dn 13, 12, 13, 13 ; BRUNO
 	dn  7, 15, 13, 15 ; KAREN
 	dn 13, 12, 13, 13 ; KOGA
-	dn 13, 12, 13, 13 ; CHAMPION
+	dn 15, 15, 15, 15 ; CHAMPION
 	dn  9,  8,  8,  8 ; BROCK
 	dn  7,  8,  8,  8 ; MISTY
 	dn  9,  8,  8,  8 ; LT_SURGE
@@ -30,7 +30,7 @@ TrainerClassDVs:
 	dn 13,  8, 12,  8 ; COOLTRAINERM
 	dn  7, 12, 12,  8 ; COOLTRAINERF
 	dn  6,  9, 12,  8 ; BEAUTY
-	dn  9,  8,  8,  8 ; POKEMANIAC
+	dn 15, 10, 10, 10 ; POKEMANIAC
 	dn 13,  8, 10,  8 ; GRUNTM
 	dn  9,  8,  8,  8 ; GENTLEMAN
 	dn  9,  8,  8,  8 ; SKIER
@@ -63,8 +63,8 @@ TrainerClassDVs:
 	dn  6,  8,  8, 10 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS
 	dn  6, 13,  8,  8 ; POKEFANF
-	dn 15, 13, 13, 14 ; RED
-	dn  9, 13, 13, 13 ; BLUE
+	dn 15, 15, 15, 15 ; RED
+	dn 15, 15, 15, 15 ; BLUE
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN

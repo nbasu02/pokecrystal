@@ -64,8 +64,8 @@ GoldenrodDeptStore1FDirectoryText:
 	para "2F TRAINER'S"
 	line "   MARKET"
 
-	para "3F BATTLE"
-	line "   COLLECTION"
+	para "3F EVOLUTION"
+	line "   STONES"
 
 	para "4F MEDICINE BOX"
 

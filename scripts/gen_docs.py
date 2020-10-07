@@ -14,6 +14,8 @@ from typing import Tuple
 
 import attr
 
+from gen_wild_mons import parse_grass_file
+from util import clean_name
 
 BALANCED_STAT_PATH = "/home/neil/Projects/pokecrystal/data/pokemon/base_stats"
 ORIGINAL_STAT_PATH = (
@@ -113,19 +115,6 @@ def clean_move_file_line(line: str) -> str:
         line = ""
 
     return line
-
-def clean_name(name: str) -> str:
-    # if it's an int, do nothing
-    try:
-        int(name)
-    except Exception:
-        pass
-    else:
-        return name
-
-    if name == "PSYCHIC_TYPE" or name == "PSYCHIC_M":
-        return "Psychic"
-    return " ".join(name.split("_")).title()
 
 
 def get_evolution(file: IO[AnyStr]) -> Optional[str]:
@@ -320,7 +309,9 @@ def generate_type_changes(
             if original_pokemon.type2 != original_pokemon.type1
             else "",
             clean_name(new_pokemon.type1),
-            clean_name(new_pokemon.type2) if new_pokemon.type2 != new_pokemon.type1 else "",
+            clean_name(new_pokemon.type2)
+            if new_pokemon.type2 != new_pokemon.type1
+            else "",
         ]
     )
     writer.writerow([""])
@@ -481,3 +472,6 @@ def generate_comparison_files() -> None:
 
 if __name__ == "__main__":
     generate_comparison_files()
+    parse_grass_file(
+        "/home/neil/Projects/pokecrystal/data/wild/johto_grass.asm", "johto_grass.csv"
+    )
