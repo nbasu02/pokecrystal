@@ -168,7 +168,7 @@ JohtoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 60, POLIWAG
 	db 60, REMORAID
-	db 60, OCTILLARY
+	db 60, OCTILLERY
 
 	map_id ROUTE_45
 	db 2 percent ; encounter rate
