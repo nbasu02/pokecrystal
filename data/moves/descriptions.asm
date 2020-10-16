@@ -769,8 +769,8 @@ FireBlastDescription:
 	next "may cause a burn.@"
 
 WaterfallDescription:
-	db   "An aquatic charge"
-	next "attack.@"
+	db   "Lets the user get"
+	next "in the first hit.@"
 
 ClampDescription:
 	db   "Traps the foe for"

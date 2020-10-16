@@ -1,6 +1,6 @@
 	db OMANYTE ; 138
 
-	db  35,  40, 100,  35,  90,  55
+	db  35,  50, 100,  35,  90,  55
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, WATER ; type

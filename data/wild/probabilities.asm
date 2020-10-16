@@ -13,6 +13,6 @@ GrassMonProbTable:
 	mon_prob 100, 6 ;  1% chance
 
 WaterMonProbTable:
-	mon_prob 60,  0 ; 60% chance
-	mon_prob 90,  1 ; 30% chance
-	mon_prob 100, 2 ; 10% chance
+	mon_prob 40,  0 ; 40% chance
+	mon_prob 80,  1 ; 40% chance
+	mon_prob 100, 2 ; 20% chance

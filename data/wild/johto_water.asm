@@ -3,82 +3,82 @@
 JohtoWaterWildMons:
 
 	map_id RUINS_OF_ALPH_OUTSIDE
-	db 2 percent ; encounter rate
-	db 15, WOOPER
-	db 20, QUAGSIRE
-	db 15, QUAGSIRE
+	db 6 percent ; encounter rate
+	db 25, OMANYTE
+	db 25, KABUTO
+	db 25, STARYU
 
 	map_id UNION_CAVE_1F
 	db 2 percent ; encounter rate
-	db 15, WOOPER
-	db 20, QUAGSIRE
-	db 15, QUAGSIRE
+	db 25, SEEL
+	db 25, WOOPER
+	db 30, QUAGSIRE
 
 	map_id UNION_CAVE_B1F
 	db 2 percent ; encounter rate
-	db 15, WOOPER
-	db 20, QUAGSIRE
-	db 15, QUAGSIRE
+	db 25, SEEL
+	db 25, WOOPER
+	db 30, QUAGSIRE
 
 	map_id UNION_CAVE_B2F
 	db 4 percent ; encounter rate
-	db 15, TENTACOOL
-	db 20, QUAGSIRE
-	db 20, TENTACRUEL
+	db 25, SEEL
+	db 30, QUAGSIRE
+	db 30, LAPRAS
 
 	map_id SLOWPOKE_WELL_B1F
 	db 2 percent ; encounter rate
-	db 15, SLOWPOKE
-	db 20, SLOWPOKE
-	db 10, SLOWPOKE
+	db 25, SLOWPOKE
+	db 25, SLOWPOKE
+	db 30, SLOWBRO
 
 	map_id SLOWPOKE_WELL_B2F
 	db 2 percent ; encounter rate
-	db 15, SLOWPOKE
-	db 20, SLOWPOKE
-	db 20, SLOWBRO
+	db 25, SLOWPOKE
+	db 25, SLOWPOKE
+	db 30, SLOWBRO
 
 	map_id ILEX_FOREST
 	db 2 percent ; encounter rate
-	db 15, PSYDUCK
-	db 10, PSYDUCK
-	db 15, GOLDUCK
+	db 25, PSYDUCK
+	db 25, HORSEA
+	db 30, GOLDUCK
 
 	map_id MOUNT_MORTAR_1F_OUTSIDE
 	db 4 percent ; encounter rate
-	db 15, GOLDEEN
-	db 20, MARILL
-	db 20, SEAKING
+	db 25, GOLDEEN
+	db 25, MARILL
+	db 30, SEAKING
 
 	map_id MOUNT_MORTAR_2F_INSIDE
 	db 2 percent ; encounter rate
-	db 20, GOLDEEN
+	db 25, GOLDEEN
 	db 25, MARILL
-	db 25, SEAKING
+	db 30, SEAKING
 
 	map_id MOUNT_MORTAR_B1F
 	db 2 percent ; encounter rate
-	db 15, GOLDEEN
-	db 20, MARILL
-	db 20, SEAKING
+	db 25, GOLDEEN
+	db 25, MARILL
+	db 30, SEAKING
 
 	map_id WHIRL_ISLAND_SW
 	db 4 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, HORSEA
-	db 20, TENTACRUEL
+	db 60, TENTACRUEL
+	db 60, SEADRA
+	db 60, LAPRAS
 
 	map_id WHIRL_ISLAND_B2F
 	db 4 percent ; encounter rate
-	db 15, HORSEA
-	db 20, HORSEA
-	db 20, TENTACRUEL
+	db 60, TENTACRUEL
+	db 60, SEADRA
+	db 60, LAPRAS
 
 	map_id WHIRL_ISLAND_LUGIA_CHAMBER
 	db 4 percent ; encounter rate
-	db 20, HORSEA
-	db 20, TENTACRUEL
-	db 20, SEADRA
+	db 60, TENTACRUEL
+	db 60, SEADRA
+	db 60, LAPRAS
 
 	map_id SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
@@ -88,15 +88,15 @@ JohtoWaterWildMons:
 
 	map_id DARK_CAVE_VIOLET_ENTRANCE
 	db 2 percent ; encounter rate
-	db 15, MAGIKARP
-	db 10, MAGIKARP
-	db 5, MAGIKARP
+	db 25, MAGIKARP
+	db 25, REMORAID
+	db 25, CHINCHOU
 
 	map_id DARK_CAVE_BLACKTHORN_ENTRANCE
 	db 2 percent ; encounter rate
-	db 15, MAGIKARP
-	db 10, MAGIKARP
-	db 5, MAGIKARP
+	db 25, MAGIKARP
+	db 25, REMORAID
+	db 25, CHINCHOU
 
 	map_id DRAGONS_DEN_B1F
 	db 4 percent ; encounter rate
@@ -106,69 +106,69 @@ JohtoWaterWildMons:
 
 	map_id OLIVINE_PORT
 	db 2 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 25, KRABBY
+	db 25, TENTACOOL
+	db 25, CORSOLA
 
 	map_id ROUTE_30
 	db 2 percent ; encounter rate
-	db 20, POLIWAG
-	db 15, POLIWAG
-	db 20, POLIWHIRL
+	db 25, REMORAID
+	db 25, POLIWAG
+	db 25, QWILFISH
 
 	map_id ROUTE_31
 	db 2 percent ; encounter rate
-	db 20, POLIWAG
-	db 15, POLIWAG
-	db 20, POLIWHIRL
+	db 25, POLIWAG
+	db 25, GOLDEEN
+	db 30, POLIWHIRL
 
 	map_id ROUTE_32
 	db 6 percent ; encounter rate
-	db 15, TENTACOOL
-	db 20, QUAGSIRE
-	db 20, TENTACRUEL
+	db 25, TENTACOOL
+	db 25, QUAGSIRE
+	db 30, TENTACRUEL
 
 	map_id ROUTE_34
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 25, TENTACOOL
+	db 25, MAGIKARP
+	db 25, STARYU
 
 	map_id ROUTE_35
 	db 4 percent ; encounter rate
-	db 20, PSYDUCK
-	db 15, PSYDUCK
-	db 20, GOLDUCK
+	db 25, PSYDUCK
+	db 25, TENTACOOL
+	db 25, STARYU
 
 	map_id ROUTE_40
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 25, KRABBY
+	db 25, SHELLDER
+	db 25, CORSOLA
 
 	map_id ROUTE_41
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 20, TENTACRUEL
-	db 20, MANTINE
+	db 30, TENTACOOL
+	db 30, STARYU
+	db 30, MANTINE
 
 	map_id ROUTE_42
 	db 4 percent ; encounter rate
-	db 20, GOLDEEN
-	db 15, GOLDEEN
-	db 20, SEAKING
+	db 25, GOLDEEN
+	db 25, REMORAID
+	db 25, TENTACOOL
 
 	map_id ROUTE_43
 	db 2 percent ; encounter rate
-	db 20, MAGIKARP
-	db 15, MAGIKARP
-	db 10, MAGIKARP
+	db 30, MAGIKARP
+	db 40, GYARADOS
+	db 40, DRAGONAIR
 
 	map_id ROUTE_44
 	db 2 percent ; encounter rate
-	db 25, POLIWAG
-	db 20, POLIWAG
-	db 25, POLIWHIRL
+	db 60, POLIWAG
+	db 60, REMORAID
+	db 60, OCTILLARY
 
 	map_id ROUTE_45
 	db 2 percent ; encounter rate
@@ -178,21 +178,21 @@ JohtoWaterWildMons:
 
 	map_id NEW_BARK_TOWN
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 25, TENTACOOL
+	db 25, HORSEA
+	db 25, CHINCHOU
 
 	map_id CHERRYGROVE_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 25, KRABBY
+	db 25, CHINCHOU
+	db 25, CORSOLA
 
 	map_id VIOLET_CITY
-	db 2 percent ; encounter rate
-	db 20, POLIWAG
-	db 15, POLIWAG
-	db 20, POLIWHIRL
+	db 6 percent ; encounter rate
+	db 25, TENTACOOL
+	db 25, PSYDUCK
+	db 25, HORSEA
 
 	map_id CIANWOOD_CITY
 	db 6 percent ; encounter rate
@@ -202,27 +202,27 @@ JohtoWaterWildMons:
 
 	map_id OLIVINE_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 25, KRABBY
+	db 25, TENTACOOL
+	db 25, CORSOLA
 
 	map_id ECRUTEAK_CITY
-	db 2 percent ; encounter rate
-	db 20, POLIWAG
-	db 15, POLIWAG
-	db 20, POLIWHIRL
+	db 6 percent ; encounter rate
+	db 25, POLIWAG
+	db 25, REMORAID
+	db 20, STARYU
 
 	map_id LAKE_OF_RAGE
 	db 6 percent ; encounter rate
-	db 15, MAGIKARP
-	db 10, MAGIKARP
-	db 15, GYARADOS
+	db 40, GYARADOS
+	db 40, GYARADOS
+	db 45, GYARADOS
 
 	map_id BLACKTHORN_CITY
 	db 4 percent ; encounter rate
-	db 15, MAGIKARP
-	db 10, MAGIKARP
-	db 5, MAGIKARP
+	db 60, GYARADOS
+	db 60, SEADRA
+	db 50, DRAGONAIR
 
 	map_id SILVER_CAVE_OUTSIDE
 	db 2 percent ; encounter rate

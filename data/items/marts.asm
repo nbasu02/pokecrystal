@@ -68,16 +68,17 @@ MartViolet:
 	db -1 ; end
 
 MartAzalea:
-	db 9 ; # items
-	db CHARCOAL
+	db 10 ; # items
 	db POKE_BALL
-	db POTION
 	db SUPER_POTION
-	db ESCAPE_ROPE
 	db REPEL
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db FLOWER_MAIL
+	db FAST_BALL
+	db LURE_BALL
+	db LEVEL_BALL
+	db HEAVY_BALL
+	db FRIEND_BALL
+	db MOON_BALL
+	db LOVE_BALL
 	db -1 ; end
 
 MartCianwood:
