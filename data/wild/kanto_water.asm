@@ -88,9 +88,9 @@ KantoWaterWildMons:
 
 	map_id ROUTE_26
 	db 6 percent ; encounter rate
-	db 30, TENTACOOL
-	db 25, TENTACOOL
-	db 30, TENTACRUEL
+	db 60, LANTURN
+	db 60, SLOWBRO
+	db 60, GOLDUCK
 
 	map_id ROUTE_27
 	db 6 percent ; encounter rate

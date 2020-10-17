@@ -113,56 +113,56 @@ KantoGrassWildMons:
 	map_id VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 34, GRAVELER
-	db 32, RHYHORN
-	db 33, ONIX
-	db 34, GOLBAT
-	db 35, SANDSLASH
-	db 35, RHYDON
-	db 35, RHYDON
+	db 62, GOLEM
+	db 62, RHYDON
+	db 62, STEELIX
+	db 62, MACHAMP
+	db 62, DUNSPARCE
+	db 55, PUPITAR
+	db 55, PUPITAR
 	; day
-	db 34, GRAVELER
-	db 32, RHYHORN
-	db 33, ONIX
-	db 34, GOLBAT
-	db 35, SANDSLASH
-	db 35, RHYDON
-	db 35, RHYDON
+	db 62, GOLEM
+	db 62, RHYDON
+	db 62, STEELIX
+	db 62, MACHAMP
+	db 62, DUNSPARCE
+	db 55, PUPITAR
+	db 55, PUPITAR
 	; nite
-	db 34, GOLBAT
-	db 34, GRAVELER
-	db 32, ONIX
-	db 36, GRAVELER
-	db 38, GRAVELER
-	db 40, GRAVELER
-	db 40, GRAVELER
+	db 62, GOLEM
+	db 62, RHYDON
+	db 62, STEELIX
+	db 62, MACHAMP
+	db 62, DUNSPARCE
+	db 55, PUPITAR
+	db 55, PUPITAR
 
 	map_id TOHJO_FALLS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, ZUBAT
-	db 22, RATICATE
-	db 24, GOLBAT
-	db 21, SLOWPOKE
-	db 20, RATTATA
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 25, ZUBAT
+	db 25, RATICATE
+	db 24, SLOWPOKE
+	db 24, TEDDIURSA
+	db 24, LARVITAR
+	db 25, AERODACTYL
+	db 25, AERODACTYL
 	; day
-	db 22, ZUBAT
-	db 22, RATICATE
-	db 24, GOLBAT
-	db 21, SLOWPOKE
-	db 20, RATTATA
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 25, ZUBAT
+	db 25, RATICATE
+	db 24, SLOWPOKE
+	db 24, TEDDIURSA
+	db 24, LARVITAR
+	db 25, AERODACTYL
+	db 25, AERODACTYL
 	; nite
-	db 22, ZUBAT
-	db 22, RATICATE
-	db 24, GOLBAT
-	db 21, SLOWPOKE
-	db 20, RATTATA
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 25, ZUBAT
+	db 25, RATICATE
+	db 24, SLOWPOKE
+	db 24, TEDDIURSA
+	db 24, LARVITAR
+	db 25, AERODACTYL
+	db 25, AERODACTYL
 
 	map_id ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -734,56 +734,56 @@ KantoGrassWildMons:
 	map_id ROUTE_26
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, DODUO
-	db 28, SANDSLASH
-	db 32, PONYTA
-	db 30, RATICATE
-	db 30, DODUO
-	db 30, ARBOK
-	db 30, ARBOK
+	db 60, DODRIO
+	db 60, SANDSLASH
+	db 60, RAPIDASH
+	db 60, DONPHAN
+	db 60, SKARMORY
+	db 60, TAUROS
+	db 60, TAUROS
 	; day
-	db 28, DODUO
-	db 28, SANDSLASH
-	db 32, PONYTA
-	db 30, RATICATE
-	db 30, DODUO
-	db 30, ARBOK
-	db 30, ARBOK
+	db 60, DODRIO
+	db 60, SANDSLASH
+	db 60, RAPIDASH
+	db 60, DONPHAN
+	db 60, SKARMORY
+	db 60, TAUROS
+	db 60, TAUROS
 	; nite
-	db 28, NOCTOWL
-	db 28, RATICATE
-	db 32, NOCTOWL
-	db 30, RATICATE
-	db 30, QUAGSIRE
-	db 30, QUAGSIRE
-	db 30, QUAGSIRE
+	db 60, QUAGSIRE
+	db 60, SANDSLASH
+	db 60, HOUNDOOM
+	db 60, URSARING
+	db 60, SKARMORY
+	db 60, TAUROS
+	db 60, TAUROS
 
 	map_id ROUTE_27
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, DODUO
-	db 28, ARBOK
-	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 60, ELECTABUZZ
+	db 60, MAGMAR
+	db 60, JYNX
+	db 60, JYNX
+	db 60, HERACROSS
+	db 60, HERACROSS
+	db 60, HERACROSS
 	; day
-	db 28, DODUO
-	db 28, ARBOK
-	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 60, ELECTABUZZ
+	db 60, MAGMAR
+	db 60, JYNX
+	db 60, JYNX
+	db 60, HERACROSS
+	db 60, HERACROSS
+	db 60, HERACROSS
 	; nite
-	db 28, QUAGSIRE
-	db 28, NOCTOWL
-	db 30, RATICATE
-	db 30, QUAGSIRE
-	db 32, NOCTOWL
-	db 32, NOCTOWL
-	db 32, NOCTOWL
+	db 60, ELECTABUZZ
+	db 60, MAGMAR
+	db 60, JYNX
+	db 60, JYNX
+	db 60, HERACROSS
+	db 60, HERACROSS
+	db 60, HERACROSS
 
 	map_id ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

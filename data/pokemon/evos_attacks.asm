@@ -309,28 +309,30 @@ SpearowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, GROWL
-	db 7, LEER
+	db 7, FOCUS_ENERGY
 	db 13, FURY_ATTACK
 	db 20, REVERSAL
 	db 25, PURSUIT
 	db 31, MIRROR_MOVE
+	db 34, FAINT_ATTACK
 	db 37, DRILL_PECK
-	db 43, AGILITY
+	db 43, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 FearowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, GROWL
-	db 1, LEER
+	db 1, FOCUS_ENERGY
 	db 1, FURY_ATTACK
-	db 7, LEER
+	db 7, FOCUS_ENERGY
 	db 13, FURY_ATTACK
 	db 20, REVERSAL
 	db 26, PURSUIT
 	db 32, MIRROR_MOVE
+	db 36, FAINT_ATTACK
 	db 40, DRILL_PECK
-	db 47, AGILITY
+	db 47, EXTREMESPEED
 	db 55, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
@@ -1059,8 +1061,8 @@ TentacruelEvosAttacks:
 	db 12, CONSTRICT
 	db 15, WRAP
 	db 19, ACID
-	db 30, SLUDGE
 	db 25, BUBBLEBEAM
+	db 30, SLUDGE
 	db 38, BARRIER
 	db 47, TOXIC
 	db 55, HYDRO_PUMP
@@ -1191,6 +1193,7 @@ MagnemiteEvosAttacks:
 	db 33, CONFUSE_RAY
 	db 39, OCTAZOOKA
 	db 45, ZAP_CANNON
+	db 53, SELFDESTRUCT
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
@@ -1208,6 +1211,7 @@ MagnetonEvosAttacks:
 	db 37, CONFUSE_RAY
 	db 43, OCTAZOOKA
 	db 53, ZAP_CANNON
+	db 60, SELFDESTRUCT
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
@@ -1216,11 +1220,14 @@ FarfetchDEvosAttacks:
 	db 7, SAND_ATTACK
 	db 13, SLASH
 	db 19, KARATE_CHOP
+	db 22, FOCUS_ENERGY
 	db 25, SWORDS_DANCE
 	db 31, AGILITY
 	db 37, DRILL_PECK
 	db 44, CROSS_CHOP
 	db 50, BATON_PASS
+	db 56, AMNESIA
+	db 56, BARRIER
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:
@@ -1234,6 +1241,7 @@ DoduoEvosAttacks:
 	db 25, JUMP_KICK
 	db 33, DRILL_PECK
 	db 37, AGILITY
+	db 44, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 DodrioEvosAttacks:
@@ -1249,6 +1257,7 @@ DodrioEvosAttacks:
 	db 31, TRI_ATTACK
 	db 38, DRILL_PECK
 	db 47, AGILITY
+	db 54, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 SeelEvosAttacks:
@@ -2894,6 +2903,7 @@ MurkrowEvosAttacks:
 	db 1, PECK
 	db 11, PURSUIT
 	db 16, HAZE
+	db 21, SPIKES
 	db 26, NIGHT_SHADE
 	db 31, FAINT_ATTACK
 	db 36, DRILL_PECK
