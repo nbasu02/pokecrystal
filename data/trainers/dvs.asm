@@ -19,7 +19,7 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; CHAMPION
 	dn  9,  8,  8,  8 ; BROCK
 	dn  7,  8,  8,  8 ; MISTY
-	dn  9,  8,  8,  8 ; LT_SURGE
+	dn 14, 14, 15, 15 ; LT_SURGE
 	dn  9,  8,  8,  8 ; SCIENTIST
 	dn  7,  8,  8,  8 ; ERIKA
 	dn  9,  8,  8,  8 ; YOUNGSTER

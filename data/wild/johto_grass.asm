@@ -550,24 +550,24 @@ JohtoGrassWildMons:
 	db 16, PARAS
 	db 16, LEDYBA
 	db 15, PIKACHU
-	db 17, PARAS
 	db 16, FARFETCH_D
+	db 17, FARFETCH_D
 	; day
 	db 15, BUTTERFREE
 	db 15, BEEDRILL
 	db 16, PARAS
 	db 16, LEDYBA
 	db 15, PIKACHU
-	db 17, PARAS
 	db 16, FARFETCH_D
+	db 17, FARFETCH_D
 	; nite
 	db 15, BUTTERFREE
 	db 15, BEEDRILL
 	db 16, PARAS
 	db 16, SPINARAK
 	db 15, PIKACHU
-	db 17, PARAS
 	db 16, FARFETCH_D
+	db 17, FARFETCH_D
 
 	map_id MOUNT_MORTAR_1F_OUTSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1358,7 +1358,7 @@ JohtoGrassWildMons:
 	db 18, CUBONE
 	db 18, MARILL
 	db 18, GROWLITHE
-	db 17, ABRA
+	db 17, AIPOM
 	db 17, GLIGAR
 	db 18, YANMA
 	db 19, YANMA
@@ -1366,7 +1366,7 @@ JohtoGrassWildMons:
 	db 18, CUBONE
 	db 18, MARILL
 	db 18, GROWLITHE
-	db 17, ABRA
+	db 17, AIPOM
 	db 17, GLIGAR
 	db 18, YANMA
 	db 19, YANMA
@@ -1374,7 +1374,7 @@ JohtoGrassWildMons:
 	db 18, CUBONE
 	db 18, MARILL
 	db 18, GROWLITHE
-	db 17, ABRA
+	db 17, AIPOM
 	db 17, GLIGAR
 	db 18, YANMA
 	db 19, YANMA
@@ -1630,23 +1630,23 @@ JohtoGrassWildMons:
 	db 80, FERALIGATR
 	db 80, FERALIGATR
 	db 80, TYRANITAR
-	db 80, DRAGONITE
-	db 80, DRAGONITE
+	db 80, SNORLAX
+	db 80, SNORLAX
 	; day
 	db 80, TYPHLOSION
 	db 80, MEGANIUM
 	db 80, FERALIGATR
 	db 80, FERALIGATR
 	db 80, TYRANITAR
-	db 80, DRAGONITE
-	db 80, DRAGONITE
+	db 80, SNORLAX
+	db 80, SNORLAX
 	; nite
 	db 80, TYPHLOSION
 	db 80, MEGANIUM
 	db 80, FERALIGATR
 	db 80, FERALIGATR
 	db 80, TYRANITAR
-	db 80, DRAGONITE
-	db 80, DRAGONITE
+	db 80, SNORLAX
+	db 80, SNORLAX
 
 	db -1 ; end

@@ -2229,7 +2229,7 @@ ChikoritaEvosAttacks:
 	db 29, BODY_SLAM
 	db 34, GIGA_DRAIN
 	db 36, LIGHT_SCREEN
-	db 43, SAFEGUARD
+	db 43, SLEEP_POWDER
 	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -2249,7 +2249,7 @@ BayleefEvosAttacks:
 	db 31, BODY_SLAM
 	db 35, GIGA_DRAIN
 	db 39, LIGHT_SCREEN
-	db 47, SAFEGUARD
+	db 47, SLEEP_POWDER
 	db 55, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -2268,7 +2268,7 @@ MeganiumEvosAttacks:
 	db 31, BODY_SLAM
 	db 37, GIGA_DRAIN
 	db 41, LIGHT_SCREEN
-	db 51, SAFEGUARD
+	db 51, SLEEP_POWDER
 	db 58, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -2745,6 +2745,7 @@ HoppipEvosAttacks:
 	db 25, MEGA_DRAIN
 	db 30, COTTON_SPORE
 	db 35, GIGA_DRAIN
+	db 40, SPIKES
 	db 0 ; no more level-up moves
 
 SkiploomEvosAttacks:
@@ -2765,6 +2766,7 @@ SkiploomEvosAttacks:
 	db 29, MEGA_DRAIN
 	db 36, COTTON_SPORE
 	db 41, GIGA_DRAIN
+	db 46, SPIKES
 	db 0 ; no more level-up moves
 
 JumpluffEvosAttacks:
@@ -2784,6 +2786,7 @@ JumpluffEvosAttacks:
 	db 33, MEGA_DRAIN
 	db 44, COTTON_SPORE
 	db 49, GIGA_DRAIN
+	db 54, SPIKES
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
@@ -2878,8 +2881,8 @@ EspeonEvosAttacks:
 	db 23, QUICK_ATTACK
 	db 30, SHADOW_BALL
 	db 36, PSYBEAM
-	db 42, PSYCH_UP
-	db 47, PSYCHIC_M
+	db 42, PSYCHIC_M
+	db 47, AMNESIA
 	db 52, MORNING_SUN
 	db 0 ; no more level-up moves
 
