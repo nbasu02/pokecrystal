@@ -1575,7 +1575,7 @@ HitmonleeEvosAttacks:
 	db 26, JUMP_KICK
 	db 27, FOCUS_ENERGY
 	db 31, HI_JUMP_KICK
-	db 36, FORESIGHT
+	db 36, FAINT_ATTACK
 	db 41, ENDURE
 	db 46, MEGA_KICK
 	db 51, REVERSAL

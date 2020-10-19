@@ -49,7 +49,26 @@ KarenScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KarenScript_KarenBeatenText, 0
+	checkevent EVENT_VIRIDIAN_GYM_BLUE
+	iftrue PostgameKarenScript_Battle
 	loadtrainer KAREN, KAREN1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ELITE_4_KAREN
+	opentext
+	writetext KarenScript_KarenDefeatText
+	waitbutton
+	closetext
+	playsound SFX_ENTER_DOOR
+	changeblock 4, 2, $16 ; open door
+	reloadmappart
+	closetext
+	setevent EVENT_KARENS_ROOM_EXIT_OPEN
+	waitsfx
+	end
+
+PostgameKarenScript_Battle:
+	loadtrainer KAREN, KAREN2
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_KAREN

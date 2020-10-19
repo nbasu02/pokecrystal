@@ -72,21 +72,26 @@ KRIS EQU __trainer_class__
 
 	trainerclass WILL ; b
 	const WILL1
+	const WILL2
 
 	trainerclass CAL ; c
 	const CAL3
 
 	trainerclass BRUNO ; d
 	const BRUNO1
+	const BRUNO2
 
 	trainerclass KAREN ; e
 	const KAREN1
+	const KAREN2
 
 	trainerclass KOGA ; f
 	const KOGA1
+	const KOGA2
 
 	trainerclass CHAMPION ; 10
 	const LANCE
+	const LANCE2
 
 	trainerclass BROCK ; 11
 	const BROCK1
@@ -511,9 +516,6 @@ KRIS EQU __trainer_class__
 	const IRWIN1
 	const FRITZ
 	const HORTON
-	const IRWIN2
-	const IRWIN3
-	const IRWIN4
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1
@@ -640,14 +642,11 @@ KRIS EQU __trainer_class__
 	const BRANDON
 	const JEREMY
 	const COLIN
-	const DEREK2
-	const DEREK3
 	const ALEX
 	const REX
 	const ALLAN
 
 	trainerclass KIMONO_GIRL ; 3c
-	const NAOKO1
 	const NAOKO2
 	const SAYO
 	const ZUKI
@@ -669,8 +668,6 @@ KRIS EQU __trainer_class__
 	trainerclass POKEFANF ; 3e
 	const BEVERLY1
 	const RUTH
-	const BEVERLY2
-	const BEVERLY3
 	const GEORGIA
 	const JAIME
 
