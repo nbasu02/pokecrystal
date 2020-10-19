@@ -805,7 +805,7 @@ KantoGrassWildMons:
 	db 80, SNORLAX
 	; nite
 	db 80, VENUSAUR
-	db 80, CHARIZARDL
+	db 80, CHARIZARD
 	db 80, BLASTOISE
 	db 80, BLASTOISE
 	db 80, SNORLAX

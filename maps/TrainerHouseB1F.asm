@@ -20,7 +20,7 @@ TrainerHouseReceptionistScript:
 	promptbutton
 	special TrainerHouse
 	iffalse .GetCal3Name
-	gettrainername STRING_BUFFER_3, CAL, CAL2
+	gettrainername STRING_BUFFER_3, CAL, CAL3
 	sjump .GotName
 
 .GetCal3Name:
@@ -44,7 +44,7 @@ TrainerHouseReceptionistScript:
 	iffalse .NoSpecialBattle
 	winlosstext TrainerHouseB1FCalBeatenText, 0
 	setlasttalked TRAINERHOUSEB1F_CHRIS
-	loadtrainer CAL, CAL2
+	loadtrainer CAL, CAL3
 	startbattle
 	reloadmapafterbattle
 	iffalse .End
