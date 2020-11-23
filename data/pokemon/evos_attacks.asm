@@ -558,6 +558,7 @@ JigglypuffEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
 	db 0 ; no more evolutions
 	db 1, SING
+	db 1, POUND
 	db 4, DEFENSE_CURL
 	db 9, POUND
 	db 14, DISABLE
@@ -999,8 +1000,8 @@ BellsproutEvosAttacks:
 	db EVOLVE_LEVEL, 21, WEEPINBELL
 	db 0 ; no more evolutions
 	db 1, VINE_WHIP
-	db 6, GROWTH
-	db 11, WRAP
+	db 6, WRAP
+	db 11, GROWTH
 	db 13, ACID
 	db 15, SLEEP_POWDER
 	db 17, POISONPOWDER
@@ -1017,8 +1018,8 @@ WeepinbellEvosAttacks:
 	db 1, VINE_WHIP
 	db 1, GROWTH
 	db 1, WRAP
-	db 6, GROWTH
-	db 11, WRAP
+	db 6, WRAP
+	db 11, GROWTH
 	db 13, ACID
 	db 15, SLEEP_POWDER
 	db 17, POISONPOWDER
@@ -2055,6 +2056,7 @@ KabutoEvosAttacks:
 	db 1, SCRATCH
 	db 1, HARDEN
 	db 10, ABSORB
+	db 15, WATER_GUN
 	db 19, PIN_MISSILE
 	db 28, SAND_ATTACK
 	db 30, ANCIENTPOWER
@@ -2071,6 +2073,7 @@ KabutopsEvosAttacks:
 	db 1, HARDEN
 	db 1, ABSORB
 	db 10, ABSORB
+	db 15, WATER_GUN
 	db 19, PIN_MISSILE
 	db 28, SAND_ATTACK
 	db 30, SLASH
@@ -2559,10 +2562,10 @@ CleffaEvosAttacks:
 IgglybuffEvosAttacks:
 	db EVOLVE_LEVEL, 10, JIGGLYPUFF
 	db 0 ; no more evolutions
-	db 1, SING
+	db 1, POUND
 	db 1, CHARM
 	db 4, DEFENSE_CURL
-	db 9, POUND
+	db 9, SING
 	db 14, SWEET_KISS
 	db 0 ; no more level-up moves
 
@@ -3010,10 +3013,11 @@ DunsparceEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAGE
 	db 5, DEFENSE_CURL
-	db 9, HEADBUTT
+	db 9, TWISTER
+	db 11, BITE
 	db 13, GLARE
 	db 18, ANCIENTPOWER
-	db 26, BITE
+	db 26, HEADBUTT
 	db 30, ROCK_SLIDE
 	db 38, DOUBLE_EDGE
 	db 46, DRAGONBREATH
@@ -3456,8 +3460,9 @@ ElekidEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
-	db 9, THUNDERPUNCH
-	db 17, LIGHT_SCREEN
+	db 6, THUNDERSHOCK
+	db 13, LIGHT_SCREEN
+	db 19, THUNDERPUNCH
 	db 25, SWIFT
 	db 33, SCREECH
 	db 41, THUNDERBOLT

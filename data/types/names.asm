@@ -3,13 +3,13 @@ TypeNames:
 	dw Normal
 	dw Fighting
 	dw Flying
-	dw Poison
 	dw Ground
 	dw Rock
 	dw Bird
 	dw Bug
-	dw Ghost
 	dw Steel
+	dw Dragon
+	dw Dark
 	dw Normal
 	dw Normal
 	dw Normal
@@ -20,14 +20,14 @@ TypeNames:
 	dw Normal
 	dw Normal
 	dw CurseType
+	dw Poison
 	dw Fire
 	dw Water
 	dw Grass
 	dw Electric
 	dw Psychic
 	dw Ice
-	dw Dragon
-	dw Dark
+	dw Ghost
 
 Normal:    db "NORMAL@"
 Fighting:  db "FIGHTING@"

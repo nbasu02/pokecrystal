@@ -475,3 +475,6 @@ if __name__ == "__main__":
     parse_grass_file(
         "/home/neil/Projects/pokecrystal/data/wild/johto_grass.asm", "johto_grass.csv"
     )
+    parse_grass_file(
+        "/home/neil/Projects/pokecrystal/data/wild/kanto_grass.asm", "kanto_grass.csv"
+    )

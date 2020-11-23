@@ -10,7 +10,6 @@ PHYSICAL EQU const_value
 	const NORMAL
 	const FIGHTING
 	const FLYING
-	const POISON
 	const GROUND
 	const ROCK
 	const BIRD
@@ -25,6 +24,7 @@ UNUSED_TYPES EQU const_value
 UNUSED_TYPES_END EQU const_value
 
 SPECIAL EQU const_value
+	const POISON
 	const FIRE
 	const WATER
 	const GRASS
