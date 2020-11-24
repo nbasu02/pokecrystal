@@ -14,6 +14,7 @@ from typing import Tuple
 
 import attr
 
+from gen_move_changes import compare_move_changes
 from gen_wild_mons import parse_grass_file
 from util import clean_name
 
@@ -478,3 +479,4 @@ if __name__ == "__main__":
     parse_grass_file(
         "/home/neil/Projects/pokecrystal/data/wild/kanto_grass.asm", "kanto_grass.csv"
     )
+    compare_move_changes()

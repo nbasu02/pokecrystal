@@ -348,10 +348,10 @@ JohtoGrassWildMons:
 	db 18, NIDORINO
 	db 18, NIDORINA
 	db 19, SPINARAK
-	db 18, VENONAT
 	db 20, NOCTOWL
+	db 18, VENONAT
 	db 19, VENONAT
-	db 20, VENONAT
+	db 19, NOCTOWL
 
 	map_id RUINS_OF_ALPH_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -361,7 +361,7 @@ JohtoGrassWildMons:
 	db 6, NATU
 	db 6, SMOOCHUM
 	db 7, SMEARGLE
-	db 6, LARVITAR
+	db 7, NATU
 	db 7, LARVITAR
 	; day
 	db 7, OMANYTE
@@ -369,7 +369,7 @@ JohtoGrassWildMons:
 	db 6, NATU
 	db 6, SMOOCHUM
 	db 7, SMEARGLE
-	db 6, LARVITAR
+	db 7, NATU
 	db 7, LARVITAR
 	; nite
 	db 7, OMANYTE
@@ -377,7 +377,7 @@ JohtoGrassWildMons:
 	db 6, NATU
 	db 6, SMOOCHUM
 	db 7, SMEARGLE
-	db 6, LARVITAR
+	db 7, NATU
 	db 7, LARVITAR
 
 	map_id RUINS_OF_ALPH_INNER_CHAMBER
@@ -416,7 +416,7 @@ JohtoGrassWildMons:
 	db 11, CLEFAIRY
 	db 11, ONIX
 	db 12, ONIX
-	db 12, STEELIX
+	db 12, ONIX
 	; day
 	db 12, GEODUDE
 	db 12, ZUBAT
@@ -424,7 +424,7 @@ JohtoGrassWildMons:
 	db 11, CLEFAIRY
 	db 11, ONIX
 	db 12, ONIX
-	db 12, STEELIX
+	db 12, ONIX
 	; nite
 	db 12, GEODUDE
 	db 12, MARILL
@@ -432,7 +432,7 @@ JohtoGrassWildMons:
 	db 11, CLEFAIRY
 	db 11, ONIX
 	db 12, ONIX
-	db 12, STEELIX
+	db 12, ONIX
 
 	map_id UNION_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -443,7 +443,7 @@ JohtoGrassWildMons:
 	db 11, RHYHORN
 	db 11, ONIX
 	db 12, ONIX
-	db 12, STEELIX
+	db 12, ONIX
 	; day
 	db 12, GEODUDE
 	db 12, SANDSHREW
@@ -451,7 +451,7 @@ JohtoGrassWildMons:
 	db 11, RHYHORN
 	db 11, ONIX
 	db 12, ONIX
-	db 12, STEELIX
+	db 12, ONIX
 	; nite
 	db 12, GEODUDE
 	db 12, SANDSHREW
@@ -459,7 +459,7 @@ JohtoGrassWildMons:
 	db 11, RHYHORN
 	db 11, ONIX
 	db 12, ONIX
-	db 12, STEELIX
+	db 12, ONIX
 
 	map_id UNION_CAVE_B2F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -545,29 +545,29 @@ JohtoGrassWildMons:
 	map_id ILEX_FOREST
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, BUTTERFREE
-	db 15, BEEDRILL
-	db 16, PARAS
-	db 16, LEDYBA
-	db 15, PIKACHU
-	db 16, FARFETCH_D
-	db 17, FARFETCH_D
+	db 13, BUTTERFREE
+	db 13, BEEDRILL
+	db 14, PARAS
+	db 14, LEDYBA
+	db 13, PIKACHU
+	db 13, FARFETCH_D
+	db 14, FARFETCH_D
 	; day
-	db 15, BUTTERFREE
-	db 15, BEEDRILL
-	db 16, PARAS
-	db 16, LEDYBA
-	db 15, PIKACHU
-	db 16, FARFETCH_D
-	db 17, FARFETCH_D
+	db 13, BUTTERFREE
+	db 13, BEEDRILL
+	db 14, PARAS
+	db 14, LEDYBA
+	db 13, PIKACHU
+	db 13, FARFETCH_D
+	db 14, FARFETCH_D
 	; nite
-	db 15, BUTTERFREE
-	db 15, BEEDRILL
-	db 16, PARAS
-	db 16, SPINARAK
-	db 15, PIKACHU
-	db 16, FARFETCH_D
-	db 17, FARFETCH_D
+	db 13, BUTTERFREE
+	db 13, BEEDRILL
+	db 14, PARAS
+	db 14, SPINARAK
+	db 13, PIKACHU
+	db 13, FARFETCH_D
+	db 14, FARFETCH_D
 
 	map_id MOUNT_MORTAR_1F_OUTSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1144,7 +1144,7 @@ JohtoGrassWildMons:
 	db 6, SLUGMA
 	db 6, PHANPY
 	db 7, TEDDIURSA
-	db 6, DUNSPARCE
+	db 6, HOUNDOUR
 	db 7, DUNSPARCE
 	; day
 	db 7, GEODUDE
@@ -1152,7 +1152,7 @@ JohtoGrassWildMons:
 	db 6, SLUGMA
 	db 6, PHANPY
 	db 7, TEDDIURSA
-	db 6, DUNSPARCE
+	db 6, HOUNDOUR
 	db 7, DUNSPARCE
 	; nite
 	db 7, GEODUDE
@@ -1160,7 +1160,7 @@ JohtoGrassWildMons:
 	db 6, SLUGMA
 	db 7, TEDDIURSA
 	db 6, PHANPY
-	db 6, DUNSPARCE
+	db 6, HOUNDOUR
 	db 7, DUNSPARCE
 
 	map_id DARK_CAVE_BLACKTHORN_ENTRANCE

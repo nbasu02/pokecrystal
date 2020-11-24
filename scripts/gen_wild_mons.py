@@ -116,20 +116,20 @@ def parse_grass_file(input_filename: str, output_filename: str):
 
             morning_pokemon = []
             morning_pokemon.append(
-                make_encounter_obj(input_file.readline().strip(), 30)
-            )
-            morning_pokemon.append(
-                make_encounter_obj(input_file.readline().strip(), 30)
+                make_encounter_obj(input_file.readline().strip(), 20)
             )
             morning_pokemon.append(
                 make_encounter_obj(input_file.readline().strip(), 20)
             )
             morning_pokemon.append(
-                make_encounter_obj(input_file.readline().strip(), 10)
+                make_encounter_obj(input_file.readline().strip(), 20)
             )
+            morning_pokemon.append(
+                make_encounter_obj(input_file.readline().strip(), 15)
+            )
+            morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
+            morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
             morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
-            morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 4))
-            morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 1))
 
             for pokemon_rate in morning_pokemon:
                 map_encounters.add_encounter_rate(pokemon_rate, "morning")
@@ -138,13 +138,13 @@ def parse_grass_file(input_filename: str, output_filename: str):
             input_file.readline()
 
             day_pokemon = []
-            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 30))
-            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 30))
             day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
+            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
+            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
+            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 15))
+            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
             day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
             day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
-            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 4))
-            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 1))
 
             for pokemon_rate in day_pokemon:
                 map_encounters.add_encounter_rate(pokemon_rate, "day")
@@ -153,13 +153,13 @@ def parse_grass_file(input_filename: str, output_filename: str):
             input_file.readline()
 
             night_pokemon = []
-            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 30))
-            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 30))
             night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
+            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
+            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
+            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 15))
+            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
             night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
             night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
-            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 4))
-            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 1))
 
             for pokemon_rate in night_pokemon:
                 map_encounters.add_encounter_rate(pokemon_rate, "night")

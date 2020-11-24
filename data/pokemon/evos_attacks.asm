@@ -2844,11 +2844,11 @@ YanmaEvosAttacks:
 	db 1, FORESIGHT
 	db 7, QUICK_ATTACK
 	db 13, TWISTER
-	db 19, LEECH_LIFE
+	db 19, PIN_MISSILE
 	db 25, DRAGON_RAGE
 	db 31, CONFUSE_RAY
 	db 37, WING_ATTACK
-	db 43, SCREECH
+	db 43, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
@@ -3274,10 +3274,12 @@ OctilleryEvosAttacks:
 
 DelibirdEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PRESENT
-	db 1, ICY_WIND
-	db 1, WING_ATTACK
+	db 1, POWDER_SNOW
+	db 1, GUST
 	db 1, PAY_DAY
+	db 1, PRESENT
+	db 15, ICY_WIND
+	db 23, WING_ATTACK
 	db 0 ; no more level-up moves
 
 MantineEvosAttacks:
