@@ -2026,10 +2026,12 @@ PorygonEvosAttacks:
 OmanyteEvosAttacks:
 	db EVOLVE_LEVEL, 30, OMASTAR
 	db 0 ; no more evolutions
-	db 1, CONSTRICT
+	db 1, WATER_GUN
 	db 1, WITHDRAW
+	db 10, CONSTRICT
 	db 13, BITE
-	db 19, BUBBLEBEAM
+	db 19, ROCK_THROW
+	db 24, BUBBLEBEAM
 	db 30, ANCIENTPOWER
 	db 37, PROTECT
 	db 49, ROCK_SLIDE
@@ -2038,11 +2040,13 @@ OmanyteEvosAttacks:
 
 OmastarEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, WATER_GUN
 	db 1, CONSTRICT
 	db 1, WITHDRAW
 	db 1, BITE
 	db 13, BITE
-	db 19, BUBBLEBEAM
+	db 19, ROCK_THROW
+	db 24, BUBBLEBEAM
 	db 30, ANCIENTPOWER
 	db 30, SPIKE_CANNON
 	db 37, PROTECT
@@ -2058,7 +2062,7 @@ KabutoEvosAttacks:
 	db 10, ABSORB
 	db 15, WATER_GUN
 	db 19, PIN_MISSILE
-	db 28, SAND_ATTACK
+	db 24, BUBBLEBEAM
 	db 30, ANCIENTPOWER
 	db 35, MEGA_DRAIN
 	db 37, LEECH_LIFE
@@ -2075,7 +2079,7 @@ KabutopsEvosAttacks:
 	db 10, ABSORB
 	db 15, WATER_GUN
 	db 19, PIN_MISSILE
-	db 28, SAND_ATTACK
+	db 24, BUBBLEBEAM
 	db 30, SLASH
 	db 30, ANCIENTPOWER
 	db 37, MEGA_DRAIN
@@ -2743,8 +2747,8 @@ HoppipEvosAttacks:
 	db 1, TACKLE
 	db 5, SYNTHESIS
 	db 8, ABSORB
-	db 10, GUST
-	db 13, POISONPOWDER
+	db 10, POISONPOWDER
+	db 13, GUST
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
 	db 20, LEECH_SEED
@@ -2764,8 +2768,8 @@ SkiploomEvosAttacks:
 	db 1, TACKLE
 	db 5, SYNTHESIS
 	db 8, ABSORB
-	db 10, GUST
-	db 13, POISONPOWDER
+	db 10, POISONPOWDER
+	db 13, GUST
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
 	db 22, LEECH_SEED
@@ -2784,8 +2788,8 @@ JumpluffEvosAttacks:
 	db 1, TACKLE
 	db 5, SYNTHESIS
 	db 8, ABSORB
-	db 10, GUST
-	db 13, POISONPOWDER
+	db 10, POISONPOWDER
+	db 13, GUST
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
 	db 22, LEECH_SEED

@@ -114,13 +114,14 @@ MartGoldenrod2F2:
 	db -1 ; end
 
 MartGoldenrod3F:
-	db 6 ; # items
+	db 7 ; # items
 	db LEAF_STONE
 	db FIRE_STONE
 	db WATER_STONE
 	db THUNDERSTONE
 	db MOON_STONE
 	db SUN_STONE
+	db UP_GRADE
 	db -1 ; end
 
 MartGoldenrod4F:
@@ -163,6 +164,7 @@ MartGoldenrod5F4:
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
+	db TM_THIEF
 	db TM_HEADBUTT
 	db TM_ROCK_SMASH
 	db -1 ; end
@@ -177,14 +179,13 @@ MartOlivine:
 	db AWAKENING
 	db ICE_HEAL
 	db SUPER_REPEL
-	db SURF_MAIL
+	db METAL_COAT
 	db -1 ; end
 
 MartEcruteak:
 	db 10 ; # items
 	db POKE_BALL
 	db GREAT_BALL
-	db POTION
 	db SUPER_POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
@@ -192,6 +193,7 @@ MartEcruteak:
 	db BURN_HEAL
 	db ICE_HEAL
 	db REVIVE
+	db KINGS_ROCK
 	db -1 ; end
 
 MartMahogany1:
@@ -224,8 +226,8 @@ MartBlackthorn:
 	db FULL_HEAL
 	db REVIVE
 	db MAX_REPEL
-	db X_DEFEND
-	db X_ATTACK
+	db DRAGON_FANG
+	db DRAGON_SCALE
 	db -1 ; end
 
 MartViridian:
@@ -315,12 +317,14 @@ MartCeladon2F2:
 	db -1 ; end
 
 MartCeladon3F:
-	db 5 ; # items
+	db 7 ; # items
 	db TM_HIDDEN_POWER
 	db TM_SUNNY_DAY
 	db TM_PROTECT
 	db TM_RAIN_DANCE
 	db TM_SANDSTORM
+	db TM_TOXIC
+	db TM_GIGA_DRAIN
 	db -1 ; end
 
 MartCeladon4F:
@@ -340,14 +344,24 @@ MartCeladon5F1:
 	db -1 ; end
 
 MartCeladon5F2:
-	db 7 ; # items
-	db X_ACCURACY
-	db GUARD_SPEC
-	db DIRE_HIT
-	db X_ATTACK
-	db X_DEFEND
-	db X_SPEED
-	db X_SPECIAL
+	db 17 ; # items
+	db SOFT_SAND
+	db SHARP_BEAK
+	db POISON_BARB
+	db SILVERPOWDER
+	db MYSTIC_WATER
+	db TWISTEDSPOON
+	db BLACKBELT_I
+	db BLACKGLASSES
+	db NEVERMELTICE
+	db MAGNET
+	db SPELL_TAG
+	db MIRACLE_SEED
+	db HARD_STONE
+	db CHARCOAL
+	db METAL_COAT
+	db DRAGON_FANG
+	db POLKADOT_BOW
 	db -1 ; end
 
 MartFuchsia:
@@ -370,7 +384,7 @@ MartSaffron:
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
-	db FLOWER_MAIL
+	db UP_GRADE
 	db -1 ; end
 
 MartMtMoon:
@@ -380,11 +394,11 @@ MartMtMoon:
 	db SODA_POP
 	db LEMONADE
 	db REPEL
-	db PORTRAITMAIL
+	db MOON_STONE
 	db -1 ; end
 
 MartIndigoPlateau:
-	db 7 ; # items
+	db 14 ; # items
 	db ULTRA_BALL
 	db MAX_REPEL
 	db HYPER_POTION
@@ -392,6 +406,13 @@ MartIndigoPlateau:
 	db FULL_RESTORE
 	db REVIVE
 	db FULL_HEAL
+	db TM_MUD_SLAP
+	db TM_FURY_CUTTER
+	db TM_ATTRACT
+	db TM_DYNAMICPUNCH
+	db TM_IRON_TAIL
+	db TM_ICY_WIND
+	db TM_DRAGONBREATH
 	db -1 ; end
 
 MartUnderground:

@@ -32,7 +32,7 @@ GoldenrodDeptStore3FSuperNerdText:
 	line "impatient!"
 
 	para "I used a stone"
-	line " to evolve"
+	line "to evolve"
 	cont "my #MON."
 	done
 

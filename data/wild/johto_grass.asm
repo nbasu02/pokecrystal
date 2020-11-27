@@ -1373,7 +1373,7 @@ JohtoGrassWildMons:
 	; nite
 	db 18, CUBONE
 	db 18, MARILL
-	db 18, GROWLITHE
+	db 18, HOUNDOUR
 	db 17, AIPOM
 	db 17, GLIGAR
 	db 18, YANMA
