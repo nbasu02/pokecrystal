@@ -46,6 +46,7 @@ Fixes in the [multi-player battle engine](#multi-player-battle-engine) category 
   - [Moon Ball does not boost catch rate](#moon-ball-does-not-boost-catch-rate)
   - [Love Ball boosts catch rate for the wrong gender](#love-ball-boosts-catch-rate-for-the-wrong-gender)
   - [Fast Ball only boosts catch rate for three Pokémon](#fast-ball-only-boosts-catch-rate-for-three-pokémon)
+  - [Heavy Ball uses wrong weight value for three Pokémon](#heavy-ball-uses-wrong-weight-value-for-three-pokémon)
   - [Glacier Badge may not boost Special Defense depending on the value of Special Attack](#glacier-badge-may-not-boost-special-defense-depending-on-the-value-of-special-attack)
   - ["Smart" AI encourages Mean Look if its own Pokémon is badly poisoned](#smart-ai-encourages-mean-look-if-its-own-pokémon-is-badly-poisoned)
   - [AI makes a false assumption about `CheckTypeMatchup`](#ai-makes-a-false-assumption-about-checktypematchup)
@@ -559,7 +560,7 @@ This bug affects Attract, Curse, Foresight, Mean Look, Mimic, Nightmare, Spider 
 
 ```diff
  .got_mon
- 	ld a, [wd002]
+ 	ld a, [wCurBeatUpPartyMon]
  	ld hl, wPartyMonNicknames
  	call GetNick
  	ld a, MON_HP
@@ -567,7 +568,7 @@ This bug affects Attract, Curse, Foresight, Mean Look, Mimic, Nightmare, Spider 
  	ld a, [hli]
  	or [hl]
  	jp z, .beatup_fail ; fainted
- 	ld a, [wd002]
+ 	ld a, [wCurBeatUpPartyMon]
  	ld c, a
  	ld a, [wCurBattleMon]
 -	; BUG: this can desynchronize link battles
@@ -839,10 +840,9 @@ This can bring Pokémon straight from level 1 to 100 by gaining just a few exper
  CalcExpAtLevel:
  ; (a/b)*n**3 + c*n**2 + d*n - e
 +	ld a, d
-+	cp 1
++	dec a
 +	jr nz, .UseExpFormula
 +; Pokémon have 0 experience at level 1
-+	xor a
 +	ld hl, hProduct
 +	ld [hli], a
 +	ld [hli], a
@@ -972,6 +972,40 @@ This can occur if your party and current PC box are both full when you start the
 +	jr nz, .loop
  	sla b
  	jr c, .max
+```
+
+
+### Heavy Ball uses wrong weight value for three Pokémon
+
+**Fix:** Edit `GetPokedexEntryBank` in [engine/items/item_effects.asm](https://github.com/pret/pokecrystal/blob/master/engine/items/item_effects.asm):
+
+```diff
+ GetPokedexEntryBank:
+-; This function is buggy.
+-; It gets the wrong bank for Kadabra (64), Tauros (128), and Sunflora (192).
+-; Uncomment the line below to fix this.
+ 	push hl
+ 	push de
+ 	ld a, [wEnemyMonSpecies]
+-	; dec a
++	dec a
+ 	rlca
+ 	rlca
+ 	maskbits NUM_DEX_ENTRY_BANKS
+ 	ld hl, .PokedexEntryBanks
+ 	ld d, 0
+ 	ld e, a
+ 	add hl, de
+ 	ld a, [hl]
+ 	pop de
+ 	pop hl
+ 	ret
+
+ .PokedexEntryBanks:
+ 	db BANK("Pokedex Entries 001-064")
+ 	db BANK("Pokedex Entries 065-128")
+ 	db BANK("Pokedex Entries 129-192")
+ 	db BANK("Pokedex Entries 193-251")
 ```
 
 
@@ -1279,7 +1313,7 @@ First, edit `UsedSurfScript` in [engine/events/overworld.asm](https://github.com
 
  	callasm .empty_fn ; empty function
 
- 	readmem wBuffer2
+ 	readmem wSurfingPlayerState
  	writevar VAR_MOVEMENT
 
  	special UpdatePlayerSprite
@@ -1327,6 +1361,8 @@ Then edit `SurfStartStep` in [engine/overworld/player_object.asm](https://github
 +	db D_LEFT,  0, -1
 +	db D_RIGHT, 0, -1
 ```
+
+This fix will make the player enter the water at a normal walking speed, not with a slow step.
 
 
 ### Swimming NPCs aren't limited by their movement radius
@@ -1714,7 +1750,7 @@ The exact cause of this bug is unknown.
  	ld de, wStringBuffer1
  	ld a, BANK("Evolutions and Attacks")
 -	ld bc, 10
-+	ld bc, wStringBuffer2 - wStringBuffer1
++	ld bc, STRING_BUFFER_LENGTH
  	call FarCopyBytes
 ```
 
@@ -1983,103 +2019,7 @@ This bug can prevent you from talking to Eusine in Celadon City or encountering 
 
 ([Video 1](https://www.youtube.com/watch?v=ukqtK0l6bu0), [Video 2](https://www.youtube.com/watch?v=c2zHd1BPtvc))
 
-**Fix:** Edit `MoveMonWOMail_InsertMon_SaveGame` and `_SaveGameData` in [engine/menus/save.asm](https://github.com/pret/pokecrystal/blob/master/engine/menus/save.asm):
-
-```diff
- MoveMonWOMail_InsertMon_SaveGame:
- 	...
- 	ld a, TRUE
- 	ld [wSaveFileExists], a
- 	farcall StageRTCTimeForSave
- 	farcall BackupMysteryGift
--	call ValidateSave
-+	call InvalidateSave
- 	call SaveOptions
- 	call SavePlayerData
- 	call SavePokemonData
- 	call SaveChecksum
--	call ValidateBackupSave
-+	call ValidateSave
-+	call InvalidateBackupSave
- 	call SaveBackupOptions
- 	call SaveBackupPlayerData
- 	call SaveBackupPokemonData
- 	call SaveBackupChecksum
-+	call ValidateBackupSave
- 	farcall BackupPartyMonMail
- 	farcall BackupMobileEventIndex
- 	farcall SaveRTC
- 	...
-```
-
-```diff
- _SaveGameData:
- 	...
- 	ld a, TRUE
- 	ld [wSaveFileExists], a
- 	farcall StageRTCTimeForSave
- 	farcall BackupMysteryGift
--	call ValidateSave
-+	call InvalidateSave
- 	call SaveOptions
- 	call SavePlayerData
- 	call SavePokemonData
- 	call SaveBox
- 	call SaveChecksum
--	call ValidateBackupSave
-+	call ValidateSave
-+	call InvalidateBackupSave
- 	call SaveBackupOptions
- 	call SaveBackupPlayerData
- 	call SaveBackupPokemonData
- 	call SaveBackupChecksum
-+	call ValidateBackupSave
- 	call UpdateStackTop
- 	farcall BackupPartyMonMail
- 	farcall BackupMobileEventIndex
- 	farcall SaveRTC
- 	...
-```
-
-Then create two new routines, `InvalidateSave` and `InvalidateBackupSave`:
-
-```diff
- ValidateSave:
- 	ld a, BANK(sCheckValue1) ; aka BANK(sCheckValue2)
- 	call OpenSRAM
- 	ld a, SAVE_CHECK_VALUE_1
- 	ld [sCheckValue1], a
- 	ld a, SAVE_CHECK_VALUE_2
- 	ld [sCheckValue2], a
- 	jp CloseSRAM
-
-+InvalidateSave:
-+	ld a, BANK(sCheckValue1) ; aka BANK(sCheckValue2)
-+	call OpenSRAM
-+	xor a
-+	ld [sCheckValue1], a
-+	ld [sCheckValue2], a
-+	jp CloseSRAM
-```
-
-```diff
- ValidateBackupSave:
- 	ld a, BANK(sBackupCheckValue1) ; aka BANK(sBackupCheckValue2)
- 	call OpenSRAM
- 	ld a, SAVE_CHECK_VALUE_1
- 	ld [sBackupCheckValue1], a
- 	ld a, SAVE_CHECK_VALUE_2
- 	ld [sBackupCheckValue2], a
- 	jp CloseSRAM
-
-+InvalidateBackupSave:
-+	ld a, BANK(sBackupCheckValue1) ; aka BANK(sBackupCheckValue2)
-+	call OpenSRAM
-+	xor a
-+	ld [sBackupCheckValue1], a
-+	ld [sBackupCheckValue2], a
-+	jp CloseSRAM
-```
+This does not have a simple and accurate fix. It would involve redesigning parts of the save system for Pokémon boxes.
 
 
 ### `ScriptCall` can overflow `wScriptStack` and crash
@@ -2223,7 +2163,7 @@ Then create two new routines, `InvalidateSave` and `InvalidateBackupSave`:
  	jr z, .skip
 -	; jr c, .skip
 +	jr c, .skip
- 
+
  	; could have done "inc hl" instead
  	ld bc, 1
  	add hl, bc

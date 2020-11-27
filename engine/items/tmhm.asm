@@ -73,7 +73,7 @@ AskTeachTMHM:
 ChooseMonToLearnTMHM:
 	ld hl, wStringBuffer2
 	ld de, wTMHMMoveNameBackup
-	ld bc, 12
+	ld bc, MOVE_NAME_LENGTH - 1
 	call CopyBytes
 	call ClearBGPalettes
 ChooseMonToLearnTMHM_NoRefresh:
@@ -97,7 +97,7 @@ ChooseMonToLearnTMHM_NoRefresh:
 	push bc
 	ld hl, wTMHMMoveNameBackup
 	ld de, wStringBuffer2
-	ld bc, 12
+	ld bc, MOVE_NAME_LENGTH - 1
 	call CopyBytes
 	pop af ; now contains the original contents of af
 	ret
@@ -159,7 +159,7 @@ TeachTMHM:
 	and a
 	ret
 
-.unused
+.didnt_use ; unreferenced
 	ld a, 2
 	ld [wItemEffectSucceeded], a
 .learned_move
@@ -436,7 +436,8 @@ TMHMPocket_GetCurrentLineCoord:
 	jr nz, .loop
 	ret
 
-Function2ca95: ; unreferenced
+PlaceMoveNameAfterTMHMName: ; unreferenced
+; Similar to a part of TMHM_DisplayPocketItems.
 	pop hl
 	ld bc, 3
 	add hl, bc
@@ -484,7 +485,7 @@ TMHM_PlaySFX_ReadText2:
 	pop de
 	ret
 
-Function2cadf: ; unreferenced
+VerboseReceiveTMHM: ; unreferenced
 	call ConvertCurItemIntoCurTMHM
 	call .CheckHaveRoomForTMHM
 	ld hl, .NoRoomTMHMText
@@ -510,7 +511,7 @@ Function2cadf: ; unreferenced
 	add hl, bc
 	ld a, [hl]
 	inc a
-	cp NUM_TMS * 2
+	cp MAX_ITEM_STACK + 1
 	ret nc
 	ld [hl], a
 	ret

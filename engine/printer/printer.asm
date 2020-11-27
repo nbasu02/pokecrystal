@@ -447,9 +447,11 @@ CheckCancelPrint:
 	ret
 
 .pressed_b
-	ld a, [wca80]
+	ld a, [wUnusedGameboyPrinterSafeCancelFlag]
 	cp $0c
 	jr nz, .cancel
+
+; wait for printer activity to finish before canceling?
 .loop
 	ld a, [wPrinterOpcode]
 	and a
@@ -575,7 +577,9 @@ PlacePrinterStatusString:
 	ld [wPrinterStatus], a
 	ret
 
-Function847bd: ; unreferenced
+PlacePrinterStatusStringBorderless: ; unreferenced
+; Similar to PlacePrinterStatusString, but with different hlcoords
+; and ClearBox instead of TextBox.
 	ld a, [wPrinterStatus]
 	and a
 	ret z
@@ -848,7 +852,7 @@ Printer_GetMonGender:
 Printer_GetBoxMonSpecies:
 	push hl
 	ld e, a
-	ld d, $0
+	ld d, 0
 	ld a, [wAddrOfBoxToPrint]
 	ld l, a
 	ld a, [wAddrOfBoxToPrint + 1]
@@ -907,7 +911,7 @@ Printer_PlaceEmptyBoxSlotString:
 .loop
 	push bc
 	push hl
-	ld de, String84a25
+	ld de, .EmptyBoxSlotString
 	call PlaceString
 	pop hl
 	ld bc, 3 * SCREEN_WIDTH
@@ -917,5 +921,5 @@ Printer_PlaceEmptyBoxSlotString:
 	jr nz, .loop
 	ret
 
-String84a25:
+.EmptyBoxSlotString:
 	db "  ------@"

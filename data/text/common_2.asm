@@ -114,20 +114,20 @@ _ExpPointsText::
 	text " EXP. Points!"
 	prompt
 
-Text_GoMon::
+_GoMonText::
 	text "Go! @"
 	text_end
 
-Text_DoItMon::
+_DoItMonText::
 	text "Do it! @"
 	text_end
 
-Text_GoForItMon::
+_GoForItMonText::
 	text "Go for it,"
 	line "@"
 	text_end
 
-Text_YourFoesWeakGetmMon::
+_YourFoesWeakGetmMonText::
 	text "Your foe's weak!"
 	line "Get'm, @"
 	text_end
@@ -137,7 +137,7 @@ _BattleMonNicknameText::
 	text "!"
 	done
 
-Text_BattleMonNickComma::
+_BattleMonNickCommaText::
 	text_ram wBattleMonNick
 	text ",@"
 	text_end
@@ -260,32 +260,32 @@ _MysteryGiftSentHomeText::
 	text "'s home."
 	prompt
 
-_MysteryGiftReceivedCardText::
+_NameCardReceivedCardText::
 	text "Received"
 	line "@"
-	text_ram wc850
+	text_ram wMysteryGiftCardHolderName
 	text "'s CARD."
 	prompt
 
-_MysteryGiftListedCardText::
-	text_ram wc850
+_NameCardListedCardText::
+	text_ram wMysteryGiftCardHolderName
 	text "'s CARD was"
 	line "listed as no.@"
 	text_decimal wDeciramBuffer, 1, 2
 	text "."
 	prompt
 
-_MysteryGiftNotRegisteredCardText::
+_NameCardNotRegisteredCardText::
 	text "The CARD was not"
 	line "registered."
 	prompt
 
-_MysteryGiftLinkCancelledText::
+_NameCardLinkCancelledText::
 	text "The link has been"
 	line "cancelled."
 	prompt
 
-_MysteryGiftLinkCommErrorText::
+_NameCardLinkCommErrorText::
 	text "Communication"
 	line "error."
 	prompt
@@ -487,7 +487,6 @@ _RodNothingText::
 	text "Not even a nibble!"
 	prompt
 
-; unreferenced
 _UnusedNothingHereText::
 	text "Looks like there's"
 	line "nothing here."
@@ -1369,11 +1368,11 @@ _TrainerRankingNoDataText:: ; unreferenced
 	para ""
 	done
 
-_DummyGameYeahText::
+_MemoryGameYeahText::
 	text " , yeah!"
 	done
 
-_DummyGameDarnText::
+_MemoryGameDarnText::
 	text "Darn…"
 	done
 

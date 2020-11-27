@@ -45,7 +45,7 @@ endr
 	ld [hli], a ; BATTLEANIMSTRUCT_OAMFLAGS
 	ld a, [de]
 	inc de
-	ld [hli], a ; BATTLEANIMSTRUCT_02
+	ld [hli], a ; BATTLEANIMSTRUCT_FIX_Y
 	ld a, [de]
 	inc de
 	ld [hli], a ; BATTLEANIMSTRUCT_FRAMESET_ID
@@ -211,10 +211,10 @@ InitBattleAnimBuffer:
 	add hl, bc
 	ld a, [hl]
 	ld [wBattleAnimTempPalette], a
-	ld hl, BATTLEANIMSTRUCT_02
+	ld hl, BATTLEANIMSTRUCT_FIX_Y
 	add hl, bc
 	ld a, [hl]
-	ld [wBattleAnimTempField02], a
+	ld [wBattleAnimTempFixY], a
 	ld hl, BATTLEANIMSTRUCT_TILEID
 	add hl, bc
 	ld a, [hli]
@@ -248,7 +248,7 @@ InitBattleAnimBuffer:
 	ld [wBattleAnimTempXCoord], a
 	ld a, [hli]
 	ld d, a
-	ld a, [wBattleAnimTempField02]
+	ld a, [wBattleAnimTempFixY]
 	cp $ff
 	jr nz, .check_kinesis_softboiled_milkdrink
 	ld a, 5 * 8
@@ -263,14 +263,12 @@ InitBattleAnimBuffer:
 	jr nz, .no_sub
 	ld a, [wFXAnimID]
 	cp KINESIS
-	jr z, .kinesis
+	jr z, .do_sub
 	cp SOFTBOILED
-	jr z, .softboiled
+	jr z, .do_sub
 	cp MILK_DRINK
 	jr nz, .no_sub
-.kinesis
-.softboiled
-.milk_drink
+.do_sub
 	pop af
 	sub 1 * 8
 	jr .done
@@ -290,7 +288,7 @@ GetBattleAnimTileOffset:
 	push bc
 	ld hl, wBattleAnimTileDict
 	ld b, a
-	ld c, 10 / 2
+	ld c, NUM_BATTLEANIMTILEDICT_ENTRIES
 .loop
 	ld a, [hli]
 	cp b
@@ -315,3 +313,5 @@ _ExecuteBGEffects:
 _QueueBGEffect:
 	callfar QueueBGEffect
 	ret
+
+INCLUDE "data/battle_anims/objects.asm"

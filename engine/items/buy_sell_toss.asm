@@ -8,9 +8,9 @@ SelectQuantityToBuy:
 	farcall GetItemPrice
 RooftopSale_SelectQuantityToBuy:
 	ld a, d
-	ld [wBuffer1], a
+	ld [wBuySellItemPrice + 0], a
 	ld a, e
-	ld [wBuffer2], a
+	ld [wBuySellItemPrice + 1], a
 	ld hl, BuyItem_MenuHeader
 	call LoadMenuHeader
 	call Toss_Sell_Loop
@@ -19,9 +19,9 @@ RooftopSale_SelectQuantityToBuy:
 SelectQuantityToSell:
 	farcall GetItemPrice
 	ld a, d
-	ld [wBuffer1], a
+	ld [wBuySellItemPrice + 0], a
 	ld a, e
-	ld [wBuffer2], a
+	ld [wBuySellItemPrice + 1], a
 	ld hl, SellItem_MenuHeader
 	call LoadMenuHeader
 	call Toss_Sell_Loop
@@ -141,7 +141,8 @@ BuySellToss_UpdateQuantityDisplay:
 	call FarCall_de
 	ret
 
-ret_25097:
+NoPriceToDisplay:
+; Does nothing.
 	ret
 
 DisplayPurchasePrice:
@@ -158,9 +159,9 @@ DisplaySellingPrice:
 BuySell_MultiplyPrice:
 	xor a
 	ldh [hMultiplicand + 0], a
-	ld a, [wBuffer1]
+	ld a, [wBuySellItemPrice + 0]
 	ldh [hMultiplicand + 1], a
-	ld a, [wBuffer2]
+	ld a, [wBuySellItemPrice + 1]
 	ldh [hMultiplicand + 2], a
 	ld a, [wItemQuantityChangeBuffer]
 	ldh [hMultiplier], a
@@ -204,7 +205,7 @@ BuySell_DisplaySubtotal:
 TossItem_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 15, 9, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw ret_25097
+	dw NoPriceToDisplay
 	db 0 ; default option
 
 BuyItem_MenuHeader:

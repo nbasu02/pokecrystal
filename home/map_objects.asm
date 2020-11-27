@@ -410,7 +410,7 @@ LoadMovementDataPointer::
 
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
-	ld [hl], STEP_TYPE_00
+	ld [hl], STEP_TYPE_RESET
 
 	ld hl, wVramState
 	set 7, [hl]
@@ -589,7 +589,7 @@ UpdateSprites::
 	bit 0, a
 	ret z
 
-	farcall Function55e0
+	farcall UpdateAllObjectsFrozen
 	farcall _UpdateSprites
 	ret
 

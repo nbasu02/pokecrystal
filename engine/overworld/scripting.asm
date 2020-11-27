@@ -34,7 +34,7 @@ WaitScript:
 	dec [hl]
 	ret nz
 
-	farcall Function58b9
+	farcall UnfreezeAllObjects
 
 	ld a, SCRIPT_READ
 	ld [wScriptMode], a
@@ -48,7 +48,7 @@ WaitScriptMovement:
 	bit 7, [hl]
 	ret nz
 
-	farcall Function58b9
+	farcall UnfreezeAllObjects
 
 	ld a, SCRIPT_READ
 	ld [wScriptMode], a
@@ -458,11 +458,11 @@ Script_verbosegiveitem:
 	ld de, GiveItemScript
 	jp ScriptCall
 
-ret_96f76:
+GiveItemScript_DummyFunction:
 	ret
 
 GiveItemScript:
-	callasm ret_96f76
+	callasm GiveItemScript_DummyFunction
 	writetext .ReceivedItemText
 	iffalse .Full
 	waitsfx
@@ -812,11 +812,11 @@ Script_applymovement:
 ApplyMovement:
 	push bc
 	ld a, c
-	farcall SetFlagsForMovement_1
+	farcall FreezeAllOtherObjects
 	pop bc
 
 	push bc
-	call SetFlagsForMovement_2
+	call UnfreezeFollowerObject
 	pop bc
 
 	call GetScriptByte
@@ -833,8 +833,8 @@ ApplyMovement:
 	call StopScript
 	ret
 
-SetFlagsForMovement_2:
-	farcall _SetFlagsForMovement_2
+UnfreezeFollowerObject:
+	farcall _UnfreezeFollowerObject
 	ret
 
 Script_applymovementlasttalked:
@@ -951,7 +951,7 @@ ApplyObjectFacing:
 Script_variablesprite:
 	call GetScriptByte
 	ld e, a
-	ld d, $0
+	ld d, 0
 	ld hl, wVariableSprites
 	add hl, de
 	call GetScriptByte
@@ -1590,7 +1590,7 @@ GetStringBuffer:
 
 CopyConvertedText:
 	ld hl, wStringBuffer3
-	ld bc, wStringBuffer4 - wStringBuffer3
+	ld bc, STRING_BUFFER_LENGTH
 	call AddNTimes
 	call CopyName2
 	ret
@@ -1703,7 +1703,7 @@ Script_givepokemail:
 	push bc
 	inc hl
 	ld bc, MAIL_MSG_LENGTH
-	ld de, wd002
+	ld de, wMonMailMessageBuffer
 	ld a, [wScriptBank]
 	call FarCopyBytes
 	pop bc
@@ -2173,8 +2173,7 @@ Script_warpcheck:
 	farcall EnableEvents
 	ret
 
-Script_enableevents:
-; unused
+Script_enableevents: ; unreferenced
 	farcall EnableEvents
 	ret
 
@@ -2204,7 +2203,8 @@ Script_writeunusedbytebuffer:
 	ld [wUnusedScriptByteBuffer], a
 	ret
 
-	db closetext_command ; unused
+UnusedClosetextScript: ; unreferenced
+	closetext
 
 Script_closetext:
 	call _OpenAndCloseMenu_HDMATransferTilemapAndAttrmap
@@ -2316,13 +2316,13 @@ Script_endall:
 	ret
 
 Script_halloffame:
-	ld hl, wGameTimerPause
-	res GAMETIMERPAUSE_TIMER_PAUSED_F, [hl]
+	ld hl, wGameTimerPaused
+	res GAME_TIMER_PAUSED_F, [hl]
 	farcall StubbedTrainerRankings_HallOfFame
 	farcall StubbedTrainerRankings_HallOfFame2
 	farcall HallOfFame
-	ld hl, wGameTimerPause
-	set GAMETIMERPAUSE_TIMER_PAUSED_F, [hl]
+	ld hl, wGameTimerPaused
+	set GAME_TIMER_PAUSED_F, [hl]
 	jr ReturnFromCredits
 
 Script_credits:
@@ -2353,7 +2353,7 @@ Script_checksave:
 	ld [wScriptVar], a
 	ret
 
-; unused
+Script_checkver_duplicate: ; unreferenced
 	ld a, [.gs_version]
 	ld [wScriptVar], a
 	ret

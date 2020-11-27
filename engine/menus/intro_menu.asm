@@ -9,7 +9,7 @@ Intro_MainMenu:
 	farcall MainMenu
 	jp StartTitleScreen
 
-; unused
+IntroMenu_DummyFunction: ; unreferenced
 	ret
 
 PrintDayOfWeek:
@@ -173,12 +173,13 @@ _ResetWRAM:
 	ld [wRoamMon2MapNumber], a
 	ld [wRoamMon3MapNumber], a
 
-	ld a, BANK(sMysteryGiftItem)
+	ld a, BANK(sMysteryGiftItem) ; aka BANK(sMysteryGiftUnlocked)
 	call OpenSRAM
 	ld hl, sMysteryGiftItem
 	xor a
 	ld [hli], a
-	dec a
+	assert sMysteryGiftItem + 1 == sMysteryGiftUnlocked
+	dec a ; -1
 	ld [hl], a
 	call CloseSRAM
 
@@ -370,7 +371,7 @@ Continue:
 	ld c, 20
 	call DelayFrames
 	farcall JumpRoamMons
-	farcall MysteryGift_CopyReceivedDecosToPC
+	farcall CopyMysteryGiftReceivedDecorationsToPC
 	farcall ClockContinue
 	ld a, [wSpawnAfterChampion]
 	cp SPAWN_LANCE
@@ -464,9 +465,9 @@ FinishContinueFunction:
 	xor a
 	ld [wDontPlayMapMusicOnReload], a
 	ld [wLinkMode], a
-	ld hl, wGameTimerPause
-	set GAMETIMERPAUSE_TIMER_PAUSED_F, [hl]
-	res GAMETIMERPAUSE_MOBILE_7_F, [hl]
+	ld hl, wGameTimerPaused
+	set GAME_TIMER_PAUSED_F, [hl]
+	res GAME_TIMER_MOBILE_F, [hl]
 	ld hl, wEnteredMapFromContinue
 	set 1, [hl]
 	farcall OverworldLoop
@@ -1048,7 +1049,8 @@ RunTitleScreen:
 	scf
 	ret
 
-Function6292: ; unreferenced
+UnusedTitlePerspectiveScroll: ; unreferenced
+; Similar behavior to Intro_PerspectiveScrollBG.
 	ldh a, [hVBlankCounter]
 	and $7
 	ret nz
@@ -1267,7 +1269,7 @@ ResetClock:
 	farcall _ResetClock
 	jp Init
 
-Function639b: ; unreferenced
+UpdateTitleTrailSprite: ; unreferenced
 	; If bit 0 or 1 of [wTitleScreenTimer] is set, we don't need to be here.
 	ld a, [wTitleScreenTimer]
 	and %00000011
@@ -1279,9 +1281,9 @@ Function639b: ; unreferenced
 	ld h, 0
 	add hl, hl
 	add hl, hl
-	ld de, .Data_63ca
+	ld de, .TitleTrailCoords
 	add hl, de
-	; If bit 2 of [wTitleScreenTimer] is set, get the second dw; else, get the first dw
+	; If bit 2 of [wTitleScreenTimer] is set, get the second coords; else, get the first coords
 	ld a, [wTitleScreenTimer]
 	and %00000100
 	srl a
@@ -1299,14 +1301,25 @@ Function639b: ; unreferenced
 	call InitSpriteAnimStruct
 	ret
 
-.Data_63ca:
-; frame 0 y, x; frame 1 y, x
-	db 11 * 8 + 4, 10 * 8,  0 * 8,      0 * 8
-	db 11 * 8 + 4, 13 * 8, 11 * 8 + 4, 11 * 8
-	db 11 * 8 + 4, 13 * 8, 11 * 8 + 4, 15 * 8
-	db 11 * 8 + 4, 17 * 8, 11 * 8 + 4, 15 * 8
-	db  0 * 8,      0 * 8, 11 * 8 + 4, 15 * 8
-	db  0 * 8,      0 * 8, 11 * 8 + 4, 11 * 8
+.TitleTrailCoords:
+trail_coords: MACRO
+rept _NARG / 2
+_dx = 4
+if \1 == 0 && \2 == 0
+_dx = 0
+endc
+	dbpixel \1, \2, _dx, 0
+	shift
+	shift
+endr
+ENDM
+	; frame 0 y, x; frame 1 y, x
+	trail_coords 11, 10,  0,  0
+	trail_coords 11, 13, 11, 11
+	trail_coords 11, 13, 11, 15
+	trail_coords 11, 17, 11, 15
+	trail_coords  0,  0, 11, 15
+	trail_coords  0,  0, 11, 11
 
 Copyright:
 	call ClearTilemap

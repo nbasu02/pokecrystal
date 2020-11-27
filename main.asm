@@ -203,7 +203,7 @@ SECTION "bank13", ROMX
 
 INCLUDE "engine/tilesets/map_palettes.asm"
 INCLUDE "gfx/tileset_palette_maps.asm"
-INCLUDE "data/collision_permissions.asm"
+INCLUDE "data/collision/collision_permissions.asm"
 INCLUDE "engine/menus/empty_sram.asm"
 INCLUDE "engine/menus/savemenu_copytilemapatonce.asm"
 INCLUDE "engine/events/checksave.asm"
@@ -262,7 +262,7 @@ INCLUDE "data/pokemon/names.asm"
 INCLUDE "data/pokemon/unused_pic_banks.asm"
 
 UnusedEggPic::
-; Another egg pic. This is shifted up a few pixels.
+; The G/S Egg pic. This is shifted up a few pixels.
 INCBIN "gfx/pokemon/egg/unused_front.2bpp.lz"
 
 
@@ -434,12 +434,8 @@ SECTION "Move Animations", ROMX
 INCLUDE "engine/events/bug_contest/display_stats.asm"
 INCLUDE "engine/battle_anims/anim_commands.asm"
 INCLUDE "engine/battle_anims/core.asm"
-INCLUDE "data/battle_anims/objects.asm"
 INCLUDE "engine/battle_anims/functions.asm"
 INCLUDE "engine/battle_anims/helpers.asm"
-INCLUDE "data/battle_anims/framesets.asm"
-INCLUDE "data/battle_anims/oam.asm"
-INCLUDE "data/battle_anims/object_gfx.asm"
 
 
 SECTION "Pic Animations 1", ROMX
@@ -483,7 +479,7 @@ SECTION "bank38", ROMX
 INCLUDE "engine/events/print_unown_2.asm"
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
-INCLUDE "engine/games/dummy_game.asm"
+INCLUDE "engine/games/memory_game.asm"
 INCLUDE "engine/pokemon/bills_pc.asm"
 
 

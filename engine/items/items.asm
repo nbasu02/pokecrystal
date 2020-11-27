@@ -240,7 +240,7 @@ RemoveItemFromPocket:
 	cp c
 	jr nc, .ok ; memory
 	ld c, a
-	ld b, $0
+	ld b, 0
 	add hl, bc
 	add hl, bc
 	ld a, [wCurItem]
@@ -481,7 +481,7 @@ GetNumberedTMHM:
 	jr c, .done
 	cp ITEM_DC - (TM01 - 1) - 1
 	jr c, .skip_one
-.skip_two
+; skip two
 	inc a
 .skip_one
 	inc a

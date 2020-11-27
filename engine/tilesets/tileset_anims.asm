@@ -90,7 +90,8 @@ TilesetJohtoAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
-UnusedTilesetAnim_fc0d7:
+UnusedTilesetAnim1: ; unreferenced
+; Scrolls tile $03 like water, but also has the standard $03 flower tile.
 	dw vTiles2 tile $03, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw vTiles2 tile $03, WriteTileFromBuffer
@@ -103,7 +104,8 @@ UnusedTilesetAnim_fc0d7:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
-UnusedTilesetAnim_fc103:
+UnusedTilesetAnim2: ; unreferenced
+; Scrolls tile $14 like cave water.
 	dw vTiles2 tile $14, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw vTiles2 tile $14, WriteTileFromBuffer
@@ -140,7 +142,8 @@ TilesetEliteFourRoomAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
-UnusedTilesetAnim_fc17f:
+UnusedTilesetAnim3: ; unreferenced
+; Scrolls tile $53 like a waterfall; scrolls tile $03 like cave water.
 	dw vTiles2 tile $53, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileDown
 	dw wTileAnimBuffer, ScrollTileDown
@@ -154,7 +157,8 @@ UnusedTilesetAnim_fc17f:
 	dw vTiles2 tile $53, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 
-UnusedTilesetAnim_fc1af:
+UnusedTilesetAnim4: ; unreferenced
+; Scrolls tile $54 like a waterfall; scrolls tile $03 like cave water.
 	dw vTiles2 tile $54, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileDown
 	dw wTileAnimBuffer, ScrollTileDown
@@ -231,7 +235,8 @@ TilesetTowerAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
-UnusedTilesetAnim_fc2bf:
+UnusedTilesetAnim5: ; unreferenced
+; Scrolls tile $4f like cave water.
 	dw vTiles2 tile $4f, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw vTiles2 tile $4f, WriteTileFromBuffer
@@ -300,7 +305,7 @@ ScrollTileRightLeft:
 	jr nz, ScrollTileLeft
 	jr ScrollTileRight
 
-ScrollTileUpDown:
+ScrollTileUpDown: ; unreferenced
 ; Scroll up for 4 ticks, then down for 4 ticks.
 	ld a, [wTileAnimationTimer]
 	inc a
@@ -886,7 +891,7 @@ AnimateWaterPalette:
 	cp %100 ; frame 4
 	jr z, .color2
 
-.color1
+; color1
 	ld hl, wBGPals1 palette PAL_BG_WATER color 1
 	ld a, [hli]
 	ldh [rBGPD], a

@@ -3,7 +3,7 @@ __trainer_class__ = 0
 trainerclass: MACRO
 \1 EQU __trainer_class__
 __trainer_class__ = __trainer_class__ + 1
-const_value = 1
+	const_def 1
 ENDM
 
 ; trainer class ids
@@ -647,7 +647,7 @@ KRIS EQU __trainer_class__
 	const ALLAN
 
 	trainerclass KIMONO_GIRL ; 3c
-	const NAOKO2
+	const NAOKO
 	const SAYO
 	const ZUKI
 	const KUNI

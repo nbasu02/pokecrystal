@@ -346,11 +346,11 @@ TakePartyItem:
 	call GetPartyItemLocation
 	ld a, [hl]
 	and a
-	jr z, .asm_12c8c
+	jr z, .not_holding_item
 
 	ld [wCurItem], a
 	call ReceiveItemFromPokemon
-	jr nc, .asm_12c94
+	jr nc, .item_storage_full
 
 	farcall ItemIsMail
 	call GetPartyItemLocation
@@ -360,18 +360,18 @@ TakePartyItem:
 	call GetItemName
 	ld hl, PokemonTookItemText
 	call MenuTextboxBackup
-	jr .asm_12c9a
+	jr .done
 
-.asm_12c8c
+.not_holding_item
 	ld hl, PokemonNotHoldingText
 	call MenuTextboxBackup
-	jr .asm_12c9a
+	jr .done
 
-.asm_12c94
+.item_storage_full
 	ld hl, ItemStorageFullText
 	call MenuTextboxBackup
 
-.asm_12c9a
+.done
 	ret
 
 GiveTakeItemMenuData:
@@ -1016,19 +1016,19 @@ MoveScreenLoop:
 	push hl
 	call .copy_move
 	pop hl
-	ld bc, $15
+	ld bc, wPartyMon1PP - wPartyMon1Moves
 	add hl, bc
 	call .copy_move
 	ld a, [wBattleMode]
 	jr z, .swap_moves
 	ld hl, wBattleMonMoves
-	ld bc, $20
+	ld bc, wBattleMonStructEnd - wBattleMon
 	ld a, [wCurPartyMon]
 	call AddNTimes
 	push hl
 	call .copy_move
 	pop hl
-	ld bc, 6
+	ld bc, wBattleMonPP - wBattleMonMoves
 	add hl, bc
 	call .copy_move
 
@@ -1052,7 +1052,7 @@ MoveScreenLoop:
 	ld a, [wMenuCursorY]
 	dec a
 	ld c, a
-	ld b, $0
+	ld b, 0
 	add hl, bc
 	ld d, h
 	ld e, l
@@ -1060,7 +1060,7 @@ MoveScreenLoop:
 	ld a, [wMoveSwapBuffer]
 	dec a
 	ld c, a
-	ld b, $0
+	ld b, 0
 	add hl, bc
 	ld a, [de]
 	ld b, [hl]
@@ -1097,7 +1097,7 @@ SetUpMoveScreenBG:
 	farcall ClearSpriteAnims2
 	ld a, [wCurPartyMon]
 	ld e, a
-	ld d, $0
+	ld d, 0
 	ld hl, wPartySpecies
 	add hl, de
 	ld a, [hl]
@@ -1145,7 +1145,7 @@ SetUpMoveList:
 	ld bc, NUM_MOVES
 	call CopyBytes
 	ld a, SCREEN_WIDTH * 2
-	ld [wBuffer1], a
+	ld [wListMovesLineSpacing], a
 	hlcoord 2, 3
 	predef ListMoves
 	hlcoord 10, 4
@@ -1168,7 +1168,7 @@ PrepareToPlaceMoveData:
 	ld a, [wMenuCursorY]
 	dec a
 	ld c, a
-	ld b, $0
+	ld b, 0
 	add hl, bc
 	ld a, [hl]
 	ld [wCurSpecies], a

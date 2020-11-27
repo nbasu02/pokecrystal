@@ -429,7 +429,7 @@ Function100320:
 	farcall Mobile_ReloadMapPart
 	ret
 
-Function100327:
+Function100327: ; unreferenced
 	farcall HDMATransferTilemapToWRAMBank3
 	ret
 
@@ -523,7 +523,7 @@ Function10039c:
 	call FarCopyWRAM
 	ret
 
-Function1003ab:
+Function1003ab: ; unreferenced
 	ld hl, w3_d000
 	ld de, wcc60
 	ld bc, $54
@@ -1870,7 +1870,7 @@ Mobile_MoveSelectionScreen:
 	ld bc, NUM_MOVES
 	call CopyBytes
 	ld a, SCREEN_WIDTH * 2
-	ld [wBuffer1], a
+	ld [wListMovesLineSpacing], a
 	hlcoord 2, 10
 	predef ListMoves
 	ret
@@ -2217,29 +2217,29 @@ Function100ed4:
 Function100edf:
 	ld hl, Unknown_100fc0
 	ld c, 1
-	jr asm_100f02
+	jr Function100f02
 
 Function100ee6:
 	ld hl, Unknown_100fc0
 	ld c, 2
-	jr asm_100f02
+	jr Function100f02
 
 Function100eed:
 	ld hl, Unknown_100feb
 	ld c, 1
-	jr asm_100f02
+	jr Function100f02
 
 Function100ef4:
 	ld hl, Unknown_100ff3
 	ld c, 1
-	jr asm_100f02
+	jr Function100f02
 
-Function100efb:
+Function100efb: ; unreferenced
 	ld hl, Unknown_10102c
 	ld c, 1
-	jr asm_100f02
+	jr Function100f02
 
-asm_100f02:
+Function100f02:
 	ld a, c
 	ld [wStringBuffer2], a
 	; someting that was previously stored in de gets backed up to here
@@ -2660,8 +2660,8 @@ Function1011f1:
 	call CloseSRAM
 	ld hl, wdc41
 	res 4, [hl]
-	ld hl, wGameTimerPause
-	bit GAMETIMERPAUSE_MOBILE_7_F, [hl]
+	ld hl, wGameTimerPaused
+	bit GAME_TIMER_MOBILE_F, [hl]
 	jr z, .skip
 	ld hl, wdc41
 	set 4, [hl]
@@ -4425,15 +4425,15 @@ Function101e98:
 	call ClearSprites
 	farcall Function8adb3
 	ret c
-	ld hl, wGameTimerPause
-	set GAMETIMERPAUSE_MOBILE_7_F, [hl]
+	ld hl, wGameTimerPaused
+	set GAME_TIMER_MOBILE_F, [hl]
 	ld hl, wdc41
 	set 4, [hl]
 	ret
 
 Function101ead:
-	ld hl, wGameTimerPause
-	bit GAMETIMERPAUSE_MOBILE_7_F, [hl]
+	ld hl, wGameTimerPaused
+	bit GAME_TIMER_MOBILE_F, [hl]
 	jr nz, .asm_101ec8
 	ld hl, wdc41
 	bit 2, [hl]
@@ -4812,7 +4812,7 @@ Function1021e0:
 	call ExitMenu
 	ret
 
-UnknownText_0x1021ea:
+UnknownText_0x1021ea: ; unreferenced
 	text_far UnknownText_0x1bd201
 	text_end
 
@@ -4964,7 +4964,7 @@ Function1022d0:
 	ld a, 30
 	sub c
 	ld c, a
-	ld b, $03
+	ld b, 03
 	farcall AdvanceMobileInactivityTimerAndCheckExpired
 	jr c, .asm_1022f3
 	xor a
@@ -5169,7 +5169,7 @@ Function10246a:
 	ld [wcd49], a
 	ret
 
-Function102480:
+Function102480: ; unreferenced
 	ld c, $32
 	call DelayFrames
 	ld a, [wcd49]
@@ -5183,7 +5183,7 @@ Function10248d:
 	ld [wcd49], a
 	ret
 
-Function102496:
+Function102496: ; unreferenced
 	ld hl, wcd4e
 	dec [hl]
 	ret nz
@@ -5276,7 +5276,7 @@ Function10250c:
 	call Function102b9c
 	call Function102bdc
 	jr c, .asm_10256d
-	farcall Functionfb5dd
+	farcall CheckAnyOtherAliveMonsForTrade
 	jr c, .asm_102568
 	ld hl, wcd4b
 	set 1, [hl]
@@ -6443,7 +6443,7 @@ Function102dd3:
 	ld hl, vTiles0
 	lb bc, BANK(MobileTradeLightsGFX), 4
 	call Get2bpp
-	farcall __LoadTradeScreenBorder
+	farcall __LoadTradeScreenBorderGFX
 	call EnableLCD
 	ret
 
@@ -6496,7 +6496,7 @@ Function102e3e:
 	db "CANCEL@"
 
 Function102e4f:
-	farcall Function16d42e
+	farcall LoadMobileTradeBorderTilemap
 	farcall _InitMG_Mobile_LinkTradePalMap
 	ld de, wPlayerName
 	hlcoord 4, 0
@@ -6904,7 +6904,7 @@ Function103302:
 Function103309:
 	xor a
 	ldh [hBGMapMode], a
-	ld hl, wBuffer1
+	ld hl, wd1ea
 	ld bc, 10
 	xor a
 	call ByteFill
@@ -6912,7 +6912,7 @@ Function103309:
 	call OpenSRAM
 	ld a, [wdc41]
 	ld [s4_a60c], a
-	ld [wBuffer1], a
+	ld [wd1ea], a
 	call CloseSRAM
 	call Function1035c6
 	ld a, [hli]
@@ -6954,15 +6954,15 @@ Function103362:
 	call Function10339a
 	call Function10342c
 	farcall HDMATransferTilemapToWRAMBank3
-	ld a, [wBuffer2]
+	ld a, [wd1eb]
 	bit 7, a
 	jr z, .asm_103362
-	ld hl, wBuffer2
+	ld hl, wd1eb
 	bit 6, [hl]
 	jr z, .asm_103398
 	ld a, BANK(s4_a60c)
 	call OpenSRAM
-	ld a, [wBuffer1]
+	ld a, [wd1ea]
 	ld [s4_a60c], a
 	ld [wdc41], a
 	call CloseSRAM
@@ -7028,7 +7028,7 @@ Function1033af:
 
 .b
 	call PlayClickSFX
-	ld hl, wBuffer2
+	ld hl, wd1eb
 	set 7, [hl]
 	ret
 
@@ -7038,9 +7038,9 @@ Function1033af:
 	jr nz, .a_return
 	ld de, SFX_TRANSACTION
 	call PlaySFX
-	ld hl, wBuffer2
+	ld hl, wd1eb
 	set 7, [hl]
-	ld hl, wBuffer2
+	ld hl, wd1eb
 	set 6, [hl]
 	ret
 
@@ -7054,9 +7054,9 @@ Function1033af:
 	call PlaySFX
 	ld bc, 8
 	call Function10350f
-	ld a, [wBuffer1]
+	ld a, [wd1ea]
 	xor e
-	ld [wBuffer1], a
+	ld [wd1ea], a
 	ret
 
 Function10342c:
@@ -7092,7 +7092,7 @@ Function10343c:
 	call Function103487
 	ld bc, 8
 	call Function10350f
-	ld a, [wBuffer1]
+	ld a, [wd1ea]
 	and e
 	ld bc, 2
 	jr z, .asm_10347d

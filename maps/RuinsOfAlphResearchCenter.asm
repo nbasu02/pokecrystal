@@ -29,7 +29,7 @@ RuinsOfAlphResearchCenter_MapScripts:
 	endcallback
 
 .GetUnownDexScript:
-	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, MovementData_0x5926f
+	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesComputerMovement
 	playsound SFX_BOOT_PC
 	pause 60
 	playsound SFX_SWITCH_POKEMON
@@ -43,7 +43,7 @@ RuinsOfAlphResearchCenter_MapScripts:
 	writetext RuinsOfAlphResearchCenterModifiedDexText
 	waitbutton
 	closetext
-	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, MovementData_0x59274
+	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesPlayerMovement
 	opentext
 	writetext RuinsOfAlphResearchCenterDexUpgradedText
 	playsound SFX_ITEM
@@ -52,7 +52,7 @@ RuinsOfAlphResearchCenter_MapScripts:
 	writetext RuinsOfAlphResearchCenterScientist3Text
 	waitbutton
 	closetext
-	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, MovementData_0x59276
+	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterLeavesPlayerMovement
 	setscene SCENE_RUINSOFALPHRESEARCHCENTER_NOTHING
 	special RestartMapMusic
 	end
@@ -167,25 +167,24 @@ RuinsOfAlphResearchCenterPrinter:
 	closetext
 	end
 
-RuinsOfAlphResearchCenterPhoto:
-; unreferenced
+RuinsOfAlphResearchCenterPhoto: ; unreferenced
 	jumptext RuinsOfAlphResearchCenterProfSilktreePhotoText
 
 RuinsOfAlphResearchCenterBookshelf:
 	jumptext RuinsOfAlphResearchCenterAcademicBooksText
 
-MovementData_0x5926f:
+RuinsOfAlphResearchCenterApproachesComputerMovement:
 	step UP
 	step UP
 	step LEFT
 	turn_head UP
 	step_end
 
-MovementData_0x59274:
+RuinsOfAlphResearchCenterApproachesPlayerMovement:
 	step DOWN
 	step_end
 
-MovementData_0x59276:
+RuinsOfAlphResearchCenterLeavesPlayerMovement:
 	step UP
 	step_end
 
@@ -307,8 +306,7 @@ RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
 	cont "kinds of them…"
 	done
 
-RuinsOfAlphResearchCenterUnusedText1:
-; unused
+RuinsOfAlphResearchCenterUnusedText1: ; unreferenced
 	text "We think something"
 	line "caused the cryptic"
 
@@ -319,8 +317,7 @@ RuinsOfAlphResearchCenterUnusedText1:
 	line "studies on that."
 	done
 
-RuinsOfAlphResearchCenterUnusedText2:
-; unused
+RuinsOfAlphResearchCenterUnusedText2: ; unreferenced
 	text "According to my"
 	line "research…"
 
@@ -374,7 +371,6 @@ RuinsOfAlphResearchCenterUnownPrinterText:
 	done
 
 RuinsOfAlphResearchCenterProfSilktreePhotoText:
-; unused
 	text "It's a photo of"
 	line "the RESEARCH"
 

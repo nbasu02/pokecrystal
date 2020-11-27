@@ -24,7 +24,7 @@ VioletPokecenter1F_ElmsAideScript:
 	iffalse .RefusedEgg
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
-	giveegg TOGEPI, 5
+	giveegg TOGEPI, EGG_LEVEL
 	getstring STRING_BUFFER_4, .eggname
 	scall .AideGivesEgg
 	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
@@ -157,8 +157,7 @@ VioletPokecenterElmsAideAskEggText:
 	line "take the EGG?"
 	done
 
-; unused
-VioletPokecenterFarawayLinkText:
+VioletPokecenterFarawayLinkText: ; unreferenced
 	text "I've been thinking"
 	line "it'd be great to"
 
@@ -169,8 +168,7 @@ VioletPokecenterFarawayLinkText:
 	line "far away."
 	done
 
-; unused
-VioletPokecenterMobileAdapterText:
+VioletPokecenterMobileAdapterText: ; unreferenced
 	text "I just battled a"
 	line "friend in CIANWOOD"
 	cont "over a link."

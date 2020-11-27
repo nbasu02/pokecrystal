@@ -327,7 +327,7 @@ EvolveAfterBattle_MasterLoop:
 	inc hl
 	jp .loop
 
-; unused
+.UnusedReturnToMap: ; unreferenced
 	pop hl
 .ReturnToMap:
 	pop de
@@ -509,10 +509,10 @@ FillMoves:
 	ld a, [wCurPartyLevel]
 	cp b
 	jp c, .done
-	ld a, [wEvolutionOldSpecies]
+	ld a, [wSkipMovesBeforeLevelUp]
 	and a
 	jr z, .CheckMove
-	ld a, [wd002]
+	ld a, [wPrevPartyLevel]
 	cp b
 	jr nc, .GetMove
 

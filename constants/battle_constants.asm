@@ -10,10 +10,6 @@ NUM_MOVES EQU 4
 BASE_STAT_LEVEL EQU 7
 MAX_STAT_LEVEL EQU 13
 
-; damage limits before type effectiveness
-MIN_NEUTRAL_DAMAGE EQU 2
-MAX_NEUTRAL_DAMAGE EQU 999
-
 ; turns that sleep lasts
 REST_SLEEP_TURNS EQU 2
 TREEMON_SLEEP_TURNS EQU 7
@@ -27,6 +23,9 @@ MORE_EFFECTIVE     EQU 15
 EFFECTIVE          EQU 10
 NOT_VERY_EFFECTIVE EQU 05
 NO_EFFECT          EQU 00
+
+; enemy AI behavior
+BASE_AI_SWITCH_SCORE EQU 10
 
 ; wPlayerStatLevels and wEnemyStatLevels indexes (see wram.asm)
 ; GetStatName arguments (see data/battle/stat_names.asm)

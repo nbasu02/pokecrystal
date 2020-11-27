@@ -25,76 +25,76 @@ OverworldLoop::
 
 DisableEvents:
 	xor a
-	ld [wScriptFlags3], a
+	ld [wScriptFlags2], a
 	ret
 
 EnableEvents::
 	ld a, $ff
-	ld [wScriptFlags3], a
+	ld [wScriptFlags2], a
 	ret
 
-CheckBit5_ScriptFlags3:
-	ld hl, wScriptFlags3
+CheckBit5_ScriptFlags2:
+	ld hl, wScriptFlags2
 	bit 5, [hl]
 	ret
 
-DisableWarpsConnxns:
-	ld hl, wScriptFlags3
+DisableWarpsConnxns: ; unreferenced
+	ld hl, wScriptFlags2
 	res 2, [hl]
 	ret
 
-DisableCoordEvents:
-	ld hl, wScriptFlags3
+DisableCoordEvents: ; unreferenced
+	ld hl, wScriptFlags2
 	res 1, [hl]
 	ret
 
-DisableStepCount:
-	ld hl, wScriptFlags3
+DisableStepCount: ; unreferenced
+	ld hl, wScriptFlags2
 	res 0, [hl]
 	ret
 
-DisableWildEncounters:
-	ld hl, wScriptFlags3
+DisableWildEncounters: ; unreferenced
+	ld hl, wScriptFlags2
 	res 4, [hl]
 	ret
 
-EnableWarpsConnxns:
-	ld hl, wScriptFlags3
+EnableWarpsConnxns: ; unreferenced
+	ld hl, wScriptFlags2
 	set 2, [hl]
 	ret
 
-EnableCoordEvents:
-	ld hl, wScriptFlags3
+EnableCoordEvents: ; unreferenced
+	ld hl, wScriptFlags2
 	set 1, [hl]
 	ret
 
-EnableStepCount:
-	ld hl, wScriptFlags3
+EnableStepCount: ; unreferenced
+	ld hl, wScriptFlags2
 	set 0, [hl]
 	ret
 
 EnableWildEncounters:
-	ld hl, wScriptFlags3
+	ld hl, wScriptFlags2
 	set 4, [hl]
 	ret
 
 CheckWarpConnxnScriptFlag:
-	ld hl, wScriptFlags3
+	ld hl, wScriptFlags2
 	bit 2, [hl]
 	ret
 
 CheckCoordEventScriptFlag:
-	ld hl, wScriptFlags3
+	ld hl, wScriptFlags2
 	bit 1, [hl]
 	ret
 
 CheckStepCountScriptFlag:
-	ld hl, wScriptFlags3
+	ld hl, wScriptFlags2
 	bit 0, [hl]
 	ret
 
 CheckWildEncountersScriptFlag:
-	ld hl, wScriptFlags3
+	ld hl, wScriptFlags2
 	bit 4, [hl]
 	ret
 
@@ -135,7 +135,7 @@ EnterMap:
 	ld [wMapStatus], a
 	ret
 
-UnusedWait30Frames:
+UnusedWait30Frames: ; unreferenced
 	ld c, 30
 	call DelayFrames
 	ret
@@ -204,7 +204,7 @@ HandleMapTimeAndJoypad:
 	ret
 
 HandleMapObjects:
-	farcall HandleNPCStep ; engine/map_objects.asm
+	farcall HandleNPCStep
 	farcall _HandlePlayerStep
 	call _CheckObjectEnteringVisibleRange
 	ret
@@ -248,7 +248,7 @@ PlayerEvents:
 	and a
 	ret nz
 
-	call Dummy_CheckScriptFlags3Bit5 ; This is a waste of time
+	call Dummy_CheckScriptFlags2Bit5 ; This is a waste of time
 
 	call CheckTrainerBattle_GetPlayerEvent
 	jr c, .ok
@@ -385,10 +385,9 @@ SetUpFiveStepWildEncounterCooldown:
 	ld [wWildEncounterCooldown], a
 	ret
 
-ret_968d7:
-	ret
-
 SetMinTwoStepWildEncounterCooldown:
+; dummied out
+	ret
 	ld a, [wWildEncounterCooldown]
 	cp 2
 	ret nc
@@ -396,10 +395,10 @@ SetMinTwoStepWildEncounterCooldown:
 	ld [wWildEncounterCooldown], a
 	ret
 
-Dummy_CheckScriptFlags3Bit5:
-	call CheckBit5_ScriptFlags3
+Dummy_CheckScriptFlags2Bit5:
+	call CheckBit5_ScriptFlags2
 	ret z
-	call Function2f3e
+	call SetXYCompareFlags
 	ret
 
 RunSceneScript:
@@ -481,8 +480,8 @@ CheckTimeEvents:
 	scf
 	ret
 
-.unused
-	ld a, 8
+.unused ; unreferenced
+	ld a, $8 ; ???
 	scf
 	ret
 
@@ -776,7 +775,7 @@ PlayerMovement:
 	ret
 
 .jump:
-	call ret_968d7 ; mobile
+	call SetMinTwoStepWildEncounterCooldown
 	xor a
 	ld c, a
 	ret
@@ -813,7 +812,7 @@ PlayerMovement:
 CheckMenuOW:
 	xor a
 	ldh [hMenuReturn], a
-	ldh [hUnusedFFA1], a
+	ldh [hUnusedByte], a
 	ldh a, [hJoyPressed]
 
 	bit SELECT_F, a
@@ -901,7 +900,7 @@ CountStep:
 	; Increase the EXP of (both) DayCare Pokemon by 1.
 	farcall DayCareStep
 
-	; Every four steps, deal damage to all Poisoned Pokemon
+	; Every 4 steps, deal damage to all poisoned Pokemon.
 	ld hl, wPoisonStepCount
 	ld a, [hl]
 	cp 4
@@ -975,7 +974,7 @@ DoPlayerEvent:
 
 PlayerEventScriptPointers:
 ; entries correspond to PLAYEREVENT_* constants
-	dba Invalid_0x96c2d         ; PLAYEREVENT_NONE
+	dba InvalidEventScript      ; PLAYEREVENT_NONE
 	dba SeenByTrainerScript     ; PLAYEREVENT_SEENBYTRAINER
 	dba TalkToTrainerScript     ; PLAYEREVENT_TALKTOTRAINER
 	dba FindItemInBallScript    ; PLAYEREVENT_ITEMBALL
@@ -985,12 +984,12 @@ PlayerEventScriptPointers:
 	dba OverworldWhiteoutScript ; PLAYEREVENT_WHITEOUT
 	dba HatchEggScript          ; PLAYEREVENT_HATCH
 	dba ChangeDirectionScript   ; PLAYEREVENT_JOYCHANGEFACING
-	dba Invalid_0x96c2d         ; (NUM_PLAYER_EVENTS)
+	dba InvalidEventScript      ; (NUM_PLAYER_EVENTS)
 
-Invalid_0x96c2d:
+InvalidEventScript:
 	end
 
-; unused
+UnusedPlayerEventScript: ; unreferenced
 	end
 
 HatchEggScript:
@@ -1005,12 +1004,12 @@ WarpToNewMapScript:
 FallIntoMapScript:
 	newloadmap MAPSETUP_FALL
 	playsound SFX_KINESIS
-	applymovement PLAYER, MovementData_0x96c48
+	applymovement PLAYER, .SkyfallMovement
 	playsound SFX_STRENGTH
 	scall LandAfterPitfallScript
 	end
 
-MovementData_0x96c48:
+.SkyfallMovement:
 	skyfall
 	step_end
 
@@ -1018,10 +1017,10 @@ LandAfterPitfallScript:
 	earthquake 16
 	end
 
-EdgeWarpScript: ; 4
+EdgeWarpScript:
 	reloadend MAPSETUP_CONNECTION
 
-ChangeDirectionScript: ; 9
+ChangeDirectionScript:
 	deactivatefacing 3
 	callasm EnableWildEncounters
 	end
