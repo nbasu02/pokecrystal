@@ -1569,17 +1569,6 @@ GruntMGroup:
 	db 62, MURKROW
 	db -1 ; end
 
-	; GRUNTM (26)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 15, RATTATA
-	db 15, RATTATA
-	db -1 ; end
-
-	; GRUNTM (27)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 22, ZUBAT
-	db -1 ; end
-
 	; GRUNTM (28)
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 50, RATICATE
@@ -1592,13 +1581,6 @@ GruntMGroup:
 	db 16, RATTATA
 	db 16, DROWZEE
 	db 17, SLOWPOKE
-	db -1 ; end
-
-	; GRUNTM (30)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 25, GOLBAT
-	db 25, GOLBAT
-	db 30, ARBOK
 	db -1 ; end
 
 	; GRUNTM (31)
