@@ -1,0 +1,38 @@
+Major changes:
+
+- Dark and Dragon are now physical types, Poison and Ghost are now special types
+- Many changes to pokemon types, stats, movesets, and encounter locations (see accompanying csv files)
+- Goldenrod game corner offers Voltorb, Dratini, and Porygon
+- All trade evolutions are changed to level up, or using their corresponding trade item
+- Can evolve Eevee to Umbreon and Espeon with the Moon and Sun Stones
+- Overall difficulty increased, especially boss battles
+- Level curve updated, where trainers now get stronger throughout the course of the game instead of stagnating for long periods of time
+- Some updates made Ecruteak include adding a small pond near the west exit and adding a barrier after the entrance to Mahogany.  This requires the player to use Surf to leave Ecruteak, and Fly to enter Mahogany
+- Only Dark Cave and Rock Tunnel require Flash (notably, Mt Silver does not, so you don't need to sacrifice a move slot to battle red)
+- GS Ball found in Victory Road
+- HM Moves can be forgotten just like any other move.  The original idea of making HM moves not removable is to prevent softlocks in Gen 1, but in Gen 2 this is not necessary given you can always have HMs in your bag.  You can still deposit HMs and so may softlock yourself, but unlike Gen 1 there is never a need to clear your inventory
+- The Elite 4 and Champion now have rematch teams after beating Blue
+- Can buy all evolutionary stones and a few more TMs in Goldenrod
+- Can buy all trade evolution items in other pokemarts in Johto
+- Can buy all Johto Gym TMs at the Indigo Plateau
+- Can buy all Kanto Gym TMs in Celadon
+- All items that boost type damage increased from 10% to 20%, and are found in the Celadon Dept Store
+- Revives and Max Revives cannot be used in-battle
+
+Minor Changes:
+
+- Nurses automatically heal your pokemon when talked to
+- Both Dragon Scale and Dragon Fang boost Dragon type attack (in the original, Dragon Scale had the boost effect instead of Dragon Fang)
+- The Lapras that appears on Fridays is always shiny
+- One of the Rocket HQ Electrodes is always shiny
+
+Move changes not documented in moves.csv:
+- Moonlight, Synthesis, and Morning Sun always recover 1/2 of maximum health in clear weather regardless of time of day
+- Cut and Drill Peck now have an incresed critical hit ratio
+- using Hidden Power (should) have a base power of 70 regardless of DVs
+
+Bug Fixes:
+
+- bugs surrounding Moon Ball not working, Fast Ball only working on three pokemon, and Love Ball doing the opposite of intended are fixed
+- fix bug where in the original, burn, paralysis, and poison do not affect catch rate
+- fix Light Ball/Thick Club overflow glitch
