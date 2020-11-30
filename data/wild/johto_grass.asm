@@ -576,17 +576,17 @@ JohtoGrassWildMons:
 	db 26, GRAVELER
 	db 26, RHYHORN
 	db 26, GOLBAT
+	db 27, RHYHORN
 	db 25, PUPITAR
 	db 26, PUPITAR
-	db 27, RHYHORN
 	; day
 	db 26, MACHOKE
 	db 26, GRAVELER
 	db 26, RHYHORN
 	db 26, GOLBAT
+	db 27, RHYHORN
 	db 25, PUPITAR
 	db 26, PUPITAR
-	db 27, RHYHORN
 	; nite
 	db 26, MACHOKE
 	db 26, MARILL
@@ -603,25 +603,25 @@ JohtoGrassWildMons:
 	db 26, GRAVELER
 	db 26, RHYHORN
 	db 26, GOLBAT
+	db 27, RHYHORN
 	db 25, PUPITAR
 	db 26, PUPITAR
-	db 27, RHYHORN
 	; day
 	db 26, MACHOKE
 	db 26, GRAVELER
 	db 26, RHYHORN
 	db 26, GOLBAT
+	db 27, RHYHORN
 	db 25, PUPITAR
 	db 26, PUPITAR
-	db 27, RHYHORN
 	; nite
 	db 26, MACHOKE
 	db 26, MARILL
 	db 26, GOLBAT
 	db 26, RHYHORN
+	db 25, SNEASEL
+	db 25, SNEASEL
 	db 25, PUPITAR
-	db 25, SNEASEL
-	db 25, SNEASEL
 
 	map_id MOUNT_MORTAR_2F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -653,29 +653,29 @@ JohtoGrassWildMons:
 	map_id MOUNT_MORTAR_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, ZUBAT
-	db 17, ZUBAT
-	db 17, GOLBAT
-	db 16, MACHOP
-	db 16, GEODUDE
-	db 18, RATICATE
-	db 18, RATICATE
+	db 26, MACHOKE
+	db 26, GRAVELER
+	db 26, RHYHORN
+	db 26, GOLBAT
+	db 27, RHYHORN
+	db 25, PUPITAR
+	db 26, PUPITAR
 	; day
-	db 15, ZUBAT
-	db 17, ZUBAT
-	db 17, GOLBAT
-	db 16, MACHOP
-	db 16, GEODUDE
-	db 18, RATICATE
-	db 18, RATICATE
+	db 26, MACHOKE
+	db 26, GRAVELER
+	db 26, RHYHORN
+	db 26, GOLBAT
+	db 27, RHYHORN
+	db 25, PUPITAR
+	db 26, PUPITAR
 	; nite
-	db 15, ZUBAT
-	db 17, ZUBAT
-	db 17, GOLBAT
-	db 16, MARILL
-	db 16, GEODUDE
-	db 18, RATICATE
-	db 18, RATICATE
+	db 26, MACHOKE
+	db 26, MARILL
+	db 26, GOLBAT
+	db 26, RHYHORN
+	db 25, SNEASEL
+	db 25, SNEASEL
+	db 25, PUPITAR
 
 	map_id ICE_PATH_1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -1511,35 +1511,35 @@ JohtoGrassWildMons:
 	db 26, GOLBAT
 	db 25, MURKROW
 	db 25, VENOMOTH
-	db 26, VENOMOTH
+	db 26, HOUNDOUR
 	db 27, VENOMOTH
 
 	map_id ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 40, FURRET
-	db 40, PIDGEOT
-	db 40, RAPIDASH
-	db 40, AMPHAROS
-	db 40, SKARMORY
-	db 40, HERACROSS
-	db 42, HERACROSS
+	db 38, FURRET
+	db 38, PIDGEOT
+	db 38, RAPIDASH
+	db 38, AMPHAROS
+	db 38, SKARMORY
+	db 38, HERACROSS
+	db 39, PIDGEOT
 	; day
-	db 40, FURRET
-	db 40, PIDGEOT
-	db 40, RAPIDASH
-	db 40, AMPHAROS
-	db 40, SKARMORY
-	db 40, HERACROSS
-	db 42, HERACROSS
+	db 38, FURRET
+	db 38, PIDGEOT
+	db 38, RAPIDASH
+	db 38, AMPHAROS
+	db 38, SKARMORY
+	db 38, HERACROSS
+	db 39, PIDGEOT
 	; nite
-	db 40, RATICATE
-	db 40, MURKROW
-	db 40, HOUNDOOM
-	db 40, AMPHAROS
-	db 40, SKARMORY
-	db 40, HERACROSS
-	db 42, HERACROSS
+	db 38, RATICATE
+	db 38, MURKROW
+	db 38, HOUNDOOM
+	db 38, AMPHAROS
+	db 38, SKARMORY
+	db 38, HERACROSS
+	db 39, PIDGEOT
 
 	map_id ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

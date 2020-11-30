@@ -1,32 +1,32 @@
 TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	;  atk,def,spd,spc
-	dn  9, 10,  7,  7 ; FALKNER
-	dn  8,  8,  8,  8 ; WHITNEY
-	dn  9,  8,  8,  8 ; BUGSY
-	dn  9,  8,  8,  8 ; MORTY
-	dn  9,  8,  8,  8 ; PRYCE
-	dn  9,  8,  8,  8 ; JASMINE
-	dn  9,  8,  8,  8 ; CHUCK
+	dn 10, 10,  7,  7 ; FALKNER
+	dn 15, 15,  8,  8 ; WHITNEY
+	dn 15, 11, 15,  8 ; BUGSY
+	dn  9, 10, 14, 15 ; MORTY
+	dn 13, 12, 11, 15 ; PRYCE
+	dn 11, 15,  5, 15 ; JASMINE
+	dn 15, 15, 13,  8 ; CHUCK
 	dn  7, 12, 13, 13 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn  9,  8,  8,  8 ; POKEMON_PROF
-	dn 13, 12, 13, 13 ; WILL
+	dn 13, 12, 13, 15 ; WILL
 	dn 13, 12, 13, 13 ; CAL
-	dn 13, 12, 13, 13 ; BRUNO
+	dn 15, 12, 13, 13 ; BRUNO
 	dn  7, 15, 13, 15 ; KAREN
-	dn 13, 12, 13, 13 ; KOGA
+	dn 13, 12, 15, 13 ; KOGA
 	dn 15, 15, 15, 15 ; CHAMPION
-	dn  9,  8,  8,  8 ; BROCK
-	dn  7,  8,  8,  8 ; MISTY
+	dn 15, 15, 13,  8 ; BROCK
+	dn  7, 14, 15, 15 ; MISTY
 	dn 14, 14, 15, 15 ; LT_SURGE
 	dn  9,  8,  8,  8 ; SCIENTIST
-	dn  7,  8,  8,  8 ; ERIKA
+	dn 13, 15,  8, 15 ; ERIKA
 	dn  9,  8,  8,  8 ; YOUNGSTER
 	dn  9,  8,  8,  8 ; SCHOOLBOY
 	dn  9,  8,  8,  8 ; BIRD_KEEPER
 	dn  5,  8,  8,  8 ; LASS
-	dn  9,  8,  8,  8 ; JANINE
+	dn 15, 15, 15, 11 ; JANINE
 	dn 13,  8, 12,  8 ; COOLTRAINERM
 	dn  7, 12, 12,  8 ; COOLTRAINERF
 	dn  6,  9, 12,  8 ; BEAUTY
@@ -35,27 +35,27 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; GENTLEMAN
 	dn  9,  8,  8,  8 ; SKIER
 	dn  6,  8,  8,  8 ; TEACHER
-	dn  7, 13,  8,  7 ; SABRINA
+	dn  7, 13, 15, 15 ; SABRINA
 	dn  9,  8,  8,  8 ; BUG_CATCHER
 	dn  9,  8,  8,  8 ; FISHER
 	dn  9,  8,  8,  8 ; SWIMMERM
 	dn  7,  8,  8,  8 ; SWIMMERF
 	dn  9,  8,  8,  8 ; SAILOR
 	dn  9,  8,  8,  8 ; SUPER_NERD
-	dn  9,  8,  8,  8 ; RIVAL2
+	dn 15, 15, 15, 15 ; RIVAL2
 	dn  9,  8,  8,  8 ; GUITARIST
 	dn 10,  8,  8,  8 ; HIKER
 	dn  9,  8,  8,  8 ; BIKER
-	dn  9,  8,  8,  8 ; BLAINE
+	dn 11, 14, 14, 15 ; BLAINE
 	dn  9,  8,  8,  8 ; BURGLAR
 	dn  9,  8,  8,  8 ; FIREBREATHER
 	dn  9,  8,  8,  8 ; JUGGLER
-	dn  9,  8,  8,  8 ; BLACKBELT_T
-	dn 13,  8, 10,  8 ; EXECUTIVEM
+	dn 15,  8,  8,  8 ; BLACKBELT_T
+	dn 15,  8, 14, 13 ; EXECUTIVEM
 	dn  9,  8,  8,  8 ; PSYCHIC_T
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER
-	dn  7, 14, 10,  8 ; EXECUTIVEF
+	dn  7, 14, 14, 15 ; EXECUTIVEF
 	dn  9,  8,  8,  8 ; SAGE
 	dn  7,  8,  8,  8 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
@@ -67,4 +67,4 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; BLUE
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
-	dn  9,  8,  8,  8 ; MYSTICALMAN
+	dn 13, 13, 13, 13 ; MYSTICALMAN

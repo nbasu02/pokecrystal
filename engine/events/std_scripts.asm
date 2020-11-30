@@ -61,13 +61,14 @@ PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
 
 	opentext
+	; skip all text
+	sjump .ok
 	checktime MORN
 	iftrue .morn
 	checktime DAY
 	iftrue .day
 	checktime NITE
 	iftrue .nite
-	sjump .ok
 
 .morn
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
@@ -106,9 +107,10 @@ PokecenterNurseScript:
 	; only do this once
 	clearevent EVENT_WELCOMED_TO_POKECOM_CENTER
 
-	farwritetext NurseAskHealText
-	yesorno
-	iffalse .done
+	; skip prompt
+	; farwritetext NurseAskHealText
+	; yesorno
+	; iffalse .done
 
 	farwritetext NurseTakePokemonText
 	pause 20
@@ -132,11 +134,11 @@ PokecenterNurseScript:
 	iftrue .pokerus
 .no
 
-	farwritetext NurseReturnPokemonText
+	; farwritetext NurseReturnPokemonText
 	pause 20
 
 .done
-	farwritetext NurseGoodbyeText
+	; farwritetext NurseGoodbyeText
 
 	turnobject LAST_TALKED, UP
 	pause 10

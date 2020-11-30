@@ -142,7 +142,7 @@ JohtoWaterWildMons:
 
 	map_id ROUTE_40
 	db 6 percent ; encounter rate
-	db 25, KRABBY
+	db 25, TENTACOOL
 	db 25, SHELLDER
 	db 25, CORSOLA
 
@@ -196,14 +196,14 @@ JohtoWaterWildMons:
 
 	map_id CIANWOOD_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 30, REMORAID
+	db 30, SEADRA
+	db 30, STARYU
 
 	map_id OLIVINE_CITY
 	db 6 percent ; encounter rate
 	db 25, KRABBY
-	db 25, TENTACOOL
+	db 25, SHELLDER
 	db 25, CORSOLA
 
 	map_id ECRUTEAK_CITY
@@ -214,9 +214,9 @@ JohtoWaterWildMons:
 
 	map_id LAKE_OF_RAGE
 	db 6 percent ; encounter rate
+	db 35, GYARADOS
+	db 35, GYARADOS
 	db 40, GYARADOS
-	db 40, GYARADOS
-	db 45, GYARADOS
 
 	map_id BLACKTHORN_CITY
 	db 4 percent ; encounter rate

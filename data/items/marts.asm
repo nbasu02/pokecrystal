@@ -133,44 +133,48 @@ MartGoldenrod4F:
 	db -1 ; end
 
 MartGoldenrod5F1:
-	db 4 ; # items
+	db 5 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db TM_THIEF
+	db TM_DIG
 	db -1 ; end
 
 MartGoldenrod5F2:
-	db 5 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_THIEF
-	db TM_HEADBUTT
-	db -1 ; end
-
-MartGoldenrod5F3:
-	db 5 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_THIEF
-	db TM_ROCK_SMASH
-	db -1 ; end
-
-MartGoldenrod5F4:
 	db 6 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db TM_THIEF
+	db TM_DIG
+	db TM_HEADBUTT
+	db -1 ; end
+
+MartGoldenrod5F3:
+	db 6 ; # items
+	db TM_THUNDERPUNCH
+	db TM_FIRE_PUNCH
+	db TM_ICE_PUNCH
+	db TM_THIEF
+	db TM_DIG
+	db TM_ROCK_SMASH
+	db -1 ; end
+
+MartGoldenrod5F4:
+	db 7 ; # items
+	db TM_THUNDERPUNCH
+	db TM_FIRE_PUNCH
+	db TM_ICE_PUNCH
+	db TM_THIEF
+	db TM_DIG
 	db TM_HEADBUTT
 	db TM_ROCK_SMASH
 	db -1 ; end
 
 MartOlivine:
 	db 9 ; # items
-	db GREAT_BALL
+	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
 	db ANTIDOTE
@@ -206,7 +210,7 @@ MartMahogany1:
 MartMahogany2:
 	db 9 ; # items
 	db RAGECANDYBAR
-	db GREAT_BALL
+	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
 	db ANTIDOTE
@@ -218,12 +222,12 @@ MartMahogany2:
 
 MartBlackthorn:
 	db 9 ; # items
-	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
 	db MAX_POTION
 	db FULL_HEAL
 	db REVIVE
+	db SUPER_REPEL
 	db MAX_REPEL
 	db DRAGON_FANG
 	db DRAGON_SCALE
@@ -316,7 +320,7 @@ MartCeladon2F2:
 	db -1 ; end
 
 MartCeladon3F:
-	db 7 ; # items
+	db 8 ; # items
 	db TM_HIDDEN_POWER
 	db TM_SUNNY_DAY
 	db TM_PROTECT
@@ -324,6 +328,7 @@ MartCeladon3F:
 	db TM_SANDSTORM
 	db TM_TOXIC
 	db TM_GIGA_DRAIN
+	db TM_CURSE
 	db -1 ; end
 
 MartCeladon4F:
@@ -397,7 +402,7 @@ MartMtMoon:
 	db -1 ; end
 
 MartIndigoPlateau:
-	db 14 ; # items
+	db 15 ; # items
 	db ULTRA_BALL
 	db MAX_REPEL
 	db HYPER_POTION
@@ -408,6 +413,7 @@ MartIndigoPlateau:
 	db TM_MUD_SLAP
 	db TM_FURY_CUTTER
 	db TM_ATTRACT
+	db TM_SHADOW_BALL
 	db TM_DYNAMICPUNCH
 	db TM_IRON_TAIL
 	db TM_ICY_WIND

@@ -1,9 +1,9 @@
 	db LEDIAN ; 166
 
-	db  105,  75,  70,  80,  55, 110
+	db  105,  85,  70,  80,  55, 110
 	;   hp  atk  def  spd  sat  sdf
 
-	db BUG, FLYING ; type
+	db BUG, FIGHTING ; type
 	db 90 ; catch rate
 	db 134 ; base exp
 	db NO_ITEM, NO_ITEM ; items

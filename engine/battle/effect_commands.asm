@@ -2812,6 +2812,18 @@ SpeciesItemBoost:
 ; Double the stat
 	sla l
 	rl h
+
+	ld a, HIGH(MAX_STAT_VALUE)
+	cp h
+	jr c, .cap
+	ret nz
+	ld a, LOW(MAX_STAT_VALUE)
+	cp l
+	ret nc
+
+	.cap
+	ld hl, MAX_STAT_VALUE
+
 	ret
 
 EnemyAttackDamage:
@@ -6591,7 +6603,7 @@ BattleCommand_TimeBasedHealContinue:
 	ld a, [wTimeOfDay]
 	cp b
 	jr z, .Weather
-	dec c ; double
+	; dec c ; double
 
 .Weather:
 	ld a, [wBattleWeather]

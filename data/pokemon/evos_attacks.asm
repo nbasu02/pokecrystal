@@ -1643,7 +1643,7 @@ WeezingEvosAttacks:
 	db 0 ; no more level-up moves
 
 RhyhornEvosAttacks:
-	db EVOLVE_LEVEL, 42, RHYDON
+	db EVOLVE_LEVEL, 37, RHYDON
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, TAIL_WHIP
@@ -1719,9 +1719,10 @@ HorseaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 8, SMOKESCREEN
-	db 15, LEER
-	db 22, WATER_GUN
-	db 29, TWISTER
+	db 12, WATER_GUN
+	db 20, TWISTER
+	db 25, BUBBLEBEAM
+	db 31, RAIN_DANCE
 	db 36, AGILITY
 	db 43, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -1734,9 +1735,10 @@ SeadraEvosAttacks:
 	db 1, LEER
 	db 1, WATER_GUN
 	db 8, SMOKESCREEN
-	db 15, LEER
-	db 22, WATER_GUN
-	db 29, TWISTER
+	db 12, WATER_GUN
+	db 20, TWISTER
+	db 25, BUBBLEBEAM
+	db 31, RAIN_DANCE
 	db 40, AGILITY
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2434,12 +2436,13 @@ NoctowlEvosAttacks:
 LedybaEvosAttacks:
 	db EVOLVE_LEVEL, 18, LEDIAN
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, COMET_PUNCH
 	db 8, SUPERSONIC
+	db 11, MACH_PUNCH
 	db 15, PIN_MISSILE
 	db 22, LIGHT_SCREEN
 	db 22, REFLECT
-	db 22, SAFEGUARD
+	db 25, MEGA_PUNCH
 	db 29, BATON_PASS
 	db 36, LEECH_LIFE
 	db 39, SWORDS_DANCE
@@ -2449,13 +2452,14 @@ LedybaEvosAttacks:
 
 LedianEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, COMET_PUNCH
 	db 1, SUPERSONIC
 	db 8, SUPERSONIC
+	db 11, MACH_PUNCH
 	db 15, PIN_MISSILE
 	db 24, LIGHT_SCREEN
 	db 24, REFLECT
-	db 24, SAFEGUARD
+	db 28, MEGA_PUNCH
 	db 33, BATON_PASS
 	db 42, LEECH_LIFE
 	db 47, SWORDS_DANCE
@@ -2641,6 +2645,7 @@ MareepEvosAttacks:
 	db 20, SPARK
 	db 23, COTTON_SPORE
 	db 30, LIGHT_SCREEN
+	db 34, HEAL_BELL
 	db 37, THUNDER
 	db 0 ; no more level-up moves
 
@@ -2655,6 +2660,7 @@ FlaaffyEvosAttacks:
 	db 23, SPARK
 	db 27, COTTON_SPORE
 	db 36, LIGHT_SCREEN
+	db 40, HEAL_BELL
 	db 45, THUNDER
 	db 0 ; no more level-up moves
 
@@ -2671,6 +2677,7 @@ AmpharosEvosAttacks:
 	db 30, THUNDERPUNCH
 	db 37, DRAGONBREATH
 	db 42, LIGHT_SCREEN
+	db 47, HEAL_BELL
 	db 52, THUNDER
 	db 60, OUTRAGE
 	db 0 ; no more level-up moves
@@ -3342,11 +3349,12 @@ KingdraEvosAttacks:
 	db 1, LEER
 	db 1, WATER_GUN
 	db 8, SMOKESCREEN
-	db 15, LEER
-	db 22, WATER_GUN
-	db 29, TWISTER
-	db 35, DRAGONBREATH
+	db 12, WATER_GUN
+	db 20, TWISTER
+	db 25, BUBBLEBEAM
+	db 31, RAIN_DANCE
 	db 40, AGILITY
+	db 45, DRAGONBREATH
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
 

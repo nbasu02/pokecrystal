@@ -99,6 +99,12 @@ PlayBattleMusic:
 	jr z, .done
 	cp GRUNTF
 	jr z, .done
+	cp EXECUTIVEF
+	jr z, .done
+	cp EXECUTIVEM
+	jr z, .done
+	cp SCIENTIST
+	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
@@ -120,7 +126,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp RIVAL2_2_CHIKORITA ; Rival in Indigo Plateau
 	jr c, .done
-	ld de, MUSIC_CHAMPION_BATTLE
+	ld de, MUSIC_RIVAL_BATTLE
 	jr .done
 
 .othertrainer

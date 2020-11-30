@@ -84,7 +84,7 @@ RedGyarados:
 	pause 15
 	cry GYARADOS
 	closetext
-	loadwildmon GYARADOS, 50
+	loadwildmon GYARADOS, 40
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	ifequal LOSE, .NotBeaten
