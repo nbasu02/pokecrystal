@@ -3461,6 +3461,38 @@ CheckWhetherToAskSwitch:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .return_nc
+
+	; don't prompt player to switch if against a boss trainer
+	ld a, [wOtherTrainerClass]
+	cp EXECUTIVEF
+	jr z, .return_nc
+	cp EXECUTIVEM
+	jr z, .return_nc
+	cp RIVAL1
+	jr z, .return_nc
+	cp RIVAL2
+	jr z, .return_nc
+	cp MYSTICALMAN
+	jr z, .return_nc
+	cp SAGE
+	jr z, .sage
+	call IsGymLeader
+	jr c, .return_nc
+	jp .checkshift
+
+.sage
+	; also don't prompt if fighting against Sage Li or the Wise Trio
+	ld a, [wOtherTrainerID]
+	cp LI
+	jr z, .return_nc
+	cp GAKU
+	jr z, .return_nc
+	cp MASA
+	jr z, .return_nc
+	cp KOJI
+	jr z, .return_nc
+
+.checkshift
 	ld a, [wOptions]
 	bit BATTLE_SHIFT, a
 	jr nz, .return_nc

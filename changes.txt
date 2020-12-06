@@ -18,13 +18,16 @@ Major changes:
 - Can buy all Kanto Gym TMs in Celadon
 - All items that boost type damage increased from 10% to 20%, and are found in the Celadon Dept Store
 - Revives and Max Revives cannot be used in-battle
+- The player cannot switch pokemon after KOing an opponent's pokemon when fighting gym leaders, elite 4, the champion, rocket executives, the rival, or against Eusine, even if the options are set to Shift
+- Many pokemon changes are done in an attempt to not have some pokemon "outclass" others.  For example, Fearow is faster than Dodrio and Pigeot, Dodrio hits hardest, and Pigeot has the most bulk
 
 Minor Changes:
 
-- Nurses automatically heal your pokemon when talked to
+- Nurses automatically heal your pokemon when talked to - no need to keep mashing A
 - Both Dragon Scale and Dragon Fang boost Dragon type attack (in the original, Dragon Scale had the boost effect instead of Dragon Fang)
 - The Lapras that appears on Fridays is always shiny
 - One of the Rocket HQ Electrodes is always shiny
+- All Pokemaniacs have shiny pokemon
 
 Move changes not documented in moves.csv:
 - Moonlight, Synthesis, and Morning Sun always recover 1/2 of maximum health in clear weather regardless of time of day
@@ -36,3 +39,4 @@ Bug Fixes:
 - bugs surrounding Moon Ball not working, Fast Ball only working on three pokemon, and Love Ball doing the opposite of intended are fixed
 - fix bug where in the original, burn, paralysis, and poison do not affect catch rate
 - fix Light Ball/Thick Club overflow glitch
+- Fix bug(?) in which moves that increase your own stats after hitting an opponent (i.e. Metal Claw, Steel Wing, Ancientpower) previously skipped this stat increase if you KOed the opponent

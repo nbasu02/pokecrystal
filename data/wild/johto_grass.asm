@@ -334,24 +334,24 @@ JohtoGrassWildMons:
 	db 19, LEDIAN
 	db 19, PIDGEOTTO
 	db 20, BUTTERFREE
-	db 20, BEEDRILL
-	db 20, BEEDRILL
+	db 20, SCYTHER
+	db 20, PINSIR
 	; day
 	db 18, NIDORINO
 	db 18, NIDORINA
 	db 19, SUNKERN
 	db 19, PIDGEOTTO
 	db 20, BUTTERFREE
-	db 20, BEEDRILL
-	db 20, BEEDRILL
+	db 20, SCYTHER
+	db 20, PINSIR
 	; nite
 	db 18, NIDORINO
 	db 18, NIDORINA
 	db 19, SPINARAK
 	db 20, NOCTOWL
 	db 18, VENONAT
-	db 19, VENONAT
-	db 19, NOCTOWL
+	db 20, SCYTHER
+	db 20, PINSIR
 
 	map_id RUINS_OF_ALPH_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1277,26 +1277,26 @@ JohtoGrassWildMons:
 	db 8, EKANS
 	db 8, SANDSHREW
 	db 9, BELLSPROUT
-	db 10, PIDGEY
-	db 10, MAREEP
+	db 9, PIDGEY
+	db 9, MAREEP
 	db 9, HOPPIP
-	db 10, HOPPIP
+	db 9, HOPPIP
 	; day
 	db 8, EKANS
 	db 8, SANDSHREW
 	db 9, BELLSPROUT
-	db 10, PIDGEY
-	db 10, MAREEP
+	db 9, PIDGEY
+	db 9, MAREEP
 	db 9, HOPPIP
-	db 10, HOPPIP
+	db 9, HOPPIP
 	; nite
 	db 8, EKANS
 	db 8, SANDSHREW
 	db 9, BELLSPROUT
-	db 10, HOOTHOOT
-	db 10, MAREEP
+	db 9, HOOTHOOT
+	db 9, MAREEP
 	db 9, HOPPIP
-	db 10, HOPPIP
+	db 9, HOPPIP
 
 	map_id ROUTE_33
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1544,29 +1544,29 @@ JohtoGrassWildMons:
 	map_id ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 63, TANGELA
-	db 63, LICKITUNG
-	db 63, WEEPINBELL
-	db 66, WEEPINBELL
-	db 63, LICKITUNG
-	db 63, TANGELA
-	db 64, TANGELA
+	db 45, TANGELA
+	db 45, LICKITUNG
+	db 45, WEEPINBELL
+	db 46, WEEPINBELL
+	db 45, LICKITUNG
+	db 45, TANGELA
+	db 46, TANGELA
 	; day
-	db 63, TANGELA
-	db 63, LICKITUNG
-	db 63, WEEPINBELL
-	db 64, WEEPINBELL
-	db 63, LICKITUNG
-	db 63, TANGELA
-	db 64, TANGELA
+	db 45, TANGELA
+	db 45, LICKITUNG
+	db 45, WEEPINBELL
+	db 46, WEEPINBELL
+	db 45, LICKITUNG
+	db 45, TANGELA
+	db 46, TANGELA
 	; nite
-	db 63, TANGELA
-	db 63, POLIWHIRL
-	db 63, WEEPINBELL
-	db 64, WEEPINBELL
-	db 63, POLIWHIRL
-	db 63, TANGELA
-	db 64, TANGELA
+	db 45, TANGELA
+	db 45, POLIWHIRL
+	db 45, WEEPINBELL
+	db 46, WEEPINBELL
+	db 45, POLIWHIRL
+	db 45, TANGELA
+	db 46, TANGELA
 
 	map_id ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1602,24 +1602,24 @@ JohtoGrassWildMons:
 	db 5, SPEAROW
 	db 5, DIGLETT
 	db 5, PICHU
+	db 5, SUNKERN
 	db 5, ELEKID
-	db 5, MAGBY
 	db 5, MAGBY
 	; day
 	db 5, MANKEY
 	db 5, SPEAROW
 	db 5, DIGLETT
 	db 5, PICHU
+	db 5, SUNKERN
 	db 5, ELEKID
-	db 5, MAGBY
 	db 5, MAGBY
 	; nite
 	db 5, MANKEY
 	db 5, SPEAROW
 	db 5, DIGLETT
 	db 5, PICHU
+	db 5, SUNKERN
 	db 5, ELEKID
-	db 5, MAGBY
 	db 5, MAGBY
 
 	map_id SILVER_CAVE_OUTSIDE
