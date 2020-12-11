@@ -20,6 +20,7 @@ Major changes:
 - Revives and Max Revives cannot be used in-battle
 - The player cannot switch pokemon after KOing an opponent's pokemon when fighting gym leaders, elite 4, the champion, rocket executives, the rival, or against Eusine, even if the options are set to Shift
 - Many pokemon changes are done in an attempt to not have some pokemon "outclass" others.  For example, Fearow is faster than Dodrio and Pigeot, Dodrio hits hardest, and Pigeot has the most bulk
+- Sleep only lasts at most 3(!) turns
 
 Minor Changes:
 
@@ -28,11 +29,14 @@ Minor Changes:
 - The Lapras that appears on Fridays is always shiny
 - One of the Rocket HQ Electrodes is always shiny
 - All Pokemaniacs have shiny pokemon
+- Can buy as many moomoo milk as you want (previously could not buy if there's one in your pack)
+- Can now Dig/Escape Rope out of the goldenrod radio tower
 
 Move changes not documented in moves.csv:
 - Moonlight, Synthesis, and Morning Sun always recover 1/2 of maximum health in clear weather regardless of time of day
 - Cut and Drill Peck now have an incresed critical hit ratio
 - using Hidden Power (should) have a base power of 70 regardless of DVs
+- Sunny Day, Rain Dance, and Sandstorm now last 8 turns instead of 5
 
 Bug Fixes:
 

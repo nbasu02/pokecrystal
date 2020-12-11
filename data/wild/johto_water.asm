@@ -142,15 +142,15 @@ JohtoWaterWildMons:
 
 	map_id ROUTE_40
 	db 6 percent ; encounter rate
-	db 25, TENTACOOL
+	db 25, STARYU
 	db 25, SHELLDER
 	db 25, CORSOLA
 
 	map_id ROUTE_41
 	db 6 percent ; encounter rate
-	db 30, TENTACOOL
-	db 30, STARYU
-	db 30, MANTINE
+	db 25, TENTACOOL
+	db 25, SEEL
+	db 25, MANTINE
 
 	map_id ROUTE_42
 	db 4 percent ; encounter rate

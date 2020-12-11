@@ -133,41 +133,53 @@ MartGoldenrod4F:
 	db -1 ; end
 
 MartGoldenrod5F1:
-	db 5 ; # items
+	db 8 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db TM_THIEF
 	db TM_DIG
+	db TM_SUNNY_DAY
+	db TM_RAIN_DANCE
+	db TM_SANDSTORM
 	db -1 ; end
 
 MartGoldenrod5F2:
-	db 6 ; # items
+	db 9 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db TM_THIEF
 	db TM_DIG
+	db TM_SUNNY_DAY
+	db TM_RAIN_DANCE
+	db TM_SANDSTORM
 	db TM_HEADBUTT
 	db -1 ; end
 
 MartGoldenrod5F3:
-	db 6 ; # items
+	db 9 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db TM_THIEF
 	db TM_DIG
+	db TM_SUNNY_DAY
+	db TM_RAIN_DANCE
+	db TM_SANDSTORM
 	db TM_ROCK_SMASH
 	db -1 ; end
 
 MartGoldenrod5F4:
-	db 7 ; # items
+	db 10 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db TM_THIEF
 	db TM_DIG
+	db TM_SUNNY_DAY
+	db TM_RAIN_DANCE
+	db TM_SANDSTORM
 	db TM_HEADBUTT
 	db TM_ROCK_SMASH
 	db -1 ; end

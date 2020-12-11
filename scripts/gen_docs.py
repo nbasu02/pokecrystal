@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 import csv
+from itertools import zip_longest
 import os
 from typing import AnyStr
 from typing import Dict
@@ -265,31 +266,49 @@ def generate_move_changes(
     removal_pairs = original_pokemon.get_changed_levelup_moves(new_pokemon)
     addition_pairs = new_pokemon.get_changed_levelup_moves(original_pokemon)
 
-    removals = []
-    additions = []
-    for level, moves in sorted(removal_pairs.items()):
-        for move in moves:
-            removals.append([str(level), move])
+    if not removal_pairs and not addition_pairs:
+        return
 
-    for level, moves in sorted(addition_pairs.items()):
+    original_moveset = []
+    new_moveset = []
+    for level, moves in sorted(original_pokemon.levelup_moves.items()):
         for move in moves:
-            additions.append([str(level), move])
+            original_moveset.append([str(level), move])
+
+    for level, moves in sorted(new_pokemon.levelup_moves.items()):
+        for move in moves:
+            new_moveset.append([str(level), move])
 
     # make sure the two lists have equal number of columns to properly format the output
-    while len(additions) > len(removals):
-        removals.append(["", ""])
-    while len(removals) > len(additions):
-        additions.append(["", ""])
+    levelup_output_rows = []
+    for original_move, new_move in zip_longest(
+        sorted(original_pokemon.levelup_moves.items()),
+        sorted(new_pokemon.levelup_moves.items()),
+        fillvalue=("", set()),
+    ):
+        original_level, original_attacks = original_move
+        new_level, new_attacks = new_move
 
-    assert len(additions) == len(removals)
+        for original_attack, new_attack in zip_longest(original_attacks, new_attacks, fillvalue=""):
+            is_removed = (
+                original_level != ""
+                and original_attack in removal_pairs.get(int(original_level), set())
+            )
+            is_added = new_level != "" and new_attack in addition_pairs.get(int(new_level), set())
 
-    if not additions and not removals:
-        return
+            levelup_output_rows.append(
+                [
+                    str(original_level),
+                    clean_name(original_attack),
+                    str(new_level),
+                    clean_name(new_attack),
+                ]
+            )
 
     writer.writerow(["Moves"])
     writer.writerow(["Original:", "", "New:"])
-    for rem, add in zip(removals, additions):
-        writer.writerow(clean_name(str(i)) for i in rem + add)
+    for row in levelup_output_rows:
+        writer.writerow(row)
     writer.writerow([""])
 
 
