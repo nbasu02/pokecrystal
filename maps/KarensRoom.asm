@@ -49,8 +49,8 @@ KarenScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KarenScript_KarenBeatenText, 0
-	checkevent EVENT_VIRIDIAN_GYM_BLUE
-	iftrue PostgameKarenScript_Battle
+	checkcode VAR_BADGES
+	ifequal 16, .rematch
 	loadtrainer KAREN, KAREN1
 	startbattle
 	reloadmapafterbattle
@@ -67,7 +67,7 @@ KarenScript_Battle:
 	waitsfx
 	end
 
-PostgameKarenScript_Battle:
+.rematch
 	loadtrainer KAREN, KAREN2
 	startbattle
 	reloadmapafterbattle

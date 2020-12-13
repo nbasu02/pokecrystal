@@ -680,137 +680,137 @@ JohtoGrassWildMons:
 	map_id ICE_PATH_1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 61, SWINUB
-	db 61, GOLBAT
-	db 62, PILOSWINE
-	db 62, DELIBIRD
-	db 61, JYNX
-	db 61, SNEASEL
-	db 62, SNEASEL
+	db 45, SWINUB
+	db 45, GOLBAT
+	db 46, PILOSWINE
+	db 46, DELIBIRD
+	db 45, JYNX
+	db 45, SNEASEL
+	db 46, SNEASEL
 	; day
-	db 61, SWINUB
-	db 61, GOLBAT
-	db 62, PILOSWINE
-	db 62, DELIBIRD
-	db 61, JYNX
-	db 61, SNEASEL
-	db 62, SNEASEL
+	db 45, SWINUB
+	db 45, GOLBAT
+	db 46, PILOSWINE
+	db 46, DELIBIRD
+	db 45, JYNX
+	db 45, SNEASEL
+	db 46, SNEASEL
 	; nite
-	db 61, SWINUB
-	db 61, GOLBAT
-	db 62, PILOSWINE
-	db 62, DELIBIRD
-	db 61, JYNX
-	db 61, SNEASEL
-	db 62, SNEASEL
+	db 45, SWINUB
+	db 45, GOLBAT
+	db 46, PILOSWINE
+	db 46, DELIBIRD
+	db 45, JYNX
+	db 45, SNEASEL
+	db 46, SNEASEL
 
 	map_id ICE_PATH_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 61, SWINUB
-	db 61, GOLBAT
-	db 62, PILOSWINE
-	db 62, DELIBIRD
-	db 61, JYNX
-	db 61, SNEASEL
-	db 62, SNEASEL
+	db 45, SWINUB
+	db 45, GOLBAT
+	db 46, PILOSWINE
+	db 46, DELIBIRD
+	db 45, JYNX
+	db 45, SNEASEL
+	db 46, SNEASEL
 	; day
-	db 61, SWINUB
-	db 61, GOLBAT
-	db 62, PILOSWINE
-	db 62, DELIBIRD
-	db 61, JYNX
-	db 61, SNEASEL
-	db 62, SNEASEL
+	db 45, SWINUB
+	db 45, GOLBAT
+	db 46, PILOSWINE
+	db 46, DELIBIRD
+	db 45, JYNX
+	db 45, SNEASEL
+	db 46, SNEASEL
 	; nite
-	db 61, SWINUB
-	db 61, GOLBAT
-	db 62, PILOSWINE
-	db 62, DELIBIRD
-	db 61, JYNX
-	db 61, SNEASEL
-	db 62, SNEASEL
+	db 45, SWINUB
+	db 45, GOLBAT
+	db 46, PILOSWINE
+	db 46, DELIBIRD
+	db 45, JYNX
+	db 45, SNEASEL
+	db 46, SNEASEL
 
 	map_id ICE_PATH_B2F_MAHOGANY_SIDE
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 62, SWINUB
-	db 62, GOLBAT
-	db 63, PILOSWINE
-	db 63, DELIBIRD
-	db 62, JYNX
-	db 62, SNEASEL
-	db 63, SNEASEL
+	db 46, SWINUB
+	db 46, GOLBAT
+	db 47, PILOSWINE
+	db 47, DELIBIRD
+	db 46, JYNX
+	db 46, SNEASEL
+	db 47, SNEASEL
 	; day
-	db 62, SWINUB
-	db 62, GOLBAT
-	db 63, PILOSWINE
-	db 63, DELIBIRD
-	db 62, JYNX
-	db 62, SNEASEL
-	db 63, SNEASEL
+	db 46, SWINUB
+	db 46, GOLBAT
+	db 47, PILOSWINE
+	db 47, DELIBIRD
+	db 46, JYNX
+	db 46, SNEASEL
+	db 47, SNEASEL
 	; nite
-	db 62, SWINUB
-	db 62, GOLBAT
-	db 63, PILOSWINE
-	db 63, DELIBIRD
-	db 62, JYNX
-	db 62, SNEASEL
-	db 63, SNEASEL
+	db 46, SWINUB
+	db 46, GOLBAT
+	db 47, PILOSWINE
+	db 47, DELIBIRD
+	db 46, JYNX
+	db 46, SNEASEL
+	db 47, SNEASEL
 
 	map_id ICE_PATH_B2F_BLACKTHORN_SIDE
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 62, SWINUB
-	db 62, GOLBAT
-	db 63, PILOSWINE
-	db 63, DELIBIRD
-	db 62, JYNX
-	db 62, SNEASEL
-	db 63, SNEASEL
+	db 46, SWINUB
+	db 46, GOLBAT
+	db 47, PILOSWINE
+	db 47, DELIBIRD
+	db 46, JYNX
+	db 46, SNEASEL
+	db 47, SNEASEL
 	; day
-	db 62, SWINUB
-	db 62, GOLBAT
-	db 63, PILOSWINE
-	db 63, DELIBIRD
-	db 62, JYNX
-	db 62, SNEASEL
-	db 63, SNEASEL
+	db 46, SWINUB
+	db 46, GOLBAT
+	db 47, PILOSWINE
+	db 47, DELIBIRD
+	db 46, JYNX
+	db 46, SNEASEL
+	db 47, SNEASEL
 	; nite
-	db 62, SWINUB
-	db 62, GOLBAT
-	db 63, PILOSWINE
-	db 63, DELIBIRD
-	db 62, JYNX
-	db 62, SNEASEL
-	db 63, SNEASEL
+	db 46, SWINUB
+	db 46, GOLBAT
+	db 47, PILOSWINE
+	db 47, DELIBIRD
+	db 46, JYNX
+	db 46, SNEASEL
+	db 47, SNEASEL
 
 	map_id ICE_PATH_B3F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 63, SWINUB
-	db 63, GOLBAT
-	db 64, PILOSWINE
-	db 64, DELIBIRD
-	db 63, JYNX
-	db 63, SNEASEL
-	db 64, SNEASEL
+	db 47, SWINUB
+	db 47, GOLBAT
+	db 48, PILOSWINE
+	db 48, DELIBIRD
+	db 47, JYNX
+	db 47, SNEASEL
+	db 48, SNEASEL
 	; day
-	db 63, SWINUB
-	db 63, GOLBAT
-	db 64, PILOSWINE
-	db 64, DELIBIRD
-	db 63, JYNX
-	db 63, SNEASEL
-	db 64, SNEASEL
+	db 47, SWINUB
+	db 47, GOLBAT
+	db 48, PILOSWINE
+	db 48, DELIBIRD
+	db 47, JYNX
+	db 47, SNEASEL
+	db 48, SNEASEL
 	; nite
-	db 63, SWINUB
-	db 63, GOLBAT
-	db 64, PILOSWINE
-	db 64, DELIBIRD
-	db 63, JYNX
-	db 63, SNEASEL
-	db 64, SNEASEL
+	db 47, SWINUB
+	db 47, GOLBAT
+	db 48, PILOSWINE
+	db 48, DELIBIRD
+	db 47, JYNX
+	db 47, SNEASEL
+	db 48, SNEASEL
 
 	map_id WHIRL_ISLAND_NW
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

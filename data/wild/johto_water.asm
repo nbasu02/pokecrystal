@@ -100,9 +100,9 @@ JohtoWaterWildMons:
 
 	map_id DRAGONS_DEN_B1F
 	db 4 percent ; encounter rate
-	db 60, GYARADOS
 	db 50, DRAGONAIR
-	db 60, AERODACTYL
+	db 50, YANMA
+	db 50, AERODACTYL
 
 	map_id OLIVINE_PORT
 	db 2 percent ; encounter rate
@@ -220,8 +220,8 @@ JohtoWaterWildMons:
 
 	map_id BLACKTHORN_CITY
 	db 4 percent ; encounter rate
-	db 60, GYARADOS
-	db 60, SEADRA
+	db 50, GYARADOS
+	db 50, SEADRA
 	db 50, DRAGONAIR
 
 	map_id SILVER_CAVE_OUTSIDE

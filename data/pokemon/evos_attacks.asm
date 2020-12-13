@@ -874,7 +874,7 @@ ArcanineEvosAttacks:
 	db 34, EXTREMESPEED
 	db 42, CRUNCH
 	db 48, FLAMETHROWER
-	db 56, OUTRAGE
+	db 58, OUTRAGE
 	db 0 ; no more level-up moves
 
 PoliwagEvosAttacks:
@@ -928,7 +928,7 @@ AbraEvosAttacks:
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
-	db EVOLVE_LEVEL, 36, ALAKAZAM
+	db EVOLVE_LEVEL, 44, ALAKAZAM
 	db 0 ; no more evolutions
 	db 1, KINESIS
 	db 1, CONFUSION
@@ -937,8 +937,8 @@ KadabraEvosAttacks:
 	db 21, PSYBEAM
 	db 26, RECOVER
 	db 31, FUTURE_SIGHT
-	db 38, PSYCHIC_M
-	db 45, REFLECT
+	db 38, REFLECT
+	db 46, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 AlakazamEvosAttacks:
@@ -950,8 +950,8 @@ AlakazamEvosAttacks:
 	db 21, PSYBEAM
 	db 26, RECOVER
 	db 31, FUTURE_SIGHT
-	db 38, PSYCHIC_M
-	db 45, REFLECT
+	db 38, REFLECT
+	db 47, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MachopEvosAttacks:
@@ -971,7 +971,7 @@ MachopEvosAttacks:
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
-	db EVOLVE_LEVEL, 36, MACHAMP
+	db EVOLVE_LEVEL, 42, MACHAMP
 	db 0 ; no more evolutions
 	db 1, LOW_KICK
 	db 1, LEER
@@ -998,7 +998,7 @@ MachampEvosAttacks:
 	db 22, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 34, VITAL_THROW
-	db 43, CROSS_CHOP
+	db 45, CROSS_CHOP
 	db 52, SCARY_FACE
 	db 61, SUBMISSION
 	db 0 ; no more level-up moves
@@ -1095,7 +1095,7 @@ GeodudeEvosAttacks:
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
-	db EVOLVE_LEVEL, 36, GOLEM
+	db EVOLVE_LEVEL, 40, GOLEM
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
@@ -1122,7 +1122,7 @@ GolemEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 27, CURSE
 	db 34, ROCK_SLIDE
-	db 41, EARTHQUAKE
+	db 43, EARTHQUAKE
 	db 48, EXPLOSION
 	db 0 ; no more level-up moves
 
@@ -1370,7 +1370,7 @@ GastlyEvosAttacks:
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
-	db EVOLVE_LEVEL, 36, GENGAR
+	db EVOLVE_LEVEL, 44, GENGAR
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
@@ -1381,8 +1381,8 @@ HaunterEvosAttacks:
 	db 21, NIGHT_SHADE
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
-	db 48, DESTINY_BOND
-	db 54, SHADOW_BALL
+	db 37, DESTINY_BOND
+	db 45, SHADOW_BALL
 	db 0 ; no more level-up moves
 
 GengarEvosAttacks:
@@ -1396,8 +1396,8 @@ GengarEvosAttacks:
 	db 21, NIGHT_SHADE
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
-	db 48, DESTINY_BOND
-	db 54, SHADOW_BALL
+	db 37, DESTINY_BOND
+	db 47, SHADOW_BALL
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
@@ -2107,7 +2107,8 @@ AerodactylEvosAttacks:
 	db 29, ANCIENTPOWER
 	db 36, DOUBLE_EDGE
 	db 43, ROCK_SLIDE
-	db 50, OUTRAGE
+	db 50, CRUNCH
+	db 57, OUTRAGE
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
@@ -2691,7 +2692,7 @@ AmpharosEvosAttacks:
 	db 42, THUNDERBOLT
 	db 47, HEAL_BELL
 	db 52, THUNDER
-	db 60, OUTRAGE
+	db 58, OUTRAGE
 	db 0 ; no more level-up moves
 
 BellossomEvosAttacks:
@@ -3670,9 +3671,9 @@ CelebiEvosAttacks:
 	db 1, HEAL_BELL
 	db 10, SAFEGUARD
 	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
-	db 60, GIGA_DRAIN
+	db 30, GIGA_DRAIN
+	db 40, PSYCHIC_M
+	db 50, RECOVER
+	db 60, BATON_PASS
 	db 70, MEDITATE
 	db 0 ; no more level-up moves

@@ -57,8 +57,8 @@ LancesRoomLanceScript:
 	closetext
 	winlosstext LanceBattleWinText, 0
 	setlasttalked LANCESROOM_LANCE
-	checkevent EVENT_VIRIDIAN_GYM_BLUE
-	iftrue PostgameLancesRoomLanceScript
+	checkcode VAR_BADGES
+	ifequal 16, .rematch
 	loadtrainer CHAMPION, LANCE
 	startbattle
 	dontrestartmapmusic
@@ -130,7 +130,7 @@ LancesRoomLanceScript:
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
 
-PostgameLancesRoomLanceScript:
+.rematch
 	loadtrainer CHAMPION, LANCE2
 	startbattle
 	dontrestartmapmusic

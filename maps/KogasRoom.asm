@@ -49,8 +49,8 @@ KogaScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KogaScript_KogaBeatenText, 0
-	checkevent EVENT_VIRIDIAN_GYM_BLUE
-	iftrue PostgameKogaScript_Battle
+	checkcode VAR_BADGES
+	ifequal 16, .rematch
 	loadtrainer KOGA, KOGA1
 	startbattle
 	reloadmapafterbattle
@@ -67,7 +67,7 @@ KogaScript_Battle:
 	waitsfx
 	end
 
-PostgameKogaScript_Battle:
+.rematch
 	loadtrainer KOGA, KOGA2
 	startbattle
 	reloadmapafterbattle

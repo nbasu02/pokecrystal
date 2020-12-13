@@ -22,8 +22,8 @@ FishGroups:
 	fishgroup 100 percent, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
 
 .Shore_Old:
-	db  50 percent + 1, MAGIKARP,   10
-	db  90 percent + 1, KRABBY,     10
+	db  50 percent + 1, KRABBY,     10
+	db  90 percent + 1, SEEL,       10
 	db 100 percent,     HORSEA,     10
 .Shore_Good:
 	db  35 percent,     GYARADOS,   25
@@ -82,7 +82,7 @@ FishGroups:
 	db 100 percent,     POLITOED,   60
 
 .Dratini_Old:
-	db  50 percent + 1, MAGIKARP,   10
+	db  50 percent + 1, DRATINI,    10
 	db  90 percent + 1, DRATINI,    10
 	db 100 percent,     DRATINI,    15
 .Dratini_Good:
@@ -142,11 +142,11 @@ FishGroups:
 	db 100 percent,     GYARADOS,   60
 
 .Dratini_2_Old:
-	db  50 percent + 1, MAGIKARP,   10
+	db  50 percent + 1, DRATINI,    10
 	db  90 percent + 1, DRATINI,    10
 	db 100 percent,     DRATINI,    10
 .Dratini_2_Good:
-	db  35 percent,     MAGIKARP,   25
+	db  35 percent,     DRATINI,    25
 	db  70 percent,     DRATINI,    25
 	db  90 percent + 1, DRATINI,    25
 	db 100 percent,     time_group 16
@@ -157,12 +157,12 @@ FishGroups:
 	db 100 percent,     DRAGONAIR,  60
 
 .WhirlIslands_Old:
-	db  50 percent + 1, MAGIKARP,   10
-	db  90 percent + 1, KRABBY,   10
+	db  50 percent + 1, SEEL,       10
+	db  90 percent + 1, SHELLDER,   10
 	db 100 percent,     KRABBY,     10
 .WhirlIslands_Good:
-	db  35 percent,     MAGIKARP,   25
-	db  70 percent,     KRABBY,     25
+	db  35 percent,     SEEL,       25
+	db  70 percent,     SHELLDER,   25
 	db  90 percent + 1, KRABBY,     25
 	db 100 percent,     time_group 18
 .WhirlIslands_Super:

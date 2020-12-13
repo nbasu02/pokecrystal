@@ -515,9 +515,7 @@ KRIS EQU __trainer_class__
 	const HORTON
 
 	trainerclass BLACKBELT_T ; 32
-	const KENJI1
 	const YOSHI
-	const KENJI2
 	const LAO
 	const NOB
 	const KIYO

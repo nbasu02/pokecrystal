@@ -127,8 +127,8 @@ def parse_grass_file(input_filename: str, output_filename: str):
             morning_pokemon.append(
                 make_encounter_obj(input_file.readline().strip(), 15)
             )
-            morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
-            morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
+            morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 15))
+            morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
             morning_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
 
             for pokemon_rate in morning_pokemon:
@@ -142,8 +142,8 @@ def parse_grass_file(input_filename: str, output_filename: str):
             day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
             day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
             day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 15))
-            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
-            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
+            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 15))
+            day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
             day_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
 
             for pokemon_rate in day_pokemon:
@@ -157,8 +157,8 @@ def parse_grass_file(input_filename: str, output_filename: str):
             night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
             night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 20))
             night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 15))
-            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
-            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 10))
+            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 15))
+            night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
             night_pokemon.append(make_encounter_obj(input_file.readline().strip(), 5))
 
             for pokemon_rate in night_pokemon:

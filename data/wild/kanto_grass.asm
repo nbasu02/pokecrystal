@@ -113,29 +113,29 @@ KantoGrassWildMons:
 	map_id VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 62, GOLEM
-	db 62, RHYDON
-	db 62, STEELIX
-	db 62, MACHAMP
-	db 62, DUNSPARCE
-	db 55, PUPITAR
-	db 60, SNORLAX
+	db 52, GOLEM
+	db 52, RHYDON
+	db 52, STEELIX
+	db 52, MACHAMP
+	db 52, DUNSPARCE
+	db 50, PUPITAR
+	db 50, SNORLAX
 	; day
-	db 62, GOLEM
-	db 62, RHYDON
-	db 62, STEELIX
-	db 62, MACHAMP
-	db 62, DUNSPARCE
-	db 55, PUPITAR
-	db 60, SNORLAX
+	db 52, GOLEM
+	db 52, RHYDON
+	db 52, STEELIX
+	db 52, MACHAMP
+	db 52, DUNSPARCE
+	db 50, PUPITAR
+	db 50, SNORLAX
 	; nite
-	db 62, GOLEM
-	db 62, RHYDON
-	db 62, STEELIX
-	db 62, MACHAMP
-	db 62, DUNSPARCE
-	db 55, PUPITAR
-	db 60, SNORLAX
+	db 52, GOLEM
+	db 52, RHYDON
+	db 52, STEELIX
+	db 52, MACHAMP
+	db 52, DUNSPARCE
+	db 50, PUPITAR
+	db 50, SNORLAX
 
 	map_id TOHJO_FALLS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -734,56 +734,56 @@ KantoGrassWildMons:
 	map_id ROUTE_26
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, DODRIO
-	db 60, SANDSLASH
-	db 60, RAPIDASH
-	db 60, DONPHAN
-	db 60, SKARMORY
-	db 60, TAUROS
-	db 60, TAUROS
+	db 50, DODRIO
+	db 50, SANDSLASH
+	db 50, RAPIDASH
+	db 50, DONPHAN
+	db 50, SKARMORY
+	db 50, TAUROS
+	db 50, TAUROS
 	; day
-	db 60, DODRIO
-	db 60, SANDSLASH
-	db 60, RAPIDASH
-	db 60, DONPHAN
-	db 60, SKARMORY
-	db 60, TAUROS
-	db 60, TAUROS
+	db 50, DODRIO
+	db 50, SANDSLASH
+	db 50, RAPIDASH
+	db 50, DONPHAN
+	db 50, SKARMORY
+	db 50, TAUROS
+	db 50, TAUROS
 	; nite
-	db 60, QUAGSIRE
-	db 60, SANDSLASH
-	db 60, HOUNDOOM
-	db 60, URSARING
-	db 60, SKARMORY
-	db 60, TAUROS
-	db 60, TAUROS
+	db 50, QUAGSIRE
+	db 50, SANDSLASH
+	db 50, HOUNDOOM
+	db 50, URSARING
+	db 50, SKARMORY
+	db 50, TAUROS
+	db 50, TAUROS
 
 	map_id ROUTE_27
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, ELECTABUZZ
-	db 60, MAGMAR
-	db 60, JYNX
-	db 60, JYNX
-	db 60, HERACROSS
-	db 60, HERACROSS
-	db 60, HERACROSS
+	db 50, ELECTABUZZ
+	db 50, MAGMAR
+	db 50, JYNX
+	db 50, CHANSEY
+	db 50, WOBBUFFET
+	db 50, TANGELA
+	db 50, HERACROSS
 	; day
-	db 60, ELECTABUZZ
-	db 60, MAGMAR
-	db 60, JYNX
-	db 60, JYNX
-	db 60, HERACROSS
-	db 60, HERACROSS
-	db 60, HERACROSS
+	db 50, ELECTABUZZ
+	db 50, MAGMAR
+	db 50, JYNX
+	db 50, TANGELA
+	db 50, CHANSEY
+	db 50, WOBBUFFET
+	db 50, HERACROSS
 	; nite
-	db 60, ELECTABUZZ
-	db 60, MAGMAR
-	db 60, JYNX
-	db 60, JYNX
-	db 60, HERACROSS
-	db 60, HERACROSS
-	db 60, HERACROSS
+	db 50, ELECTABUZZ
+	db 50, MAGMAR
+	db 50, JYNX
+	db 50, TANGELA
+	db 50, CHANSEY
+	db 50, WOBBUFFET
+	db 50, HERACROSS
 
 	map_id ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

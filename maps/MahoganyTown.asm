@@ -227,6 +227,9 @@ MahoganyTownSignText:
 
 	para "Welcome to the"
 	line "Home of the Ninja"
+
+	para "You may need to"
+	line "FLY to enter!"
 	done
 
 MahoganyTownRagecandybarSignText:

@@ -21,6 +21,7 @@ Major changes:
 - The player cannot switch pokemon after KOing an opponent's pokemon when fighting gym leaders, elite 4, the champion, rocket executives, the rival, or against Eusine, even if the options are set to Shift
 - Many pokemon changes are done in an attempt to not have some pokemon "outclass" others.  For example, Fearow is faster than Dodrio and Pigeot, Dodrio hits hardest, and Pigeot has the most bulk
 - Sleep only lasts at most 3(!) turns
+- Having Suicune in your party, you can receive the GS Ball while leaving the Goldenrod City Pokemon Center
 
 Minor Changes:
 
@@ -31,6 +32,7 @@ Minor Changes:
 - All Pokemaniacs have shiny pokemon
 - Can buy as many moomoo milk as you want (previously could not buy if there's one in your pack)
 - Can now Dig/Escape Rope out of the goldenrod radio tower
+- Berry Juice buffed to healing 50HP
 
 Move changes not documented in moves.csv:
 - Moonlight, Synthesis, and Morning Sun always recover 1/2 of maximum health in clear weather regardless of time of day

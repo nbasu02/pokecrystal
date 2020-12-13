@@ -49,8 +49,8 @@ WillScript_Battle:
 	waitbutton
 	closetext
 	winlosstext WillScript_WillBeatenText, 0
-	checkevent EVENT_VIRIDIAN_GYM_BLUE
-	iftrue PostgameWillScript_Battle
+	checkcode VAR_BADGES
+	ifequal 16, .rematch
 	loadtrainer WILL, WILL1
 	startbattle
 	reloadmapafterbattle
@@ -67,7 +67,7 @@ WillScript_Battle:
 	waitsfx
 	end
 
-PostgameWillScript_Battle:
+.rematch
 	loadtrainer WILL, WILL2
 	startbattle
 	reloadmapafterbattle
@@ -83,6 +83,7 @@ PostgameWillScript_Battle:
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN
 	waitsfx
 	end
+
 
 WillScript_AfterBattle:
 	writetext WillScript_WillDefeatText

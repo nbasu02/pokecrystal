@@ -49,8 +49,8 @@ BrunoScript_Battle:
 	waitbutton
 	closetext
 	winlosstext BrunoScript_BrunoBeatenText, 0
-	checkevent EVENT_VIRIDIAN_GYM_BLUE
-	iftrue PostgameBrunoScript_Battle
+	checkcode VAR_BADGES
+	ifequal 16, .rematch
 	loadtrainer BRUNO, BRUNO1
 	startbattle
 	reloadmapafterbattle
@@ -67,7 +67,7 @@ BrunoScript_Battle:
 	waitsfx
 	end
 
-PostgameBrunoScript_Battle:
+.rematch
 	loadtrainer BRUNO, BRUNO2
 	startbattle
 	reloadmapafterbattle
