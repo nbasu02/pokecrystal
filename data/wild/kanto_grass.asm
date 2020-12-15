@@ -275,110 +275,110 @@ KantoGrassWildMons:
 	map_id ROUTE_5
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 70, PIDGEOT
-	db 70, GRANBULL
-	db 70, TANGELA
-	db 70, HERACROSS
-	db 72, GLIGAR
-	db 72, GLIGAR
-	db 72, GLIGAR
+	db 55, PIDGEOT
+	db 55, GRANBULL
+	db 55, TANGELA
+	db 56, HERACROSS
+	db 56, FURRET
+	db 56, GLIGAR
+	db 56, GLIGAR
 	; day
-	db 70, PIDGEOT
-	db 70, GRANBULL
-	db 70, TANGELA
-	db 70, HERACROSS
-	db 72, GLIGAR
-	db 72, GLIGAR
-	db 72, GLIGAR
+	db 55, PIDGEOT
+	db 55, GRANBULL
+	db 55, TANGELA
+	db 56, HERACROSS
+	db 56, FURRET
+	db 56, GLIGAR
+	db 56, GLIGAR
 	; nite
-	db 70, PERSIAN
-	db 70, GRANBULL
-	db 70, MURKROW
-	db 70, HERACROSS
-	db 72, GLIGAR
-	db 72, GLIGAR
-	db 72, GLIGAR
+	db 55, PERSIAN
+	db 55, GRANBULL
+	db 55, MURKROW
+	db 55, HERACROSS
+	db 56, FURRET
+	db 56, GLIGAR
+	db 56, GLIGAR
 
 	map_id ROUTE_6
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 70, RATICATE
-	db 70, GRANBULL
-	db 70, MAGNETON
-	db 70, ELECTRODE
-	db 70, DODRIO
-	db 71, DODRIO
-	db 72, DODRIO
+	db 55, RATICATE
+	db 55, GRANBULL
+	db 55, MAGNETON
+	db 55, ELECTRODE
+	db 55, DONPHAN
+	db 56, DODRIO
+	db 57, DODRIO
 	; day
-	db 70, RATICATE
-	db 70, GRANBULL
-	db 70, MAGNETON
-	db 70, ELECTRODE
-	db 70, DODRIO
-	db 71, DODRIO
-	db 72, DODRIO
+	db 55, RATICATE
+	db 55, GRANBULL
+	db 55, MAGNETON
+	db 55, ELECTRODE
+	db 55, DONPHAN
+	db 56, DODRIO
+	db 57, DODRIO
 	; nite
-	db 70, RATICATE
-	db 70, GRANBULL
-	db 70, MAGNETON
-	db 70, ELECTRODE
-	db 70, MURKROW
-	db 71, MURKROW
-	db 72, MURKROW
+	db 55, RATICATE
+	db 55, GRANBULL
+	db 55, MAGNETON
+	db 55, ELECTRODE
+	db 55, LICKITUNG
+	db 56, MURKROW
+	db 57, MURKROW
 
 	map_id ROUTE_7
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 72, FEAROW
-	db 72, PERSIAN
-	db 70, SCYTHER
-	db 70, PINSIR
-	db 70, PINSIR
-	db 70, PINSIR
-	db 70, PINSIR
+	db 56, FEAROW
+	db 56, PERSIAN
+	db 55, SCYTHER
+	db 55, BUTTERFREE
+	db 55, BUTTERFREE
+	db 55, PINSIR
+	db 54, PINSIR
 	; day
-	db 72, FEAROW
-	db 72, PERSIAN
-	db 70, SCYTHER
-	db 70, PINSIR
-	db 70, PINSIR
-	db 70, PINSIR
-	db 70, PINSIR
+	db 56, FEAROW
+	db 56, PERSIAN
+	db 55, SCYTHER
+	db 55, BEEDRILL
+	db 55, BEEDRILL
+	db 55, PINSIR
+	db 54, PINSIR
 	; nite
-	db 72, NOCTOWL
-	db 72, PERSIAN
-	db 70, SCYTHER
-	db 70, PINSIR
-	db 70, PINSIR
-	db 70, PINSIR
-	db 70, PINSIR
+	db 56, NOCTOWL
+	db 56, PERSIAN
+	db 55, SCYTHER
+	db 55, VENOMOTH
+	db 55, VENOMOTH
+	db 55, PINSIR
+	db 54, PINSIR
 
 	map_id ROUTE_8
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 70, GRANBULL
-	db 70, PIDGEOT
-	db 70, ALAKAZAM
-	db 70, VULPIX
-	db 70, JIGGLYPUFF
-	db 70, JIGGLYPUFF
-	db 70, JIGGLYPUFF
+	db 55, GRANBULL
+	db 55, PIDGEOT
+	db 55, ALAKAZAM
+	db 55, VULPIX
+	db 55, JIGGLYPUFF
+	db 55, JIGGLYPUFF
+	db 55, PORYGON
 	; day
-	db 70, GRANBULL
-	db 70, PIDGEOT
-	db 70, ALAKAZAM
-	db 70, VULPIX
-	db 70, JIGGLYPUFF
-	db 70, JIGGLYPUFF
-	db 70, JIGGLYPUFF
+	db 55, GRANBULL
+	db 55, PIDGEOT
+	db 55, ALAKAZAM
+	db 55, VULPIX
+	db 55, JIGGLYPUFF
+	db 55, JIGGLYPUFF
+	db 55, PORYGON
 	; nite
-	db 70, GRANBULL
-	db 70, PIDGEOT
-	db 70, GENGAR
-	db 70, GROWLITHE
-	db 70, MISDREAVUS
-	db 70, MISDREAVUS
-	db 70, MISDREAVUS
+	db 55, GRANBULL
+	db 55, PIDGEOT
+	db 55, GENGAR
+	db 55, GROWLITHE
+	db 55, MISDREAVUS
+	db 55, MISDREAVUS
+	db 55, PORYGON
 
 	map_id ROUTE_9
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

@@ -22,9 +22,9 @@ KantoWaterWildMons:
 
 	map_id ROUTE_6
 	db 2 percent ; encounter rate
-	db 65, GOLDUCK
-	db 65, POLIWHIRL
-	db 65, LANTURN
+	db 55, GOLDUCK
+	db 55, POLIWHIRL
+	db 55, LANTURN
 
 	map_id ROUTE_9
 	db 4 percent ; encounter rate
