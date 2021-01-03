@@ -3677,8 +3677,9 @@ BattleCommand_SleepTarget:
 	call BattleRandom
 	and b
 	jr z, .random_loop
-	cp SLP
-	jr z, .random_loop
+	; don't allow sleep for more than 4 turns
+	cp 4
+	jr nc, .random_loop
 	inc a
 	ld [de], a
 	call UpdateOpponentInParty

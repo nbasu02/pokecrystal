@@ -24,7 +24,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw TeruSama2Desc
+	dw SilverCharmDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -351,8 +351,9 @@ WaterStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-TeruSama2Desc:
-	db   "?@"
+SilverCharmDesc:
+	db   "Increases catch"
+	next "rate when held.@"
 
 HPUpDesc:
 	db   "Raises the HP of"
@@ -793,7 +794,7 @@ CharcoalDesc:
 
 BerryJuiceDesc:
 	db   "Restores #MON"
-	next "HP by 20.@"
+	next "HP by 50.@"
 
 ScopeLensDesc:
 	db   "Raises critical"

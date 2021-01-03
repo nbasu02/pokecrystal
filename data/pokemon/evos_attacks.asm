@@ -2605,8 +2605,8 @@ TogeticEvosAttacks:
 	db 1, POUND
 	db 1, CHARM
 	db 7, METRONOME
-	db 10, WING_ATTACK
 	db 14, SWEET_KISS
+	db 15, WING_ATTACK
 	db 19, TRI_ATTACK
 	db 25, ENCORE
 	db 31, SAFEGUARD

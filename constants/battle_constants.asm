@@ -151,7 +151,7 @@ SPDSPCDV_SHINY EQU $AA
 	const ENEMY_LAST_MOVE
 
 ; status condition bit flags
-SLP EQU %011 ; 0-3 turns
+SLP EQU %111 ; 0-3 turns
 	const_def 3
 	const PSN
 	const BRN
