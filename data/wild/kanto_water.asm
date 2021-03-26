@@ -10,9 +10,9 @@ KantoWaterWildMons:
 
 	map_id VERMILION_PORT
 	db 2 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
+	db 55, TENTACOOL
+	db 50, CORSOLA
+	db 55, TENTACRUEL
 
 	map_id ROUTE_4
 	db 4 percent ; encounter rate
@@ -64,9 +64,9 @@ KantoWaterWildMons:
 
 	map_id ROUTE_21
 	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
+	db 55, TENTACOOL
+	db 55, CORSOLA
+	db 55, TENTACRUEL
 
 	map_id ROUTE_22
 	db 2 percent ; encounter rate
@@ -112,15 +112,15 @@ KantoWaterWildMons:
 
 	map_id VIRIDIAN_CITY
 	db 2 percent ; encounter rate
-	db 10, POLIWAG
-	db 5, POLIWAG
-	db 10, POLIWHIRL
+	db 55, POLIWAG
+	db 55, REMORAID
+	db 55, POLIWHIRL
 
 	map_id CERULEAN_CITY
 	db 4 percent ; encounter rate
-	db 10, GOLDEEN
-	db 5, GOLDEEN
-	db 10, SEAKING
+	db 55, TENTACOOL
+	db 55, CORSOLA
+	db 55, TENTACRUEL
 
 	map_id VERMILION_CITY
 	db 6 percent ; encounter rate
@@ -130,15 +130,15 @@ KantoWaterWildMons:
 
 	map_id CELADON_CITY
 	db 2 percent ; encounter rate
-	db 70, MUK
-	db 70, QWILFISH
-	db 75, MUK
+	db 50, MUK
+	db 50, QWILFISH
+	db 55, MUK
 
 	map_id FUCHSIA_CITY
 	db 2 percent ; encounter rate
-	db 70, MAGIKARP
-	db 70, GOLDUCK
-	db 70, SEAKING
+	db 50, MAGIKARP
+	db 50, GOLDUCK
+	db 50, SEAKING
 
 	map_id CINNABAR_ISLAND
 	db 6 percent ; encounter rate

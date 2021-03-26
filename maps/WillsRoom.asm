@@ -49,7 +49,7 @@ WillScript_Battle:
 	waitbutton
 	closetext
 	winlosstext WillScript_WillBeatenText, 0
-	checkcode VAR_BADGES
+	readvar VAR_BADGES
 	ifequal 16, .rematch
 	loadtrainer WILL, WILL1
 	startbattle

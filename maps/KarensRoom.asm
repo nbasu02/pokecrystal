@@ -49,7 +49,7 @@ KarenScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KarenScript_KarenBeatenText, 0
-	checkcode VAR_BADGES
+	readvar VAR_BADGES
 	ifequal 16, .rematch
 	loadtrainer KAREN, KAREN1
 	startbattle

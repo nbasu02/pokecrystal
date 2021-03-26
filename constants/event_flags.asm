@@ -510,7 +510,12 @@
 	const EVENT_GOT_ODD_EGG
 	const_skip ; unused
 	const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
-; Unused: next 167 events
+	const EVENT_FOUGHT_ARTICUNO
+	const EVENT_FOUGHT_ZAPDOS
+	const EVENT_FOUGHT_MOLTRES
+	const EVENT_FOUGHT_MEW
+	const EVENT_FOUGHT_MEWTWO
+; Unused: next 162 events
 
 	const_next 1000
 ; Trainer flags
@@ -1456,7 +1461,9 @@
 	const EVENT_RADIO_TOWER_5F_ULTRA_BALL
 	const EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
 	const EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
-; Unused: next 48 events
+
+	const EVENT_ROUTE_10_NORTH_ZAPDOS
+; Unused: next 47 events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

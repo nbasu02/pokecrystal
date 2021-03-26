@@ -13,7 +13,7 @@ TrainerPicPointers::
 	dba_pic Rival1Pic
 	dba_pic PokemonProfPic
 	dba_pic WillPic
-	dba_pic CalPic
+	dba_pic CooltrainerfPic
 	dba_pic BrunoPic
 	dba_pic KarenPic
 	dba_pic KogaPic

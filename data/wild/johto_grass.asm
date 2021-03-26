@@ -815,218 +815,218 @@ JohtoGrassWildMons:
 	map_id WHIRL_ISLAND_NW
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; day
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; nite
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 
 	map_id WHIRL_ISLAND_NE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; day
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; nite
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 
 	map_id WHIRL_ISLAND_SW
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; day
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; nite
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 
 	map_id WHIRL_ISLAND_CAVE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; day
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; nite
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 
 	map_id WHIRL_ISLAND_SE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; day
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; nite
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 
 	map_id WHIRL_ISLAND_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; day
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; nite
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 
 	map_id WHIRL_ISLAND_B2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; day
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; nite
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 
 	map_id WHIRL_ISLAND_LUGIA_CHAMBER
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; day
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 	; nite
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, DEWGONG
-	db 60, KINGLER
-	db 60, GOLBAT
-	db 60, AERODACTYL
-	db 60, AERODACTYL
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, DEWGONG
+	db 50, KINGLER
+	db 50, GOLBAT
+	db 50, AERODACTYL
+	db 50, AERODACTYL
 
 	map_id SILVER_CAVE_ROOM_1
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

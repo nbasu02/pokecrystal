@@ -49,7 +49,7 @@ KogaScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KogaScript_KogaBeatenText, 0
-	checkcode VAR_BADGES
+	readvar VAR_BADGES
 	ifequal 16, .rematch
 	loadtrainer KOGA, KOGA1
 	startbattle

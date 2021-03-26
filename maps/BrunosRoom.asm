@@ -49,7 +49,7 @@ BrunoScript_Battle:
 	waitbutton
 	closetext
 	winlosstext BrunoScript_BrunoBeatenText, 0
-	checkcode VAR_BADGES
+	readvar VAR_BADGES
 	ifequal 16, .rematch
 	loadtrainer BRUNO, BRUNO1
 	startbattle

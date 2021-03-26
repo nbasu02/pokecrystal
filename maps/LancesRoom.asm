@@ -57,7 +57,7 @@ LancesRoomLanceScript:
 	closetext
 	winlosstext LanceBattleWinText, 0
 	setlasttalked LANCESROOM_LANCE
-	checkcode VAR_BADGES
+	readvar VAR_BADGES
 	ifequal 16, .rematch
 	loadtrainer CHAMPION, LANCE
 	startbattle

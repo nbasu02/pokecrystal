@@ -22,7 +22,6 @@ Major changes:
 - Many pokemon changes are done in an attempt to not have some pokemon "outclass" others.  For example, Fearow is faster than Dodrio and Pigeot, Dodrio hits hardest, and Pigeot has the most bulk
 - Sleep only lasts at most 4 turns
 - Having Suicune in your party, you can receive the GS Ball while leaving the Goldenrod City Pokemon Center
-- You can only access Blaine's gym from the west.  The east entrance to seafoam islands is blocked off.  This is done to help scale his pokemon's levels.
 
 Minor Changes:
 
@@ -35,6 +34,7 @@ Minor Changes:
 - Can now Dig/Escape Rope out of the goldenrod radio tower
 - Berry Juice buffed to healing 50HP
 - Lugia now holds an item called Silver Charm, which increases catch rate when held
+- The trainer you battle in the Viridian City Trainer House is fixed, and cannot be changed with Mystery Gift (which is unlikely to come up in emulation)
 
 Move changes not documented in moves.csv:
 - Moonlight, Synthesis, and Morning Sun always recover 1/2 of maximum health in clear weather regardless of time of day

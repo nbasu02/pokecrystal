@@ -3474,6 +3474,8 @@ CheckWhetherToAskSwitch:
 	jr z, .return_nc
 	cp MYSTICALMAN
 	jr z, .return_nc
+	cp CAL
+	jr z, .return_nc
 	cp SAGE
 	jr z, .sage
 	call IsGymLeader

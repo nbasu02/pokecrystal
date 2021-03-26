@@ -626,56 +626,56 @@ KantoGrassWildMons:
 	map_id ROUTE_21
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 75, TANGELA
-	db 75, FURRET
-	db 76, TANGELA
-	db 76, FURRET
-	db 76, MR__MIME
-	db 75, MR__MIME
-	db 77, MR__MIME
+	db 65, TANGELA
+	db 65, FURRET
+	db 66, TANGELA
+	db 66, FURRET
+	db 66, MR__MIME
+	db 65, MR__MIME
+	db 67, MR__MIME
 	; day
-	db 75, TANGELA
-	db 75, FURRET
-	db 76, TANGELA
-	db 76, FURRET
-	db 76, MR__MIME
-	db 75, MR__MIME
-	db 77, MR__MIME
+	db 65, TANGELA
+	db 65, FURRET
+	db 66, TANGELA
+	db 66, FURRET
+	db 66, MR__MIME
+	db 65, MR__MIME
+	db 67, MR__MIME
 	; nite
-	db 75, TANGELA
-	db 75, RATICATE
-	db 76, TANGELA
-	db 76, RATICATE
-	db 76, MR__MIME
-	db 75, MR__MIME
-	db 77, MR__MIME
+	db 65, TANGELA
+	db 65, RATICATE
+	db 66, TANGELA
+	db 66, RATICATE
+	db 66, MR__MIME
+	db 65, MR__MIME
+	db 67, MR__MIME
 
 	map_id ROUTE_22
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 75, FEAROW
-	db 75, NIDOKING
-	db 75, NIDOQUEEN
-	db 75, NIDOQUEEN
-	db 74, PRIMEAPE
-	db 75, PRIMEAPE
-	db 76, PRIMEAPE
+	db 65, FEAROW
+	db 65, NIDOKING
+	db 65, NIDOQUEEN
+	db 65, NIDOQUEEN
+	db 64, PRIMEAPE
+	db 65, PRIMEAPE
+	db 66, PRIMEAPE
 	; day
-	db 75, FEAROW
-	db 75, NIDOKING
-	db 75, NIDOQUEEN
-	db 75, NIDOQUEEN
-	db 74, PRIMEAPE
-	db 75, PRIMEAPE
-	db 76, PRIMEAPE
+	db 65, FEAROW
+	db 65, NIDOKING
+	db 65, NIDOQUEEN
+	db 65, NIDOQUEEN
+	db 64, PRIMEAPE
+	db 65, PRIMEAPE
+	db 66, PRIMEAPE
 	; nite
-	db 75, FEAROW
-	db 75, NIDOKING
-	db 75, NIDOQUEEN
-	db 75, NIDOQUEEN
-	db 74, PRIMEAPE
-	db 75, PRIMEAPE
-	db 76, PRIMEAPE
+	db 65, FEAROW
+	db 65, NIDOKING
+	db 65, NIDOQUEEN
+	db 65, NIDOQUEEN
+	db 64, PRIMEAPE
+	db 65, PRIMEAPE
+	db 66, PRIMEAPE
 
 	map_id ROUTE_24
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

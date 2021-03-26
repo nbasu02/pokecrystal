@@ -1,7 +1,44 @@
+	object_const_def
+	const ROUTE_10_NORTH_ZAPDOS
+
 Route10North_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Zapdos
+
+.Zapdos:
+	checkevent EVENT_FOUGHT_ZAPDOS
+	iftrue .NoAppear
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .Appear
+	sjump .NoAppear
+
+.Appear:
+	appear ROUTE_10_NORTH_ZAPDOS
+	endcallback
+
+.NoAppear:
+	disappear ROUTE_10_NORTH_ZAPDOS
+	endcallback
+
+Zapdos:
+	faceplayer
+	opentext
+	writetext ZapdosText
+	cry ZAPDOS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_ZAPDOS
+	loadwildmon ZAPDOS, 70
+	startbattle
+	disappear ROUTE_10_NORTH_ZAPDOS
+	reloadmapafterbattle
+	end
+
+ZapdosText:
+	text "Gyaoo!"
+	done
 
 PowerPlantSign:
 	jumptext PowerPlantSignText
@@ -27,3 +64,4 @@ Route10North_MapEvents:
 	bg_event 12,  1, BGEVENT_READ, Route10PokecenterSign
 
 	def_object_events
+	object_event  7,  10, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, Zapdos, EVENT_ROUTE_10_NORTH_ZAPDOS
