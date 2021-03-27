@@ -1031,110 +1031,110 @@ JohtoGrassWildMons:
 	map_id SILVER_CAVE_ROOM_1
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 72, CROBAT
+	db 71, SNEASEL
+	db 73, AERODACTYL
+	db 71, GOLEM
+	db 72, STEELIX
+	db 72, ALAKAZAM
+	db 70, TYRANITAR
 	; day
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 72, CROBAT
+	db 71, SNEASEL
+	db 73, AERODACTYL
+	db 71, GOLEM
+	db 72, STEELIX
+	db 72, MACHAMP
+	db 70, TYRANITAR
 	; nite
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 72, CROBAT
+	db 71, SNEASEL
+	db 73, AERODACTYL
+	db 71, GOLEM
+	db 72, STEELIX
+	db 72, GENGAR
+	db 70, TYRANITAR
 
 	map_id SILVER_CAVE_ROOM_2
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 72, BLISSEY
+	db 72, STEELIX
+	db 72, ALAKAZAM
+	db 70, TYRANITAR
 	; day
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 71, BLISSEY
+	db 72, STEELIX
+	db 72, MACHAMP
+	db 70, TYRANITAR
 	; nite
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 72, BLISSEY
+	db 72, STEELIX
+	db 72, GENGAR
+	db 70, TYRANITAR
 
 	map_id SILVER_CAVE_ROOM_3
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 72, BLISSEY
+	db 72, STEELIX
+	db 72, ALAKAZAM
+	db 70, TYRANITAR
 	; day
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 71, BLISSEY
+	db 72, STEELIX
+	db 72, MACHAMP
+	db 70, TYRANITAR
 	; nite
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 72, BLISSEY
+	db 72, STEELIX
+	db 72, GENGAR
+	db 70, TYRANITAR
 
 	map_id SILVER_CAVE_ITEM_ROOMS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 72, BLISSEY
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 72, STEELIX
+	db 72, ALAKAZAM
+	db 70, DUNSPARCE
 	; day
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 71, BLISSEY
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 72, STEELIX
+	db 72, MACHAMP
+	db 70, DUNSPARCE
 	; nite
-	db 90, ARTICUNO
-	db 90, MOLTRES
-	db 90, ZAPDOS
-	db 90, ZAPDOS
-	db 90, TYRANITAR
-	db 90, MEWTWO
-	db 90, MEW
+	db 73, CROBAT
+	db 72, BLISSEY
+	db 73, SNEASEL
+	db 73, AERODACTYL
+	db 72, STEELIX
+	db 72, GENGAR
+	db 70, DUNSPARCE
 
 	map_id DARK_CAVE_VIOLET_ENTRANCE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -1625,28 +1625,28 @@ JohtoGrassWildMons:
 	map_id SILVER_CAVE_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 80, TYPHLOSION
-	db 80, MEGANIUM
-	db 80, FERALIGATR
-	db 80, FERALIGATR
-	db 80, TYRANITAR
-	db 80, SNORLAX
-	db 80, SNORLAX
+	db 70, TYPHLOSION
+	db 70, MEGANIUM
+	db 70, FERALIGATR
+	db 70, AERODACTYL
+	db 70, SKARMORY
+	db 70, TYRANITAR
+	db 70, SNORLAX
 	; day
-	db 80, TYPHLOSION
-	db 80, MEGANIUM
-	db 80, FERALIGATR
-	db 80, FERALIGATR
-	db 80, TYRANITAR
-	db 80, SNORLAX
-	db 80, SNORLAX
+	db 70, TYPHLOSION
+	db 70, MEGANIUM
+	db 70, FERALIGATR
+	db 70, AERODACTYL
+	db 70, SKARMORY
+	db 70, TYRANITAR
+	db 70, SNORLAX
 	; nite
-	db 80, TYPHLOSION
-	db 80, MEGANIUM
-	db 80, FERALIGATR
-	db 80, FERALIGATR
-	db 80, TYRANITAR
-	db 80, SNORLAX
-	db 80, SNORLAX
+	db 70, TYPHLOSION
+	db 70, MEGANIUM
+	db 70, FERALIGATR
+	db 70, AERODACTYL
+	db 70, SKARMORY
+	db 70, TYRANITAR
+	db 70, SNORLAX
 
 	db -1 ; end

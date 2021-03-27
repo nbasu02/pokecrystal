@@ -2383,6 +2383,7 @@ FeraligatrEvosAttacks:
 	db 16, BITE
 	db 22, BUBBLEBEAM
 	db 28, BODY_SLAM
+	db 30, SWORDS_DANCE
 	db 38, SLASH
 	db 47, CRUNCH
 	db 58, HYDRO_PUMP

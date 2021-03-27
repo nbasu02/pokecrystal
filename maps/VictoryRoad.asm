@@ -5,6 +5,7 @@
 	const VICTORYROAD_POKE_BALL3
 	const VICTORYROAD_POKE_BALL4
 	const VICTORYROAD_POKE_BALL5
+	const VICTORYROAD_MOLTRES
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
@@ -12,12 +13,47 @@ VictoryRoad_MapScripts:
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Moltres
+
+.Moltres:
+	checkevent EVENT_FOUGHT_MOLTRES
+	iftrue .NoAppear
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .Appear
+	sjump .NoAppear
+
+.Appear:
+	appear VICTORYROAD_MOLTRES
+	endcallback
+
+.NoAppear:
+	disappear VICTORYROAD_MOLTRES
+	endcallback
+
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+Moltres:
+	faceplayer
+	opentext
+	writetext MoltresText
+	cry MOLTRES
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_MOLTRES
+	loadwildmon MOLTRES, 65
+	startbattle
+	disappear VICTORYROAD_MOLTRES
+	reloadmapafterbattle
+	end
+
+MoltresText:
+	text "Gyaoo!"
+	done
 
 VictoryRoadRivalLeft:
 	moveobject VICTORYROAD_SILVER, 18, 11
@@ -266,3 +302,4 @@ VictoryRoad_MapEvents:
 	object_event 18, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullRestore, EVENT_VICTORY_ROAD_FULL_RESTORE
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullHeal, EVENT_VICTORY_ROAD_FULL_HEAL
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP
+	object_event  5, 28, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Moltres, EVENT_VICTORYROAD_MOLTRES

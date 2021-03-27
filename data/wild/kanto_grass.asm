@@ -788,28 +788,28 @@ KantoGrassWildMons:
 	map_id ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 80, VENUSAUR
-	db 80, CHARIZARD
-	db 80, BLASTOISE
-	db 80, BLASTOISE
-	db 80, SNORLAX
-	db 80, SNORLAX
-	db 80, SNORLAX
+	db 70, VENUSAUR
+	db 70, CHARIZARD
+	db 70, BLASTOISE
+	db 70, TYPHLOSION
+	db 70, MEGANIUM
+	db 70, FERALIGATR
+	db 70, SNORLAX
 	; day
-	db 80, VENUSAUR
-	db 80, CHARIZARD
-	db 80, BLASTOISE
-	db 80, BLASTOISE
-	db 80, SNORLAX
-	db 80, SNORLAX
-	db 80, SNORLAX
+	db 70, VENUSAUR
+	db 70, CHARIZARD
+	db 70, BLASTOISE
+	db 70, TYPHLOSION
+	db 70, MEGANIUM
+	db 70, FERALIGATR
+	db 70, SNORLAX
 	; nite
-	db 80, VENUSAUR
-	db 80, CHARIZARD
-	db 80, BLASTOISE
-	db 80, BLASTOISE
-	db 80, SNORLAX
-	db 80, SNORLAX
-	db 80, SNORLAX
+	db 70, VENUSAUR
+	db 70, CHARIZARD
+	db 70, BLASTOISE
+	db 70, TYPHLOSION
+	db 70, MEGANIUM
+	db 70, FERALIGATR
+	db 70, SNORLAX
 
 	db -1 ; end

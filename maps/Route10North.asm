@@ -1,5 +1,5 @@
 	object_const_def
-	const ROUTE_10_NORTH_ZAPDOS
+	const ROUTE10_NORTH_ZAPDOS
 
 Route10North_MapScripts:
 	def_scene_scripts
@@ -15,11 +15,11 @@ Route10North_MapScripts:
 	sjump .NoAppear
 
 .Appear:
-	appear ROUTE_10_NORTH_ZAPDOS
+	appear ROUTE10_NORTH_ZAPDOS
 	endcallback
 
 .NoAppear:
-	disappear ROUTE_10_NORTH_ZAPDOS
+	disappear ROUTE10_NORTH_ZAPDOS
 	endcallback
 
 Zapdos:
@@ -30,9 +30,9 @@ Zapdos:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_ZAPDOS
-	loadwildmon ZAPDOS, 70
+	loadwildmon ZAPDOS, 65
 	startbattle
-	disappear ROUTE_10_NORTH_ZAPDOS
+	disappear ROUTE10_NORTH_ZAPDOS
 	reloadmapafterbattle
 	end
 
@@ -64,4 +64,4 @@ Route10North_MapEvents:
 	bg_event 12,  1, BGEVENT_READ, Route10PokecenterSign
 
 	def_object_events
-	object_event  7,  10, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, Zapdos, EVENT_ROUTE_10_NORTH_ZAPDOS
+	object_event  7,  10, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, Zapdos, EVENT_ROUTE10_NORTH_ZAPDOS

@@ -100,9 +100,9 @@ KantoWaterWildMons:
 
 	map_id ROUTE_28
 	db 2 percent ; encounter rate
-	db 40, POLIWAG
-	db 35, POLIWAG
-	db 40, POLIWHIRL
+	db 65, POLIWRATH
+	db 65, KINGDRA
+	db 40, DRAGONITE
 
 	map_id PALLET_TOWN
 	db 6 percent ; encounter rate

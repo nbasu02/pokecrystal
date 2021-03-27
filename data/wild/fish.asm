@@ -173,8 +173,8 @@ FishGroups:
 
 .Qwilfish_NoSwarm_Old:
 .Qwilfish_Old:
-	db  50 percent + 1, MAGIKARP,   10
-	db  90 percent + 1, TENTACOOL,  10
+	db  40 percent + 1, MAGIKARP,   10
+	db  75 percent + 1, TENTACOOL,  10
 	db 100 percent,     QWILFISH,   10
 .Qwilfish_NoSwarm_Good:
 .Qwilfish_Good:

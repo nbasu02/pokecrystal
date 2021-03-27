@@ -16,7 +16,9 @@ from typing import Tuple
 import attr
 
 from gen_move_changes import compare_move_changes
+from gen_wild_mons import parse_fish_file
 from gen_wild_mons import parse_grass_file
+from gen_wild_mons import parse_water_file
 from util import clean_name
 
 BALANCED_STAT_PATH = "/home/neil/Projects/pokecrystal/data/pokemon/base_stats"
@@ -497,5 +499,15 @@ if __name__ == "__main__":
     )
     parse_grass_file(
         "/home/neil/Projects/pokecrystal/data/wild/kanto_grass.asm", "kanto_grass.csv"
+    )
+    parse_water_file(
+        "/home/neil/Projects/pokecrystal/data/wild/johto_water.asm", "johto_water.csv"
+    )
+    parse_water_file(
+        "/home/neil/Projects/pokecrystal/data/wild/kanto_water.asm", "kanto_water.csv"
+    )
+
+    parse_fish_file(
+        "/home/neil/Projects/pokecrystal/data/wild/fish.asm", "fish.csv"
     )
     compare_move_changes()

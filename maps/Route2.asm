@@ -7,11 +7,46 @@
 	const ROUTE2_POKE_BALL3
 	const ROUTE2_POKE_BALL4
 	const ROUTE2_FRUIT_TREE
+	const ROUTE2_MEW
 
 Route2_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Mew
+
+.Mew:
+	checkevent EVENT_FOUGHT_MEW
+	iftrue .NoAppear
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .Appear
+	sjump .NoAppear
+
+.Appear:
+	appear ROUTE2_MEW
+	endcallback
+
+.NoAppear:
+	disappear ROUTE2_MEW
+	endcallback
+
+Mew:
+	faceplayer
+	opentext
+	writetext MewText
+	cry MEW
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_MEW
+	loadwildmon MEW, 65
+	startbattle
+	disappear ROUTE2_MEW
+	reloadmapafterbattle
+	end
+
+MewText:
+	text "Myuu!"
+	done
 
 TrainerBugCatcherRob:
 	trainer BUG_CATCHER, ROB, EVENT_BEAT_BUG_CATCHER_ROB, BugCatcherRobSeenText, BugCatcherRobBeatenText, 0, .Script
@@ -173,3 +208,4 @@ Route2_MapEvents:
 	object_event 19,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Carbos, EVENT_ROUTE_2_CARBOS
 	object_event 14, 50, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Elixer, EVENT_ROUTE_2_ELIXER
 	object_event 10, 14, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1
+	object_event  0, 26, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Mew, EVENT_ROUTE2_MEW
