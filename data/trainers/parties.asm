@@ -1471,7 +1471,7 @@ GruntMGroup:
 	; GRUNTM (7)
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 46, WEEZING
-	db 46, MUK
+	db 46, GLIGAR
 	db 47, GOLBAT
 	db 47, RATICATE
 	db -1 ; end
@@ -1498,7 +1498,7 @@ GruntMGroup:
 	; GRUNTM (11)
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 49, MUK
-	db 49, WEEZING
+	db 49, GLIGAR
 	db 49, RATICATE
 	db -1 ; end
 
